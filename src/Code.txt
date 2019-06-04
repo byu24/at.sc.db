@@ -1,0 +1,8 @@
+#Download tar.gz files from http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
+
+# extract tar.gz file 
+tar -zxvf sratoolkit.2.9.2-ubuntu64.tar.gz
+
+#Add SRA Tools binaries into path to utilize executables
+export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
+
