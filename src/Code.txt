@@ -6,3 +6,15 @@ tar -zxvf sratoolkit.2.9.2-ubuntu64.tar.gz
 #Add SRA Tools binaries into path to utilize executables
 export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
 
+#cd into the directory keeping all the data
+cd $BSCRATCH
+cd at.sc.db/data
+
+#Extract fastq files with fasterq-dump
+fasterq-dump SRR8315917
+fasterq-dump SRR8086586
+fasterq-dump SRR8257106
+fasterq-dump SRR8206664
+fasterq-dump SRR8485805
+
+
