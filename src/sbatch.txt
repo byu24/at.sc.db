@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --constraint=haswell
+#SBATCH -q regular
+#SBATCH -J denyer
+#SBATCH -t 02:00:00
+#SBATCH -N 8
+#SBATCH --mail-user=brendayu@lbl.gov
+#SBATCH -D /global/projectb/scratch/byu24/at.sc.db/src
+
+echo "Adding executable to path"
+export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
+
+echo "begin fasterq-dump"
+echo "Pulling Denyer protoplasted rep1"
+fasterq-dump SRR8315916 -O /global/projectb/scratch/byu24/at.sc.db/data/denyer -t /global/projectb/scratch/byu24/at.sc.db/scratch
+echo "finish pulling denyer protoplasted rep1"
+
+fasterq-dump SRR8315908 -O /global/projectb/scratch/byu24/at.sc.db/data/denyer
