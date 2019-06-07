@@ -1,0 +1,4 @@
+6/6/19, 7:36 PM
+
+Submitted batch job 22109154
+Submitted fastqpull.sh to pull denyer.sh
