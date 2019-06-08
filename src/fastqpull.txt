@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --constraint=haswell
+#SBATCH -q regular 
+#SBATCH -J jeanbaptiste	# Change name to match batch file
+#SBATCH -t 04:00:00
+#SBATCH -N 16
+#SBATCH --mail-user=brendayu@lbl.gov
+#SBATCH -D /global/projectb/scratch/byu24/at.sc.db/src
+
+srun -n 16 ./jeanbaptiste.sh	# Change the .sh file each job submission to indicate correct file
+

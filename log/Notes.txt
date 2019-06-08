@@ -2,3 +2,6 @@
 
 Submitted batch job 22109154
 Submitted fastqpull.sh to pull denyer.sh
+
+6/8/19
+batch job 22109154 Time_Out
