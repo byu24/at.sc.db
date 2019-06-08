@@ -19,8 +19,8 @@ chmod +x denyer.sh #Only do once for batch script. Repeat for each batch script
 test -x denyer.sh && echo true || echo false #Repeat for each .sh file you want to set 
 
 #Edit sbatch.sh file to include the correct file after "srun"
+sbatch fastqpull.sh #Take note of job ID
 
-sbatch --qos=genepool -A m342 fastqpull.sh
 
 
 
