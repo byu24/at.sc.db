@@ -5,3 +5,9 @@ Submitted fastqpull.sh to pull denyer.sh
 6/8/19
 batch job 22109154 Time_Out
 Submitted batch job 22154620 for JB, Zhang, and Ryu
+
+6/9/19
+submitted batch job 22162870 for denyer - job failed (forgot to add sra tools to path
+batch job 22154620 for JB/Zhang/Ryu produced 1 ryu and Zhang. Shows completed but no fastq files yet.
+submitted batch job 22162946 for denyer (correction for sra tools)
+
