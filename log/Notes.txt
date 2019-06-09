@@ -4,5 +4,4 @@ Submitted fastqpull.sh to pull denyer.sh
 
 6/8/19
 batch job 22109154 Time_Out
-Submitted batch job 22152257 for jeanbaptiste.sh (4 hr)
-submitted batch job 22152283 for ryu (24 hr)
+Submitted batch job 22154620 for JB, Zhang, and Ryu

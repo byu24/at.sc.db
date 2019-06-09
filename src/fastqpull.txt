@@ -12,6 +12,8 @@
 
 srun -N 1 -n 2 ./jeanbaptiste.sh &
 srun -N 1 -n 7 ./ryu.sh	&
+srun -N 1 -n 1 fasterq-dump SRR8485805 -O /global/projectb/scratch/byu24/at.sc.db/data/zhang -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+
 
 wait
 
