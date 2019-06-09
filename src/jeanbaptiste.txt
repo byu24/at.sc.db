@@ -4,11 +4,11 @@ export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64
 
 echo "begin fasterq-dump"
 echo "Pulling JB control 1"
-fasterq-dump SRR8086584 -O /global/projectb/scratch/byu24/at.sc.db/data/jeanbaptiste -t /global/projectb/scratch/byu24/at.sc.db/scratch
+fasterq-dump SRR8086584 -O /global/projectb/scratch/byu24/at.sc.db/data/jeanbaptiste -t /global/projectb/scratch/byu24/at.sc.db/scratch &
 echo "finish pulling JB control 1"
 
 echo "Pulling JB control 2"
-fasterq-dump SRR8086585 -O /global/projectb/scratch/byu24/at.sc.db/data/jeanbaptiste -t /global/projectb/scratch/byu24/at.sc.db/scratch
+fasterq-dump SRR8086585 -O /global/projectb/scratch/byu24/at.sc.db/data/jeanbaptiste -t /global/projectb/scratch/byu24/at.sc.db/scratch &
 echo "finish pulling JB control 1"
 
 echo "finish all JB samples"

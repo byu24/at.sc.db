@@ -4,7 +4,5 @@ Submitted fastqpull.sh to pull denyer.sh
 
 6/8/19
 batch job 22109154 Time_Out
-Submitted batch job 22149780 for jeanbaptiste.sh
-
-PID 10302 #Ryu
-PID 50402 #Denyer wt rep1 sample 2
+Submitted batch job 22152257 for jeanbaptiste.sh (4 hr)
+submitted batch job 22152283 for ryu (24 hr)

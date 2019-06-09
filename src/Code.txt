@@ -12,7 +12,7 @@ cd at.sc.db/data
 
 #Extract fastq files with fasterq-dump.
 
-#Create batch script to run a job. Convert each batch script into executables
+#Create batch script to pull multiple SRRs. Convert each batch script into executables
 chmod +x denyer.sh #Only do once for batch script. Repeat for each batch script
 
 #test to make sure the .sh files are executables
@@ -21,6 +21,8 @@ test -x denyer.sh && echo true || echo false #Repeat for each .sh file you want 
 #Edit sbatch.sh file to include the correct file after "srun"
 sbatch fastqpull.sh #Take note of job ID
 
+#Pull Zhang. cd into Zhang directory
+nohup fasterq-dump SRR8485805 -t /global/projectb/scratch/byu24/at.sc.db/scratch &
 
 
 
