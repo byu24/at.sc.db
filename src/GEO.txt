@@ -1,4 +1,4 @@
-Paper	GEO/BioProj	SRA			SRR 		Type		#	FileName	Downloaded
+Paper	GEO/BioProj	SRA			SRR 		Type				#	FileName	Downloaded
 Denyer	GSE123818	SRP173393	SRR8315917	protoplasted rep2	2				Y
 Denyer	GSE123818	SRP173393	SRR8315916	protoplasted rep1	2				Y
 Denyer	GSE123818	SRP173393	SRR8315908	WT rep1_1			1				Y
