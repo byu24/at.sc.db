@@ -1,0 +1,10 @@
+
+2019-06-10T20:35:28 prefetch.2.9.3: 1) Downloading 'SRR8086584'...
+2019-06-10T20:35:28 prefetch.2.9.3:  Downloading via https...
+2019-06-10T20:39:30 prefetch.2.9.3: 1) 'SRR8086584' was downloaded successfully
+2019-06-10T20:39:34 prefetch.2.9.3: 'SRR8086584' has 0 unresolved dependencies
+2019-06-10T20:39:36 prefetch.2.9.3: 'SRR8086584' has no remote vdbcache
+2019-06-10T20:39:37 fasterq-dump.2.9.6 err: cmn_iter.c cmn_iter_open_db().VDBManagerOpenDBRead( 'set_018' ) -> RC(rcVFS,rcMgr,rcOpening,rcDirectory,rcNotFound) 
+2019-06-10T20:39:37 fasterq-dump.2.9.6 err: sorter.c run_producer_pool(): row_count == 0!
+2019-06-10T20:39:37 fasterq-dump.2.9.6 err: sorter.c execute_lookup_production() -> RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)
+2019-06-10T20:39:37 fasterq-dump.2.9.6 err: fasterq-dump.c produce_lookup_files() -> RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)
