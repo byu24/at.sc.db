@@ -11,3 +11,8 @@ submitted batch job 22162870 for denyer - job failed (forgot to add sra tools to
 batch job 22154620 for JB/Zhang/Ryu produced 1 ryu and Zhang. Shows completed but no fastq files yet.
 submitted batch job 22162946 for denyer (correction for sra tools)
 
+6/10/19
+batch job 22154620 successful. Did not download JB and 2 SRA for ryu. Rerun for missing SRAs
+batch job 22162946 successful.
+submitted job 22193055 for remainder of ryu and jb
+
