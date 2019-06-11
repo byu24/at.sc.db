@@ -1,4 +1,0 @@
-2019-06-11T02:04:28 fasterq-dump.2.9.6 sys: timeout exhausted while reading file within network system module - mbedtls_ssl_read returned -76 ( NET - Reading information from the socket failed )
-spots read      : 166,267,337
-reads read      : 166,267,337
-reads written   : 166,267,337
