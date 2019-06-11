@@ -1,8 +1,0 @@
-
-2019-06-10T20:31:39 prefetch.2.9.3: 1) Downloading 'SRR8257102'...
-2019-06-10T20:31:39 prefetch.2.9.3:  Downloading via https...
-2019-06-10T20:39:04 prefetch.2.9.3: 1) 'SRR8257102' was downloaded successfully
-2019-06-10T20:39:05 prefetch.2.9.3: 'SRR8257102' has 0 unresolved dependencies
-spots read      : 105,491,683
-reads read      : 316,475,049
-reads written   : 316,475,049
