@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --mail-user=bjcole@lbl.gov
+#SBATCH --mail-type=ALL
+#SBATCH -A gtrnd
+#SBATCH -q genepool_shared
+#SBATCH -J download_SRA_sc_009
+#SBATCH -t 12:00:00
+#SBATCH --mem-per-cpu=4000
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --output=download_SRA_sc_009.out
+
+cd /global/projectb/scratch/bjcole/at.sc.db/
+/global/projectb/scratch/bjcole/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206662 -o scratch/sc_009 -t http
+/global/projectb/scratch/bjcole/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/sc_009 \
+  -o sc_009.fastq \
+  -O /global/projectb/scratch/bjcole/at.sc.db/scratch \
+  -t /global/projectb/scratch/bjcole/at.sc.db/scratch \
+  -sS --include-technical
