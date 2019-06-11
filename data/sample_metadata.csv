@@ -1,0 +1,23 @@
+Name,SRA,Genotype,Reference_name,Reference,Treatment,Platform,Version,SRR
+set_001,SRX5025979,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Sucrose,DropSeq,NA,SRR8206654
+set_002,SRX5025980,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Sucrose,DropSeq,NA,SRR8206655
+set_003,SRX5025981,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Sucrose,DropSeq,NA,SRR8206656
+set_004,SRX5025982,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,NA,SRR8206657
+set_005,SRX5025983,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,NA,SRR8206658
+set_006,SRX5025984,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,NA,SRR8206659
+set_007,SRX5025985,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,NA,SRR8206660
+set_008,SRX5025986,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,NA,SRR8206661
+set_009,SRX5025987,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,NA,SRR8206662
+set_010,SRX5025988,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,NA,SRR8206663
+set_011,SRR8485805,Col-0,Zhang,https://doi.org/10.1016/j.molp.2019.04.004,Control,10XGenomics,V2,SRR8485805
+set_012,SRX5074332,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,V2,SRR8257103
+set_013,SRX5074331,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,V2,SRR8257102
+set_014,SRX5074330,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,V2,SRR8257101
+set_015,SRX5074330,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,V2,SRR8257100
+set_016,SRX4913500,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose + Heatshock,10XGenomics,V2,SRR8086586
+set_017,SRX4913499,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose,10XGenomics,V2,SRR8086585
+set_018,SRX4913498,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose,10XGenomics,V2,SRR8086584
+set_019,SRX5128616,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,V2,SRR8315911
+set_020,SRX5128616,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,V2,SRR8315910
+set_021,SRX5128615,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,V2,SRR8315909
+set_022,SRX5128615,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,V2,SRR8315908
