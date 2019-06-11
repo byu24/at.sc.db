@@ -16,3 +16,5 @@ batch job 22154620 successful. Did not download JB and 2 SRA for ryu. Rerun for 
 batch job 22162946 successful.
 submitted job 22193055 for remainder of ryu and jb. Job failed cause of slurm. Resubmitted
 submitted job 22193420 for previous failed job.
+request 22196970 salloc for interactive job
+
