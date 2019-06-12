@@ -11,6 +11,7 @@
 #SBATCH --output=download_SRA_js_017.out
 
 cd /global/projectb/scratch/bjcole/at.sc.db/
+wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086585/whole_root_Control_2_possorted_genome_bam.bam \
   -q -O- | samtools view | \
     awk '{ \
     match($0, "CR:Z:([ATCGN]+)", arr1)
