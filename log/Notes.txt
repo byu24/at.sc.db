@@ -18,3 +18,5 @@ submitted job 22193055 for remainder of ryu and jb. Job failed cause of slurm. R
 submitted job 22193420 for previous failed job.
 request 22196970 salloc for interactive job
 
+6/11/19
+job allocation 22234979 for interactive node
