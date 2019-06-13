@@ -1,4 +1,46 @@
 6/6/19, 7:36 PM
-
 Submitted batch job 22109154
 Submitted fastqpull.sh to pull denyer.sh
+
+6/8/19
+batch job 22109154 Time_Out
+Submitted batch job 22154620 for JB, Zhang, and Ryu
+
+6/9/19
+submitted batch job 22162870 for denyer - job failed (forgot to add sra tools to path
+batch job 22154620 for JB/Zhang/Ryu produced 1 ryu and Zhang. Shows completed but no fastq files yet.
+submitted batch job 22162946 for denyer (correction for sra tools)
+
+6/10/19
+batch job 22154620 successful. Did not download JB and 2 SRA for ryu. Rerun for missing SRAs
+batch job 22162946 successful.
+submitted job 22193055 for remainder of ryu and jb. Job failed cause of slurm. Resubmitted
+submitted job 22193420 for previous failed job.
+request 22196970 salloc for interactive job
+
+6/11/19
+job allocation 22234979 for interactive node
+
+6/12/19
+Submitted batch job 22259995
+Submitted batch job 22259996
+Submitted batch job 22259997
+Submitted batch job 22259998
+Submitted batch job 22259999
+Submitted batch job 22260000
+Submitted batch job 22260001
+Submitted batch job 22260002
+Submitted batch job 22260003
+Submitted batch job 22260004
+Submitted batch job 22260005
+Submitted batch job 22260006
+Submitted batch job 22260007
+Submitted batch job 22260008
+Submitted batch job 22260009
+Submitted batch job 22260010
+Submitted batch job 22260011
+Submitted batch job 22260012
+Submitted batch job 22260013
+Submitted batch job 22260014
+Submitted batch job 22260015
+Submitted batch job 22260016

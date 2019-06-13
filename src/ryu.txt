@@ -1,0 +1,34 @@
+#!/bin/bash
+echo "Adding executable to path"
+export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
+
+echo "begin fasterq-dump"
+echo "Pulling ryu gl2"
+fasterq-dump SRR8257106 -O /global/projectb/scratch/byu24/at.sc.db/data/ryu -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+echo "finish pulling ryu gl2"
+
+echo "Pulling ryu wt1_1"
+fasterq-dump SRR8257100 -O /global/projectb/scratch/byu24/at.sc.db/data/ryu -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+echo "finish pulling ryu wt1_1"
+
+echo "Pulling ryu wt1_2"
+fasterq-dump SRR8257101 -O /global/projectb/scratch/byu24/at.sc.db/data/ryu -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+echo "finish pulling ryu wt1_2"
+
+echo "Pulling ryu wt2"
+fasterq-dump SRR8257102 -O /global/projectb/scratch/byu24/at.sc.db/data/ryu -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+echo "finish pulling ryu wt2"
+
+echo "Pulling ryu wt3"
+fasterq-dump SRR8257103 -O /global/projectb/scratch/byu24/at.sc.db/data/ryu -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+echo "finish pulling ryu wt3"
+
+echo "Pulling ryu rhd_1"
+fasterq-dump SRR8257105 -O /global/projectb/scratch/byu24/at.sc.db/data/ryu -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+echo "finish pulling ryu rhd_1"
+
+echo "Pulling ryu rhd_2"
+fasterq-dump SRR8257104 -O /global/projectb/scratch/byu24/at.sc.db/data/ryu -t /global/projectb/scratch/byu24/at.sc.db/scratch &
+echo "finish pulling ryu rhd_2"
+
+echo "finish all ryu samples"
