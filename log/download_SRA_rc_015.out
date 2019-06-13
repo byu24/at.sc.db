@@ -1,0 +1,7 @@
+
+2019-06-12T17:31:20 prefetch.2.9.3: 1) Downloading 'SRR8257100'...
+2019-06-12T17:31:20 prefetch.2.9.3:  Downloading via https...
+2019-06-12T17:40:28 prefetch.2.9.3 sys: timeout exhausted while reading file within network system module - mbedtls_ssl_read returned -76 ( NET - Reading information from the socket failed )
+2019-06-12T17:40:28 prefetch.2.9.3 int: timeout exhausted while reading file within network system module - Cannot KStreamRead: https://sra-download.ncbi.nlm.nih.gov/sos/sra-pub-run-1/SRR8257100/SRR8257100.1
+2019-06-12T17:40:28 prefetch.2.9.3: 1) failed to download SRR8257100
+2019-06-12T17:40:28 fasterq-dump.2.9.6 err: invalid accession 'scratch/rc_015'
