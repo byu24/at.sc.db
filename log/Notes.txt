@@ -44,3 +44,19 @@ Submitted batch job 22260013
 Submitted batch job 22260014
 Submitted batch job 22260015
 Submitted batch job 22260016
+
+6/13/19
+Jobs successful except for some. Rerun for Zhang and missing files
+Submitted batch job 22283637
+Submitted batch job 22283639
+Submitted batch job 22283640
+Submitted batch job 22283641
+Submitted batch job 22283642
+Submitted batch job 22283643
+Submitted batch job 22283644
+Submitted batch job 22283645
+
+
+
+
+
