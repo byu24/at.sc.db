@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mail-user=bjcole@lbl.gov
+#SBATCH --mail-user=brendayu@lbl.gov
 #SBATCH --mail-type=ALL
 #SBATCH -A gtrnd
 #SBATCH -q genepool_shared
@@ -11,8 +11,9 @@
 #SBATCH --output=download_SRA_zc_011.out
 
 module load python3
-source activate /global/projectb/scratch/bjcole/env_STARsolo
-cd /global/projectb/scratch/bjcole/at.sc.db/
+conda create --mkdir --prefix=$BSCRATCH/env_STAR
+source activate $BSCRATCH/env_STAR
+cd /global/projectb/scratch/byu24/at.sc.db/
 wget ftp://download.big.ac.cn/gsa/CRA001559/CRR054647/CRR054647_f1.tar.gz -O scratch/zc_011_1.tar.gz
 tar -xzvf scratch/zc_011_1.tar.gz -C scratch/
 zcat scratch/Root_R1.fastq.gz > scratch/zc_011_1.fastq

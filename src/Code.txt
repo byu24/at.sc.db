@@ -34,7 +34,7 @@ sbatch fastqpull.sh #Take note of job ID
 nohup fasterq-dump SRR8485805 -t /global/projectb/scratch/byu24/at.sc.db/scratch &
 
 module load python3
-conda create --mkdir --prefix $BSCRATCH/env_STAR
+conda create --mkdir --prefix=$BSCRATCH/env_STAR
 source activate $BSCRATCH/env_STAR
 conda install -c bioconda star
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mail-user=bjcole@lbl.gov
+#SBATCH --mail-user=brendayu@lbl.gov
 #SBATCH --mail-type=ALL
 #SBATCH -A gtrnd
 #SBATCH -q genepool_shared
@@ -11,11 +11,12 @@
 #SBATCH --output=download_SRA_sc_006.out
 
 module load python3
-source activate /global/projectb/scratch/bjcole/env_STARsolo
-cd /global/projectb/scratch/bjcole/at.sc.db/
-/global/projectb/scratch/bjcole/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206659 -o scratch/sc_006 -t http
-/global/projectb/scratch/bjcole/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/sc_006 \
+conda create --mkdir --prefix=$BSCRATCH/env_STAR
+source activate $BSCRATCH/env_STAR
+cd /global/projectb/scratch/byu24/at.sc.db/
+/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206659 -o scratch/sc_006 -t http
+/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/sc_006 \
   -o sc_006.fastq \
-  -O /global/projectb/scratch/bjcole/at.sc.db/scratch \
-  -t /global/projectb/scratch/bjcole/at.sc.db/scratch \
+  -O /global/projectb/scratch/byu24/at.sc.db/scratch \
+  -t /global/projectb/scratch/byu24/at.sc.db/scratch \
   -sS --include-technical

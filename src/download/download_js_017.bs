@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mail-user=bjcole@lbl.gov
+#SBATCH --mail-user=brendayu@lbl.gov
 #SBATCH --mail-type=ALL
 #SBATCH -A gtrnd
 #SBATCH -q genepool_shared
@@ -11,8 +11,10 @@
 #SBATCH --output=download_SRA_js_017.out
 
 module load python3
-source activate /global/projectb/scratch/bjcole/env_STARsolo
-cd /global/projectb/scratch/bjcole/at.sc.db/
+conda create --mkdir --prefix=$BSCRATCH/env_STAR
+source activate $BSCRATCH/env_STAR
+export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools
+cd /global/projectb/scratch/byu24/at.sc.db/
 wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086585/whole_root_Control_2_possorted_genome_bam.bam \
   -q -O- | samtools view | \
     awk '{ \
