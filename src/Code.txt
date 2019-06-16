@@ -1,14 +1,23 @@
-#Download tar.gz files from http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
-
-# extract tar.gz file 
-tar -zxvf sratoolkit.2.9.2-ubuntu64.tar.gz
-
-#Add SRA Tools binaries into path to utilize executables
-export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
-
 #cd into the directory keeping all the data
 cd $BSCRATCH
 cd at.sc.db/data
+
+#Install necessary software
+#Download tar.gz files from http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
+#extract tar.gz file 
+tar -zxvf sratoolkit.2.9.2-ubuntu64.tar.gz
+#Add SRA Tools binaries into path to utilize executables
+export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
+#Download HKlibs, Bcftools, Samtools
+git clone git://github.com/samtools/htslib.git
+git clone git://github.com/samtools/bcftools.git
+git clone git://github.com/samtools/samtools.git  
+#cd into each directory
+autoheader
+autoconf
+./configure prefix=/where/to/install #install it where you want it
+make
+make install
 
 #Extract fastq files with fasterq-dump.
 
@@ -24,5 +33,9 @@ sbatch fastqpull.sh #Take note of job ID
 #Pull Zhang. cd into Zhang directory
 nohup fasterq-dump SRR8485805 -t /global/projectb/scratch/byu24/at.sc.db/scratch &
 
+module load python3
+conda create --mkdir --prefix $BSCRATCH/env_STAR
+source activate $BSCRATCH/env_STAR
+conda install -c bioconda star
 
 

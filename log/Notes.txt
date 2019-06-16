@@ -47,15 +47,18 @@ Submitted batch job 22260016
 
 6/13/19
 Jobs successful except for some. Rerun for Zhang and missing files
-Submitted batch job 22283637
-Submitted batch job 22283639
-Submitted batch job 22283640
-Submitted batch job 22283641
-Submitted batch job 22283642
-Submitted batch job 22283643
-Submitted batch job 22283644
-Submitted batch job 22283645
 
+
+6/15/19
+Requested interactive job 22331540
+jobs failing because of samtools and wrong path for SRAtools. Conda environment also fixed with each .bs file
+Submitted batch job 22331911
+Submitted batch job 22331912
+Submitted batch job 22331913
+Submitted batch job 22331914
+Submitted batch job 22331915
+Submitted batch job 22331916
+Submitted batch job 22331917
 
 
 
