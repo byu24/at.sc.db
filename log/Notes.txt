@@ -63,7 +63,8 @@ Submitted batch job 22332331 (zhang)
 All jobs successful
 
 6/16/19
-Submitted batch job 22343462 - test for qtrim and rrna filter
+Submitted batch job 22343462 - test for qtrim and rrna filter -job failed due to missing code
+Submitted batch job 22343952 - rerun test file for bbduk
 
 
 
