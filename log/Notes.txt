@@ -64,8 +64,10 @@ All jobs successful
 
 6/16/19
 Submitted batch job 22343462 - test for qtrim and rrna filter -job failed due to missing code
-Submitted batch job 22343952 - rerun test file for bbduk
+Submitted batch job 22343952 - rerun test file for bbduk - SUCCESS!
 
+6/17/19
+Submitted batch job 22377277 - rerun test file for dc019 to trim paired ends
 
 
 
