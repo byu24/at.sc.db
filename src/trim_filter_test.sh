@@ -24,7 +24,6 @@ $BSCRATCH/bin/bbmap/bbduk.sh \
   out1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq \
   out2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq \
   k=21 edist=2 ref=$BSCRATCH/at.sc.db/scratch/at10/rrna_seqs.fa \
-  -Xmx15g
   
 $BSCRATCH/bin/bbmap/bbduk.sh \
   in1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq \
