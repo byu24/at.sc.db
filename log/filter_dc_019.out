@@ -1,0 +1,113 @@
+java -ea -Xmx15g -Xms15g -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_019_1.fastq in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_019_2.fastq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq k=21 edist=2 ref=/global/projectb/scratch/byu24/at.sc.db/scratch/at10/rrna_seqs.fa -Xmx15g
+Executing jgi.BBDuk [in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_019_1.fastq, in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_019_2.fastq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq, k=21, edist=2, ref=/global/projectb/scratch/byu24/at.sc.db/scratch/at10/rrna_seqs.fa, -Xmx15g]
+Version 38.51
+
+0.105 seconds.
+Initial:
+Memory: max=15435m, total=15435m, free=15112m, used=323m
+
+Added 38749053 kmers; time: 	7.996 seconds.
+Memory: max=15435m, total=15435m, free=14009m, used=1426m
+
+Input is being processed as paired
+Started output streams:	0.110 seconds.
+Processing time:   		811.805 seconds.
+
+Input:                  	374753448 reads 		23234713776 bases.
+Contaminants:           	5731170 reads (1.53%) 	355332540 bases (1.53%)
+Total Removed:          	5731170 reads (1.53%) 	355332540 bases (1.53%)
+Result:                 	369022278 reads (98.47%) 	22879381236 bases (98.47%)
+
+Time:                         	819.914 seconds.
+Reads Processed:        374m 	457.06k reads/sec
+Bases Processed:      23234m 	28.34m bases/sec
+java -ea -Xmx26201m -Xms26201m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R1_polyA.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R2.fastq k=21 mink=11 minlen=30 ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa edist=2 ktrim=r qtrim=30
+Executing jgi.BBDuk [in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R1_polyA.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R2.fastq, k=21, mink=11, minlen=30, ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa, edist=2, ktrim=r, qtrim=30]
+Version 38.51
+
+maskMiddle was disabled because useShortKmers=true
+Forcing interleaved input because paired output was specified for a single input file.
+0.081 seconds.
+Initial:
+Memory: max=26330m, total=26330m, free=25779m, used=551m
+
+Added 20330313 kmers; time: 	7.766 seconds.
+Memory: max=26330m, total=26330m, free=24543m, used=1787m
+
+Input is being processed as paired
+Started output streams:	0.047 seconds.
+Processing time:   		217.462 seconds.
+
+Input:                  	184511138 reads 		4797289588 bases.
+QTrimmed:               	0 reads (0.00%) 	0 bases (0.00%)
+KTrimmed:               	0 reads (0.00%) 	0 bases (0.00%)
+Total Removed:          	184511138 reads (100.00%) 	4797289588 bases (100.00%)
+Result:                 	0 reads (0.00%) 	0 bases (0.00%)
+
+Time:                         	225.279 seconds.
+Reads Processed:        184m 	819.03k reads/sec
+Bases Processed:       4797m 	21.29m bases/sec
+java -ea -Xmx26199m -Xms26199m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R1_polyA.fastq out=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R1.fastq ftr=-1
+Executing jgi.BBDuk [in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R1_polyA.fastq, out=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_1_R1.fastq, ftr=-1]
+Version 38.51
+
+0.048 seconds.
+Initial:
+Memory: max=26328m, total=26328m, free=25777m, used=551m
+
+Input is being processed as unpaired
+Started output streams:	0.060 seconds.
+Processing time:   		0.021 seconds.
+
+Input:                  	0 reads 		0 bases.
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	0 reads (0.00%) 	0 bases (0.00%)
+
+Time:                         	0.082 seconds.
+Reads Processed:           0 	0.00k reads/sec
+Bases Processed:           0 	0.00m bases/sec
+java -ea -Xmx26198m -Xms26198m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R2.fastq k=21 mink=11 minlen=30 ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa edist=2 ktrim=r qtrim=30
+Executing jgi.BBDuk [in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R2.fastq, k=21, mink=11, minlen=30, ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa, edist=2, ktrim=r, qtrim=30]
+Version 38.51
+
+maskMiddle was disabled because useShortKmers=true
+Forcing interleaved input because paired output was specified for a single input file.
+0.033 seconds.
+Initial:
+Memory: max=26326m, total=26326m, free=25775m, used=551m
+
+Added 20330313 kmers; time: 	7.803 seconds.
+Memory: max=26326m, total=26326m, free=24539m, used=1787m
+
+Input is being processed as paired
+Started output streams:	0.014 seconds.
+Processing time:   		695.673 seconds.
+
+Input:                  	184511138 reads 		18082091524 bases.
+QTrimmed:               	138795194 reads (75.22%) 	6354384338 bases (35.14%)
+KTrimmed:               	5474847 reads (2.97%) 	70095515 bases (0.39%)
+Total Removed:          	31171136 reads (16.89%) 	6424479853 bases (35.53%)
+Result:                 	153340002 reads (83.11%) 	11657611671 bases (64.47%)
+
+Time:                         	703.494 seconds.
+Reads Processed:        184m 	262.28k reads/sec
+Bases Processed:      18082m 	25.70m bases/sec
+java -ea -Xmx25947m -Xms25947m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq out=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R1.fastq ftr=-1
+Executing jgi.BBDuk [in=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq, out=/global/projectb/scratch/byu24/at.sc.db/scratch/filtered/dc_019_2_R1.fastq, ftr=-1]
+Version 38.51
+
+0.062 seconds.
+Initial:
+Memory: max=26074m, total=26074m, free=25529m, used=545m
+
+Input is being processed as unpaired
+Started output streams:	0.071 seconds.
+Processing time:   		244.868 seconds.
+
+Input:                  	76670001 reads 		5828871388 bases.
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	76670001 reads (100.00%) 	5828871388 bases (100.00%)
+
+Time:                         	244.941 seconds.
+Reads Processed:      76670k 	313.01k reads/sec
+Bases Processed:       5828m 	23.80m bases/sec
