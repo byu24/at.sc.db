@@ -27,27 +27,28 @@ $BSCRATCH/bin/bbmap/bbduk.sh \
   -Xmx15g
   
 $BSCRATCH/bin/bbmap/bbduk.sh \
-  in=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq \
+  in1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq \
+  in2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq \
   out1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_R1_polyA.fastq \
-  out2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_R2.fastq \
+  out2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq \
   k=21 mink=11 minlen=30 \
   ref=$BSCRATCH/bin/bbmap/resources/adapters.fa \
   edist=2 ktrim=r qtrim=30 \
 
 $BSCRATCH/bin/bbmap/bbduk.sh \
-  in=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_R1_polyA.fastq \
-  out=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_R1.fastq \
-  ftr=$((cb_len + umi_len - 1)) \
-
-$BSCRATCH/bin/bbmap/bbduk.sh \
-  in=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq \
-  out1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq \
+  in1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_filtered.fastq \
+  in2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_filtered.fastq \
+  out1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_R2.fastq \
   out2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_R2.fastq \
   k=21 mink=11 minlen=30 \
   ref=$BSCRATCH/bin/bbmap/resources/adapters.fa \
   edist=2 ktrim=r qtrim=30 \
 
 $BSCRATCH/bin/bbmap/bbduk.sh \
-  in=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq \
-  out=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_R1.fastq \
+  in1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_R1_polyA.fastq \
+  in2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_R1_polyA.fastq \
+  out1=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_1_R1.fastq \
+  out2=$BSCRATCH/at.sc.db/scratch/filtered/dc_019_2_R1.fastq \
   ftr=$((cb_len + umi_len - 1)) \
+
+
