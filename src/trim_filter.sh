@@ -13,7 +13,7 @@
 #!/bin/bash
 prefix=$1
 technology=$2
-bbmap_path=$BSCRATCH/Drop-seq_tools-2.3.0/bbmap
+bbmap_path=$BSCRATCH/bin/bbmap
 
 echo $prefix 
 echo $technology
