@@ -1,0 +1,23 @@
+sbatch filter_ss_001.bs &
+sbatch filter_ss_002.bs &
+sbatch filter_ss_003.bs &
+sbatch filter_sc_004.bs &
+sbatch filter_sc_005.bs &
+sbatch filter_sc_006.bs &
+sbatch filter_sc_007.bs &
+sbatch filter_sc_008.bs &
+sbatch filter_sc_009.bs &
+sbatch filter_sc_010.bs &
+sbatch filter_zc_011.bs &
+sbatch filter_rc_012.bs &
+sbatch filter_rc_013.bs &
+sbatch filter_rc_014.bs &
+sbatch filter_rc_015.bs &
+sbatch filter_jsh_016.bs &
+sbatch filter_js_017.bs &
+sbatch filter_js_018.bs &
+sbatch filter_dc_019.bs &
+sbatch filter_dc_020.bs &
+sbatch filter_dc_021.bs &
+sbatch filter_dc_022.bs &
+
