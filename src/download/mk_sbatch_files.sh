@@ -10,7 +10,7 @@ while [ "$i" -lt "$len" ]; do
   srr_name=${srr_names[$i]}
 
   echo "#!/bin/bash" > src/download/download_${set_name}.bs
-  echo "#SBATCH --mail-user=bjcole@lbl.gov" >> src/download/download_${set_name}.bs
+  echo "#SBATCH --mail-user=brendayu@lbl.gov" >> src/download/download_${set_name}.bs
   echo "#SBATCH --mail-type=ALL" >> src/download/download_${set_name}.bs
   echo "#SBATCH -A gtrnd" >> src/download/download_${set_name}.bs
   echo "#SBATCH -q genepool_shared" >> src/download/download_${set_name}.bs
@@ -22,13 +22,14 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --output=download_SRA_${set_name}.out" >> src/download/download_${set_name}.bs
   echo "" >> src/download/download_${set_name}.bs
   echo "module load python3" >> src/download/download_${set_name}.bs
-  echo "source activate $BSCRATCH/env_STARsolo" >> src/download/download_${set_name}.bs
+  echo "conda create --mkdir --prefix=$BSCRATCH/bin/env_STAR" >> src/download/download_${set_name}.bs
+  echo "source activate $BSCRATCH/bin/env_STAR" >> src/download/download_${set_name}.bs
 
   echo "cd $BSCRATCH/at.sc.db/" >> src/download/download_${set_name}.bs
 
   if ! [[ $set_name =~ js|zc ]]; then 
-    echo "$BSCRATCH/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 ${srr_name} -o scratch/${set_name} -t http" >> src/download/download_${set_name}.bs
-    echo "$BSCRATCH/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/${set_name} \\" >> src/download/download_${set_name}.bs
+    echo "$BSCRATCH/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 ${srr_name} -o scratch/${set_name} -t http" >> src/download/download_${set_name}.bs
+    echo "$BSCRATCH/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/${set_name} \\" >> src/download/download_${set_name}.bs
     echo "  -o ${set_name}.fastq \\" >> src/download/download_${set_name}.bs
     echo "  -O $BSCRATCH/at.sc.db/scratch \\" >> src/download/download_${set_name}.bs
     echo "  -t $BSCRATCH/at.sc.db/scratch \\" >> src/download/download_${set_name}.bs
@@ -36,14 +37,17 @@ while [ "$i" -lt "$len" ]; do
   fi
 
   if [[ $set_name =~ "jsh_016" ]]; then
+    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
     echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086586/whole_root_Heatshock_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js_017" ]]; then
+    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
     echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086585/whole_root_Control_2_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js_018" ]]; then
+    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
     echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086584/whole_root_Control_1_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 

@@ -11,8 +11,8 @@
 #SBATCH --output=download_SRA_dc_019.out
 
 module load python3
-conda create --mkdir --prefix=$BSCRATCH/env_STAR
-source activate $BSCRATCH/env_STAR
+conda create --mkdir --prefix=/global/projectb/scratch/byu24/bin/env_STAR
+source activate /global/projectb/scratch/byu24/bin/env_STAR
 cd /global/projectb/scratch/byu24/at.sc.db/
 /global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8315911 -o scratch/dc_019 -t http
 /global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/dc_019 \

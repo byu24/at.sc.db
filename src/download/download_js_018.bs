@@ -11,10 +11,10 @@
 #SBATCH --output=download_SRA_js_018.out
 
 module load python3
-conda create --mkdir --prefix=$BSCRATCH/env_STAR
-source activate $BSCRATCH/env_STAR
-export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools
+conda create --mkdir --prefix=/global/projectb/scratch/byu24/bin/env_STAR
+source activate /global/projectb/scratch/byu24/bin/env_STAR
 cd /global/projectb/scratch/byu24/at.sc.db/
+export PATH=/usr/common/software/darshan/3.1.4/bin:/usr/common/software/altd/2.0/bin:/usr/common/software/bin:/usr/common/mss/bin:/usr/common/nsg/bin:/opt/gcc/7.3.0/bin:/opt/cray/pe/mpt/7.7.3/gni/bin:/opt/cray/rca/2.2.18-6.0.7.1_5.48__g2aa4f39.ari/bin:/opt/cray/alps/6.6.43-6.0.7.1_5.46__ga796da32.ari/sbin:/opt/cray/job/2.2.3-6.0.7.1_5.44__g6c4e934.ari/bin:/opt/cray/pe/craype/2.5.15/bin:/opt/intel/compilers_and_libraries_2018.1.163/linux/bin/intel64:/opt/ovis/bin:/opt/ovis/sbin:/usr/syscom/nsg/sbin:/usr/syscom/nsg/bin:/opt/cray/pe/modules/3.2.10.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin:/opt/cray/pe/bin:/global/projectb/scratch/byu24/bin/samtools
 wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086584/whole_root_Control_1_possorted_genome_bam.bam \
   -q -O- | samtools view | \
     awk '{ \

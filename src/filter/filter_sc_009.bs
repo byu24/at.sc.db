@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mail-user=bjcole@lbl.gov
+#SBATCH --mail-user=brendayu@lbl.gov
 #SBATCH --mail-type=ALL
 #SBATCH -A gtrnd
 #SBATCH -q genepool_shared
@@ -11,7 +11,8 @@
 #SBATCH --output=filter_SRA_sc_009.out
 
 module load python3
-source activate /global/projectb/scratch/bjcole/env_STARsolo
-cd /global/projectb/scratch/bjcole/at.sc.db/
+conda create --mkdir --prefix=/global/projectb/scratch/byu24/bin/env_STAR
+source activate /global/projectb/scratch/byu24/bin/env_STAR
+cd /global/projectb/scratch/byu24/at.sc.db/
 
 sh src/trim_filter.sh sc_009 DropSeq
