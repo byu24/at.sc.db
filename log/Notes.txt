@@ -70,28 +70,30 @@ Submitted batch job 22343952 - rerun test file for bbduk - SUCCESS!
 Submitted batch job 22377277 - rerun test file for dc019 to trim paired ends
 
 6/20/19
-Submitted batch job 22444268
-Submitted batch job 22444269
-Submitted batch job 22444270
-Submitted batch job 22444271
-Submitted batch job 22444272
-Submitted batch job 22444273
-Submitted batch job 22444274
-Submitted batch job 22444275
-Submitted batch job 22444276
-Submitted batch job 22444277
-Submitted batch job 22444278
-Submitted batch job 22444279
-Submitted batch job 22444280
-Submitted batch job 22444281
-Submitted batch job 22444282
-Submitted batch job 22444283
-Submitted batch job 22444284
-Submitted batch job 22444287
-Submitted batch job 22444289
-Submitted batch job 22444290
-Submitted batch job 22444291
-Submitted batch job 22444293
+Ran jobs for filtering
+Submitted batch job 22445537
+Submitted batch job 22445538
+Submitted batch job 22445539
+Submitted batch job 22445540
+Submitted batch job 22445541
+Submitted batch job 22445542
+Submitted batch job 22445543
+Submitted batch job 22445544
+Submitted batch job 22445545
+Submitted batch job 22445546
+Submitted batch job 22445547
+Submitted batch job 22445548
+Submitted batch job 22445549
+Submitted batch job 22445550
+Submitted batch job 22445551
+Submitted batch job 22445552
+Submitted batch job 22445553
+Submitted batch job 22445554
+Submitted batch job 22445555
+Submitted batch job 22445557
+Submitted batch job 22445559
+Submitted batch job 22445560
+
 
 
 
