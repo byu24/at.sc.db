@@ -71,28 +71,29 @@ Submitted batch job 22377277 - rerun test file for dc019 to trim paired ends
 
 6/20/19
 Ran jobs for filtering
-Submitted batch job 22445537
-Submitted batch job 22445538
-Submitted batch job 22445539
-Submitted batch job 22445540
-Submitted batch job 22445541
-Submitted batch job 22445542
-Submitted batch job 22445543
-Submitted batch job 22445544
-Submitted batch job 22445545
-Submitted batch job 22445546
-Submitted batch job 22445547
-Submitted batch job 22445548
-Submitted batch job 22445549
-Submitted batch job 22445550
-Submitted batch job 22445551
-Submitted batch job 22445552
-Submitted batch job 22445553
-Submitted batch job 22445554
-Submitted batch job 22445555
-Submitted batch job 22445557
-Submitted batch job 22445559
-Submitted batch job 22445560
+Submitted batch job 22445809
+Submitted batch job 22445810
+Submitted batch job 22445811
+Submitted batch job 22445812
+Submitted batch job 22445813
+Submitted batch job 22445814
+Submitted batch job 22445815
+Submitted batch job 22445816
+Submitted batch job 22445817
+Submitted batch job 22445819
+Submitted batch job 22445820
+Submitted batch job 22445821
+Submitted batch job 22445822
+Submitted batch job 22445823
+Submitted batch job 22445824
+Submitted batch job 22445825
+Submitted batch job 22445826
+Submitted batch job 22445827
+Submitted batch job 22445828
+Submitted batch job 22445829
+Submitted batch job 22445830
+Submitted batch job 22445831
+
 
 
 
