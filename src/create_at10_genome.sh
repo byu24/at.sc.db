@@ -1,7 +1,8 @@
 prefix=$1
 module load python3
+source activate /global/projectb/scratch/bjcole/env_STARsolo
 
-mappingdir=scratch/${prefix}
+mappingdir=$BSCRATCH/at.sc.db/scratch/${prefix}
 genomedir=${mappingdir}/at10
 version=v3
 fa_source=ftp://ftp.ensemblgenomes.org/pub/release-43/plants/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
