@@ -1,10 +1,22 @@
 #cd into the directory keeping all the data
 cd $BSCRATCH
-cd at.sc.db/data
 
-#Install necessary software
-#Download tar.gz files from http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
-#extract tar.gz file 
+#Create database directory
+#Structure
+mkdir at.sc.db
+cd at.sc.db
+mkdir data #final data generated, charts, etc.
+mkdir log #log files from each step of the data processing
+mkdir reports #any reports that are generated
+mkdir scratch	#all in-progress work should be stored here and worked on here
+mkdir src	#all working code should be stored here
+
+#Create bin directory in home page for all software
+cd $BSCRATCH
+mkdir bin
+
+#Install necessary software in bin directory
+#SRATools from http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
 tar -zxvf sratoolkit.2.9.2-ubuntu64.tar.gz
 #Add SRA Tools binaries into path to utilize executables
 export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
@@ -19,6 +31,12 @@ autoconf
 make
 make install
 
+#Create a conda environment for executables
+module load python3
+conda create --mkdir --prefix=$BSCRATCH/env_STAR
+source activate $BSCRATCH/env_STAR
+conda install -c bioconda star
+
 #Extract fastq files with fasterq-dump.
 
 #Create batch script to pull multiple SRRs. Convert each batch script into executables
@@ -30,12 +48,6 @@ test -x denyer.sh && echo true || echo false #Repeat for each .sh file you want 
 #Edit sbatch.sh file to include the correct file after "srun"
 sbatch fastqpull.sh #Take note of job ID
 
-#Pull Zhang. cd into Zhang directory
-nohup fasterq-dump SRR8485805 -t /global/projectb/scratch/byu24/at.sc.db/scratch &
 
-module load python3
-conda create --mkdir --prefix=$BSCRATCH/env_STAR
-source activate $BSCRATCH/env_STAR
-conda install -c bioconda star
 
 
