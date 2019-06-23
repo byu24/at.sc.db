@@ -1,6 +1,6 @@
 prefix=$1
 module load python3
-source activate /global/projectb/scratch/bjcole/env_STARsolo
+source activate $BSCRATCH/bin/env_STAR
 
 mappingdir=$BSCRATCH/at.sc.db/scratch/${prefix}
 genomedir=${mappingdir}/at10

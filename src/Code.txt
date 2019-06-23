@@ -16,11 +16,17 @@ cd $BSCRATCH
 mkdir bin
 
 #Install necessary software in bin directory
-#SRATools from http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
+#
+#
+#SRATools
+wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
 tar -zxvf sratoolkit.2.9.2-ubuntu64.tar.gz
 #Add SRA Tools binaries into path to utilize executables
 export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
-#Download HKlibs, Bcftools, Samtools
+#
+#
+#
+#HKlibs, Bcftools, Samtools
 git clone git://github.com/samtools/htslib.git
 git clone git://github.com/samtools/bcftools.git
 git clone git://github.com/samtools/samtools.git  
@@ -30,12 +36,48 @@ autoconf
 ./configure prefix=/where/to/install #install it where you want it
 make
 make install
-
-#Create a conda environment for executables
+#
+#
+#
+#STAR
+#Create a conda environment for executables 
 module load python3
 conda create --mkdir --prefix=$BSCRATCH/env_STAR
 source activate $BSCRATCH/env_STAR
 conda install -c bioconda star
+#
+# 
+# 
+#JAVA 
+#Install the latest version of Java (older than 1.8.x) to run Picard 
+#Go to https://www.oracle.com/technetwork/java/javase/downloads/index.html
+#Download the latest JDK file (not JRE) as a tar.gz file for Linux x64
+tar -xzvg jdk-12.0.1_linux-x64_bin.tar.gz
+#Set Java path to the folder
+export JAVA_HOME=$BSCRATCH/bin/jdk-12.0.1
+export PATH=$JAVA_HOME/bin:$PATH
+java -version
+#
+# 
+#PICARD
+#Install Picard .jar files (do not install source files as they have bugs from gradle) 
+#Necessary to utilize Drop-Seq Tools  
+mkdir picard
+cd picard
+wget https://github.com/broadinstitute/picard/releases/download/2.20.2/picard.jar
+wget https://github.com/broadinstitute/picard/releases/download/2.20.2/picardcloud.jar
+#test picard
+java -jar picard.jar
+#Create an environmental variable
+PICARD='$BSCRATCH/bin/picard/picard.jar'
+alias picard="java -jar $PICARD"
+#
+#
+#
+#DROP-SEQ-Tools
+#Install Drop-seq tools by downloading .tar.gz file
+wget https://github.com/broadinstitute/Drop-seq/archive/v2.3.0.tar.gz
+#NOTE: DROP-SEQ-Tools comes with an older version of Picard. Download latest version as above and use that one.
 
 #Extract fastq files with fasterq-dump.
 
@@ -47,7 +89,6 @@ test -x denyer.sh && echo true || echo false #Repeat for each .sh file you want 
 
 #Edit sbatch.sh file to include the correct file after "srun"
 sbatch fastqpull.sh #Take note of job ID
-
 
 
 
