@@ -78,7 +78,24 @@ alias picard="java -jar $PICARD"
 #Install Drop-seq tools by downloading .tar.gz file
 wget https://github.com/broadinstitute/Drop-seq/archive/v2.3.0.tar.gz
 #NOTE: DROP-SEQ-Tools comes with an older version of Picard. Download latest version as above and use that one.
-
+#
+#
+#
+#SALMON (download binaries)
+wget https://github.com/COMBINE-lab/salmon/releases/download/v0.14.0/salmon-0.14.0_linux_x86_64.tar.gz
+export PATH=$PATH:$BSCRATCH/bin/salmon/bin
+#
+#
+#
+#Gffread
+mkdir gffread
+cd gffread
+git clone https://github.com/gpertea/gclib
+git clone https://github.com/gpertea/gffread
+cd gffread
+make release
+export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
+#
 #Extract fastq files with fasterq-dump.
 
 #Create batch script to pull multiple SRRs. Convert each batch script into executables
@@ -91,4 +108,6 @@ test -x denyer.sh && echo true || echo false #Repeat for each .sh file you want 
 sbatch fastqpull.sh #Take note of job ID
 
 
+wget ftp://ftp.ensemblgenomes.org/pub/release-43/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.43.gff3.gz
 
+gffread -w at10_transcripts.fa -g at10.fa at10.gtf
