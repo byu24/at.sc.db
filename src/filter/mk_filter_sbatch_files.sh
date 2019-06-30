@@ -13,8 +13,6 @@ while [ "$i" -lt "$len" ]; do
   run_name=${run_names[$i]}
 
   echo "#!/bin/bash" > src/filter/filter_${set_name}.bs
-  echo "#SBATCH --mail-user=brendayu@lbl.gov" >> src/filter/filter_${set_name}.bs
-  echo "#SBATCH --mail-type=ALL" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH -A gtrnd" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH -q genepool_shared" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH -J filter_SRA_${set_name}" >> src/filter/filter_${set_name}.bs
@@ -25,10 +23,9 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --output=filter_SRA_${set_name}.out" >> src/filter/filter_${set_name}.bs
   echo "" >> src/filter/filter_${set_name}.bs
   echo "module load python3" >> src/filter/filter_${set_name}.bs
-  echo "conda create --mkdir --prefix=$BSCRATCH/bin/env_STAR" >> src/filter/filter_${set_name}.bs
-  echo "source activate $BSCRATCH/bin/env_STAR" >> src/filter/filter_${set_name}.bs
+  echo "source activate \$BSCRATCH/bin/env_STARsolo" >> src/filter/filter_${set_name}.bs
 
-  echo "cd $BSCRATCH/at.sc.db/" >> src/filter/filter_${set_name}.bs
+  echo "cd \$BSCRATCH/at.sc.db/" >> src/filter/filter_${set_name}.bs
 
   echo "" >> src/filter/filter_${set_name}.bs
   echo "sh src/trim_filter.sh ${set_name} ${run_name}" >> src/filter/filter_${set_name}.bs

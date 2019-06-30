@@ -11,12 +11,11 @@
 #SBATCH --output=download_SRA_ss_003.out
 
 module load python3
-conda create --mkdir --prefix=/global/projectb/scratch/byu24/bin/env_STAR
-source activate /global/projectb/scratch/byu24/bin/env_STAR
-cd /global/projectb/scratch/byu24/at.sc.db/
-/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206656 -o scratch/ss_003 -t http
-/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/ss_003 \
+source activate /global/projectb/scratch/bjcole/env_STARsolo
+cd /global/projectb/scratch/bjcole/at.sc.db/
+/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206656 -o scratch/ss_003 -t http
+/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/ss_003 \
   -o ss_003.fastq \
-  -O /global/projectb/scratch/byu24/at.sc.db/scratch \
-  -t /global/projectb/scratch/byu24/at.sc.db/scratch \
+  -O /global/projectb/scratch/bjcole/at.sc.db/scratch \
+  -t /global/projectb/scratch/bjcole/at.sc.db/scratch \
   -sS --include-technical

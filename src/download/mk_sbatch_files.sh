@@ -22,9 +22,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --output=download_SRA_${set_name}.out" >> src/download/download_${set_name}.bs
   echo "" >> src/download/download_${set_name}.bs
   echo "module load python3" >> src/download/download_${set_name}.bs
-  echo "conda create --mkdir --prefix=$BSCRATCH/bin/env_STAR" >> src/download/download_${set_name}.bs
-  echo "source activate $BSCRATCH/bin/env_STAR" >> src/download/download_${set_name}.bs
-
+  echo "source activate /global/projectb/scratch/bjcole/env_STARsolo" >> src/download/download_${set_name}.bs
   echo "cd $BSCRATCH/at.sc.db/" >> src/download/download_${set_name}.bs
 
   if ! [[ $set_name =~ js|zc ]]; then 
@@ -37,29 +35,26 @@ while [ "$i" -lt "$len" ]; do
   fi
 
   if [[ $set_name =~ "jsh_016" ]]; then
-    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
     echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086586/whole_root_Heatshock_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js_017" ]]; then
-    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
     echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086585/whole_root_Control_2_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js_018" ]]; then
-    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
     echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086584/whole_root_Control_1_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js" ]]; then
-    echo "  -q -O- | samtools view | \\" >> src/download/download_${set_name}.bs
+    echo "  -q -O- | samtools view -F 256 | \\" >> src/download/download_${set_name}.bs
     echo "    awk '{ \\" >> src/download/download_${set_name}.bs
     echo -e "    match(\$0, \"CR:Z:([ATCGN]+)\", arr1)" >> src/download/download_${set_name}.bs
     echo -e "    match(\$0, \"UR:Z:([ATCGN]+)\", arr2)" >> src/download/download_${set_name}.bs
     echo -e "    match(\$0, \"CY:Z:([[:graph:]]+)\", arr3)" >> src/download/download_${set_name}.bs
     echo -e "    match(\$0, \"UY:Z:([[:graph:]]+)\", arr4)" >> src/download/download_${set_name}.bs
-    echo -E "    print \$1\"\\n\" arr1[1] arr2[1] \"\\n+\\n\" arr3[1] arr4[1] > \"scratch/${set_name}_1.fastq\""  >> src/download/download_${set_name}.bs
-    echo -E "    print \$1\"\\n\"\$10\"\\n+\\n\"\$11 > \"scratch/${set_name}_2.fastq\"}'"  >> src/download/download_${set_name}.bs
+    echo -E "    print \"@\"\$1\"\\n\" arr1[1] arr2[1] \"\\n+\\n\" arr3[1] arr4[1] > \"scratch/${set_name}_1.fastq\""  >> src/download/download_${set_name}.bs
+    echo -E "    print \"@\"\$1\"\\n\"\$10\"\\n+\\n\"\$11 > \"scratch/${set_name}_2.fastq\"}'"  >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "zc" ]]; then

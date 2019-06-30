@@ -1,0 +1,16 @@
+Not a conda environment: /global/projectb/scratch/bjcole/bin/env_STARsolo
+js_018
+10x_V2
+java -ea -Xmx14903m -Xms14903m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_2.fastq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_rRNA_filtered_1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_rRNA_filtered_2.fastq k=21 edist=2 ref=/global/projectb/scratch/bjcole/at.sc.db/scratch/at10/rrna_seqs.fa
+Executing jgi.BBDukF [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_2.fastq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_rRNA_filtered_1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018_rRNA_filtered_2.fastq, k=21, edist=2, ref=/global/projectb/scratch/bjcole/at.sc.db/scratch/at10/rrna_seqs.fa]
+Version 38.26
+
+0.036 seconds.
+Initial:
+Memory: max=14976m, total=14976m, free=14662m, used=314m
+
+Added 38749053 kmers; time: 	8.340 seconds.
+Memory: max=14976m, total=14976m, free=13591m, used=1385m
+
+Input is being processed as paired
+Started output streams:	0.075 seconds.
