@@ -6,7 +6,7 @@ echo $prefix
 echo $technology
 
 salmon_path=$BSCRATCH/bin/salmon/bin
-index_path=$BSCRATCH/bin/at.sc.db/scratch/at10
+index_path=$BSCRATCH/at.sc.db/scratch/at10
 file_prefix=$BSCRATCH/at.sc.db/scratch/${prefix}
 data_path=$BSCRATCH/at.sc.db/data
 
