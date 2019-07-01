@@ -1,0 +1,2323 @@
+mkdir: cannot create directory 'scratch/sc_010': File exists
+Version Info: This is the most recent version of salmon.
+Logs will be written to scratch/sc_010/logs
+[2019-07-01 15:39:52.346] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-07-01 15:39:52.346] [jointLog] [info] Usage of --validateMappings implies use of minScoreFraction. Since not explicitly specified, it is being set to 0.65
+[2019-07-01 15:39:52.346] [jointLog] [info] Usage of --validateMappings, without --hardFilter implies use of range factorization. rangeFactorizationBins is being set to 4
+[2019-07-01 15:39:52.346] [jointLog] [info] Usage of --validateMappings implies a default consensus slack of 0.2. Setting consensusSlack to 0.2.
+[2019-07-01 15:39:52.346] [jointLog] [info] Using default value of 0.87 for minScoreFraction in Alevin
+Using default value of 0.6 for consensusSlack in Alevin
+[2019-07-01 15:39:52.347] [alevinLog] [info] Loading Header
+[2019-07-01 15:39:52.347] [alevinLog] [info] Loading Transcript Info 
+### alevin (dscRNA-seq quantification) v0.14.1
+### [ program ] => salmon 
+### [ command ] => alevin 
+### [ libType ] => { ISR }
+### [ mates1 ] => { scratch/sc_010/sc_010_R1.fastq }
+### [ mates2 ] => { scratch/sc_010/sc_010_R2.fastq }
+### [ dropseq ] => { }
+### [ index ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10 }
+### [ threads ] => { 2 }
+### [ output ] => { scratch/sc_010/ }
+### [ dumpMtx ] => { }
+### [ tgMap ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10_tgMap.tsv }
+### [ mrna ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10_ptGenes.tsv }
+### [ rrna ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10_riboGenes.tsv }
+
+
+[2019-07-01 15:39:52.443] [alevinLog] [info] Found all transcripts to gene mappings
+[2019-07-01 15:39:52.457] [alevinLog] [info] Processing barcodes files (if Present) 
+
+ 
+[32mprocessed[31m 0 Million [32mbarcodes[0m[32mprocessed[31m 1 Million [32mbarcodes[0m[32mprocessed[31m 1 Million [32mbarcodes[0m[32mprocessed[31m 2 Million [32mbarcodes[0m[32mprocessed[31m 2 Million [32mbarcodes[0m[32mprocessed[31m 3 Million [32mbarcodes[0m[32mprocessed[31m 3 Million [32mbarcodes[0m[32mprocessed[31m 4 Million [32mbarcodes[0m[32mprocessed[31m 4 Million [32mbarcodes[0m[32mprocessed[31m 5 Million [32mbarcodes[0m[32mprocessed[31m 5 Million [32mbarcodes[0m[32mprocessed[31m 6 Million [32mbarcodes[0m[32mprocessed[31m 6 Million [32mbarcodes[0m[32mprocessed[31m 7 Million [32mbarcodes[0m[32mprocessed[31m 7 Million [32mbarcodes[0m[32mprocessed[31m 8 Million [32mbarcodes[0m[32mprocessed[31m 8 Million [32mbarcodes[0m[32mprocessed[31m 9 Million [32mbarcodes[0m[32mprocessed[31m 9 Million [32mbarcodes[0m[32mprocessed[31m 10 Million [32mbarcodes[0m[32mprocessed[31m 10 Million [32mbarcodes[0m[32mprocessed[31m 11 Million [32mbarcodes[0m[32mprocessed[31m 11 Million [32mbarcodes[0m[32mprocessed[31m 12 Million [32mbarcodes[0m[32mprocessed[31m 12 Million [32mbarcodes[0m[32mprocessed[31m 13 Million [32mbarcodes[0m[32mprocessed[31m 13 Million [32mbarcodes[0m[32mprocessed[31m 14 Million [32mbarcodes[0m[32mprocessed[31m 14 Million [32mbarcodes[0m[32mprocessed[31m 15 Million [32mbarcodes[0m[32mprocessed[31m 15 Million [32mbarcodes[0m[32mprocessed[31m 16 Million [32mbarcodes[0m[32mprocessed[31m 16 Million [32mbarcodes[0m[32mprocessed[31m 17 Million [32mbarcodes[0m[32mprocessed[31m 17 Million [32mbarcodes[0m[32mprocessed[31m 18 Million [32mbarcodes[0m[32mprocessed[31m 18 Million [32mbarcodes[0m[32mprocessed[31m 19 Million [32mbarcodes[0m[32mprocessed[31m 19 Million [32mbarcodes[0m[32mprocessed[31m 20 Million [32mbarcodes[0m[32mprocessed[31m 20 Million [32mbarcodes[0m[32mprocessed[31m 21 Million [32mbarcodes[0m[32mprocessed[31m 21 Million [32mbarcodes[0m[32mprocessed[31m 22 Million [32mbarcodes[0m[32mprocessed[31m 22 Million [32mbarcodes[0m[32mprocessed[31m 23 Million [32mbarcodes[0m[32mprocessed[31m 23 Million [32mbarcodes[0m[32mprocessed[31m 24 Million [32mbarcodes[0m[32mprocessed[31m 24 Million [32mbarcodes[0m[32mprocessed[31m 25 Million [32mbarcodes[0m[32mprocessed[31m 25 Million [32mbarcodes[0m[32mprocessed[31m 26 Million [32mbarcodes[0m[32mprocessed[31m 26 Million [32mbarcodes[0m[32mprocessed[31m 27 Million [32mbarcodes[0m[32mprocessed[31m 27 Million [32mbarcodes[0m[32mprocessed[31m 28 Million [32mbarcodes[0m[32mprocessed[31m 28 Million [32mbarcodes[0m[32mprocessed[31m 29 Million [32mbarcodes[0m[32mprocessed[31m 29 Million [32mbarcodes[0m[32mprocessed[31m 30 Million [32mbarcodes[0m[32mprocessed[31m 30 Million [32mbarcodes[0m[32mprocessed[31m 31 Million [32mbarcodes[0m[32mprocessed[31m 31 Million [32mbarcodes[0m[32mprocessed[31m 32 Million [32mbarcodes[0m[32mprocessed[31m 32 Million [32mbarcodes[0m[32mprocessed[31m 33 Million [32mbarcodes[0m[32mprocessed[31m 33 Million [32mbarcodes[0m[32mprocessed[31m 34 Million [32mbarcodes[0m[32mprocessed[31m 34 Million [32mbarcodes[0m[32mprocessed[31m 35 Million [32mbarcodes[0m[32mprocessed[31m 35 Million [32mbarcodes[0m[32mprocessed[31m 36 Million [32mbarcodes[0m[32mprocessed[31m 36 Million [32mbarcodes[0m[32mprocessed[31m 37 Million [32mbarcodes[0m[32mprocessed[31m 37 Million [32mbarcodes[0m[32mprocessed[31m 38 Million [32mbarcodes[0m[32mprocessed[31m 38 Million [32mbarcodes[0m[32mprocessed[31m 39 Million [32mbarcodes[0m[32mprocessed[31m 39 Million [32mbarcodes[0m[32mprocessed[31m 40 Million [32mbarcodes[0m[32mprocessed[31m 40 Million [32mbarcodes[0m[32mprocessed[31m 41 Million [32mbarcodes[0m[32mprocessed[31m 41 Million [32mbarcodes[0m[32mprocessed[31m 42 Million [32mbarcodes[0m[32mprocessed[31m 42 Million [32mbarcodes[0m[32mprocessed[31m 43 Million [32mbarcodes[0m[32mprocessed[31m 43 Million [32mbarcodes[0m[32mprocessed[31m 44 Million [32mbarcodes[0m
+
+[2019-07-01 15:44:58.289] [alevinLog] [info] Done barcode density calculation.
+[2019-07-01 15:44:58.289] [alevinLog] [info] # Barcodes Used: [32m44011903[0m / [31m44035021[0m.
+[2019-07-01 15:45:04.060] [alevinLog] [info] Knee found left boundary at [32m 2284 [0m
+[2019-07-01 15:45:05.932] [alevinLog] [info] Gauss Corrected Boundary at [32m 1421 [0m
+[2019-07-01 15:45:05.932] [alevinLog] [info] Learned InvCov: 342.978 normfactor: 1069.4
+[2019-07-01 15:45:05.932] [alevinLog] [info] Total [32m2132[0m(has [32m710[0m low confidence) barcodes
+[2019-07-01 15:45:06.672] [alevinLog] [info] Done True Barcode Sampling
+[2019-07-01 15:45:06.893] [alevinLog] [info] Total 37.7248% reads will be thrown away because of noisy Cellular barcodes.
+[2019-07-01 15:45:06.978] [alevinLog] [info] Done populating Z matrix
+[2019-07-01 15:45:06.993] [alevinLog] [info] Total 46084 CB got sequence corrected
+[2019-07-01 15:45:06.997] [alevinLog] [info] Done indexing Barcodes
+[2019-07-01 15:45:06.997] [alevinLog] [info] Total Unique barcodes found: 1393722
+[2019-07-01 15:45:06.997] [alevinLog] [info] Used Barcodes except Whitelist: 45441
+[2019-07-01 15:45:07.033] [alevinLog] [info] Done with Barcode Processing; Moving to Quantify
+
+[2019-07-01 15:45:07.033] [alevinLog] [info] parsing read library format
+[2019-07-01 15:45:07.033] [jointLog] [info] There is 1 library.
+[2019-07-01 15:45:07.224] [jointLog] [info] Loading Quasi index
+[2019-07-01 15:45:07.226] [jointLog] [info] Loading 32-bit quasi index
+[2019-07-01 15:45:07.228] [stderrLog] [info] Loading Suffix Array 
+[2019-07-01 15:45:07.933] [stderrLog] [info] Loading Transcript Info 
+[2019-07-01 15:45:08.220] [stderrLog] [info] Loading Rank-Select Bit Array
+[2019-07-01 15:45:08.307] [stderrLog] [info] There were 53,467 set bits in the bit array
+[2019-07-01 15:45:08.314] [stderrLog] [info] Computing transcript lengths
+[2019-07-01 15:45:08.314] [stderrLog] [info] Waiting to finish loading hash
+[2019-07-01 15:45:32.304] [jointLog] [info] done
+[2019-07-01 15:45:32.304] [jointLog] [info] Index contained 53,467 targets
+
+
+
+
+[2019-07-01 15:45:32.304] [stderrLog] [info] Done loading index
+[A[32mprocessed[31m 0 Million [32mfragments[0m
+hits: 259448, hits per frag:  0.524137[A[32mprocessed[31m 1 Million [32mfragments[0m
+hits: 467278, hits per frag:  0.469626[A[32mprocessed[31m 1 Million [32mfragments[0m
+hits: 675499, hits per frag:  0.451839[A[32mprocessed[31m 2 Million [32mfragments[0m
+hits: 943786, hits per frag:  0.473076[A[32mprocessed[31m 2 Million [32mfragments[0m
+hits: 1195779, hits per frag:  0.47927[A[32mprocessed[31m 3 Million [32mfragments[0m
+hits: 1418361, hits per frag:  0.473576[A[32mprocessed[31m 3 Million [32mfragments[0m
+hits: 1653294, hits per frag:  0.473045[A[32mprocessed[31m 4 Million [32mfragments[0m
+hits: 1936336, hits per frag:  0.48469[A[32mprocessed[31m 4 Million [32mfragments[0m
+hits: 2205110, hits per frag:  0.49057[A[32mprocessed[31m 5 Million [32mfragments[0m
+hits: 2423407, hits per frag:  0.485167[A[32mprocessed[31m 5 Million [32mfragments[0m
+hits: 2644615, hits per frag:  0.481277[A[32mprocessed[31m 6 Million [32mfragments[0m
+hits: 2922086, hits per frag:  0.487421[A[32mprocessed[31m 6 Million [32mfragments[0m
+hits: 3165672, hits per frag:  0.487401[A[32mprocessed[31m 7 Million [32mfragments[0m
+hits: 3366504, hits per frag:  0.481273[A[32mprocessed[31m 7 Million [32mfragments[0m
+hits: 3564256, hits per frag:  0.475551[A[32mprocessed[31m 8 Million [32mfragments[0m
+hits: 3824544, hits per frag:  0.478367[A[32mprocessed[31m 8 Million [32mfragments[0m
+hits: 4065566, hits per frag:  0.478583[A[32mprocessed[31m 9 Million [32mfragments[0m
+hits: 4274066, hits per frag:  0.47516[A[32mprocessed[31m 9 Million [32mfragments[0m
+hits: 4498286, hits per frag:  0.473753[A[32mprocessed[31m 10 Million [32mfragments[0m
+hits: 4770658, hits per frag:  0.477304[A[32mprocessed[31m 10 Million [32mfragments[0m
+hits: 5021644, hits per frag:  0.47848[A[32mprocessed[31m 11 Million [32mfragments[0m
+hits: 5211381, hits per frag:  0.473977[A[32mprocessed[31m 11 Million [32mfragments[0m
+hits: 5433239, hits per frag:  0.472661[A[32mprocessed[31m 12 Million [32mfragments[0m
+hits: 5720746, hits per frag:  0.476928[A[32mprocessed[31m 12 Million [32mfragments[0m
+hits: 6000184, hits per frag:  0.480207[A[32mprocessed[31m 13 Million [32mfragments[0m
+hits: 6211837, hits per frag:  0.478017[A[32mprocessed[31m 13 Million [32mfragments[0m
+hits: 6440798, hits per frag:  0.477273[A[32mprocessed[31m 14 Million [32mfragments[0m
+hits: 6719194, hits per frag:  0.480114[A[32mprocessed[31m 14 Million [32mfragments[0m
+hits: 7006025, hits per frag:  0.483341[A[32mprocessed[31m 15 Million [32mfragments[0m
+hits: 7240042, hits per frag:  0.48283[A[32mprocessed[31m 15 Million [32mfragments[0m
+hits: 7483618, hits per frag:  0.48297[A[32mprocessed[31m 16 Million [32mfragments[0m
+hits: 7768491, hits per frag:  0.485682[A[32mprocessed[31m 16 Million [32mfragments[0m
+hits: 8053633, hits per frag:  0.488247[A[32mprocessed[31m 17 Million [32mfragments[0m
+hits: 8286206, hits per frag:  0.487567[A[32mprocessed[31m 17 Million [32mfragments[0m
+hits: 8505270, hits per frag:  0.486154[A[32mprocessed[31m 18 Million [32mfragments[0m
+hits: 8772785, hits per frag:  0.487512[A[32mprocessed[31m 18 Million [32mfragments[0m
+hits: 9058871, hits per frag:  0.489801[A[32mprocessed[31m 19 Million [32mfragments[0m
+hits: 9292742, hits per frag:  0.48922[A[32mprocessed[31m 19 Million [32mfragments[0m
+hits: 9503208, hits per frag:  0.487469[A[32mprocessed[31m 20 Million [32mfragments[0m
+hits: 9747681, hits per frag:  0.487506[A[32mprocessed[31m 20 Million [32mfragments[0m
+hits: 10026502, hits per frag:  0.489217[A[32mprocessed[31m 21 Million [32mfragments[0m
+hits: 10265371, hits per frag:  0.488944[A[32mprocessed[31m 21 Million [32mfragments[0m
+hits: 10473260, hits per frag:  0.487242[A[32mprocessed[31m 22 Million [32mfragments[0m
+hits: 10732475, hits per frag:  0.487951[A[32mprocessed[31m 22 Million [32mfragments[0m
+hits: 11012316, hits per frag:  0.489545[A[32mprocessed[31m 23 Million [32mfragments[0m
+hits: 11264480, hits per frag:  0.489866[A[32mprocessed[31m 23 Million [32mfragments[0m
+hits: 11461482, hits per frag:  0.487826[A[32mprocessed[31m 24 Million [32mfragments[0m
+hits: 11699871, hits per frag:  0.487596[A[32mprocessed[31m 24 Million [32mfragments[0m
+hits: 11957590, hits per frag:  0.488165[A[32mprocessed[31m 25 Million [32mfragments[0m
+hits: 12233544, hits per frag:  0.48944[A[32mprocessed[31m 25 Million [32mfragments[0m
+hits: 12416010, hits per frag:  0.486998[A[32mprocessed[31m 26 Million [32mfragments[0m
+hits: 12614699, hits per frag:  0.485274[A[32mprocessed[31m 26 Million [32mfragments[0m
+hits: 12875304, hits per frag:  0.485952[A[32mprocessed[31m 27 Million [32mfragments[0m
+hits: 13110348, hits per frag:  0.485658[A[32mprocessed[31m 27 Million [32mfragments[0m
+hits: 13294146, hits per frag:  0.483511[A[32mprocessed[31m 28 Million [32mfragments[0m
+hits: 13505253, hits per frag:  0.482417[A[32mprocessed[31m 28 Million [32mfragments[0m
+hits: 13764451, hits per frag:  0.483048[A[32mprocessed[31m 29 Million [32mfragments[0m
+hits: 13944348, hits per frag:  0.480922[A[32mprocessed[31m 29 Million [32mfragments[0m
+hits: 14144059, hits per frag:  0.479541[A[32mprocessed[31m 30 Million [32mfragments[0m
+hits: 14423033, hits per frag:  0.480848[A[32mprocessed[31m 30 Million [32mfragments[0m
+hits: 14602829, hits per frag:  0.47886[A[32mprocessed[31m 31 Million [32mfragments[0m
+hits: 14764903, hits per frag:  0.476364[A[32mprocessed[31m 31 Million [32mfragments[0m
+hits: 15022839, hits per frag:  0.476991[A[32mprocessed[31m 32 Million [32mfragments[0m
+hits: 15238524, hits per frag:  0.476278[A[32mprocessed[31m 32 Million [32mfragments[0m
+hits: 15395538, hits per frag:  0.473782[A[32mprocessed[31m 33 Million [32mfragments[0m
+hits: 15622658, hits per frag:  0.473486[A[32mprocessed[31m 33 Million [32mfragments[0m
+hits: 15852634, hits per frag:  0.473284[A[32mprocessed[31m 34 Million [32mfragments[0m
+hits: 16017029, hits per frag:  0.471158[A[32mprocessed[31m 34 Million [32mfragments[0m
+hits: 16196301, hits per frag:  0.469526[A[32mprocessed[31m 35 Million [32mfragments[0m
+hits: 16373293, hits per frag:  0.467875[A[32mprocessed[31m 35 Million [32mfragments[0m
+hits: 16537737, hits per frag:  0.465917[A[32mprocessed[31m 36 Million [32mfragments[0m
+hits: 16715302, hits per frag:  0.464378[A[32mprocessed[31m 36 Million [32mfragments[0m
+hits: 16934336, hits per frag:  0.464018[A[32mprocessed[31m 37 Million [32mfragments[0m
+hits: 17073960, hits per frag:  0.461521[A[32mprocessed[31m 37 Million [32mfragments[0m
+hits: 17253092, hits per frag:  0.460144[A[32mprocessed[31m 38 Million [32mfragments[0m
+hits: 17462360, hits per frag:  0.459596[A[32mprocessed[31m 38 Million [32mfragments[0m
+hits: 17600538, hits per frag:  0.457216[A[32mprocessed[31m 39 Million [32mfragments[0m
+hits: 17786934, hits per frag:  0.456134[A[32mprocessed[31m 39 Million [32mfragments[0m
+hits: 17958569, hits per frag:  0.454705[A[32mprocessed[31m 40 Million [32mfragments[0m
+hits: 18115958, hits per frag:  0.452956[A[32mprocessed[31m 40 Million [32mfragments[0m
+hits: 18251001, hits per frag:  0.450698[A[32mprocessed[31m 41 Million [32mfragments[0m
+hits: 18405757, hits per frag:  0.448976[A[32mprocessed[31m 41 Million [32mfragments[0m
+hits: 18590785, hits per frag:  0.448025[A[32mprocessed[31m 42 Million [32mfragments[0m
+hits: 18730459, hits per frag:  0.446016[A[32mprocessed[31m 42 Million [32mfragments[0m
+hits: 18869302, hits per frag:  0.444036[A[32mprocessed[31m 43 Million [32mfragments[0m
+hits: 19089211, hits per frag:  0.443987[A[32mprocessed[31m 43 Million [32mfragments[0m
+hits: 19204905, hits per frag:  0.441543[A[32mprocessed[31m 44 Million [32mfragments[0m
+hits: 19349056, hits per frag:  0.439801
+
+
+
+
+
+[2019-07-01 16:13:11.692] [jointLog] [info] Computed 43,333 rich equivalence classes for further processing
+[2019-07-01 16:13:11.692] [jointLog] [info] Counted 11,046,089 total reads in the equivalence classes 
+[2019-07-01 16:13:11.693] [jointLog] [warning] 0.0355467% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 23.
+
+
+[2019-07-01 16:13:11.693] [jointLog] [info] Number of fragments discarded because they are best-mapped to decoys : 0
+[2019-07-01 16:13:11.693] [jointLog] [warning] Found 122 reads with `N` in the UMI sequence and ignored the reads.
+Please report on github if this number is too large
+[2019-07-01 16:13:11.693] [jointLog] [info] Mapping rate = 25.0848%
+
+[2019-07-01 16:13:11.693] [jointLog] [info] finished quantifyLibrary()
+[2019-07-01 16:13:11.973] [alevinLog] [info] Starting optimizer
+
+
+[2019-07-01 16:13:12.049] [alevinLog] [warning] 47 mitorna gene(s) does not have transcript in the reference
+[2019-07-01 16:13:12.049] [alevinLog] [info] Total 238 usable mRna genes
+[2019-07-01 16:13:12.050] [alevinLog] [warning] 1 ribosomal rna gene(s) does not have transcript in the reference
+[2019-07-01 16:13:12.050] [alevinLog] [info] Total 3 usable rRna genes
+[A[32mAnalyzed 1 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 2 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 3 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 4 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 5 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 6 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 7 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 8 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 9 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 10 cells ([31m0%[32m of all).[0m
+[A[32mAnalyzed 11 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 12 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 13 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 14 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 15 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 16 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 17 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 18 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 19 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 20 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 21 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 22 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 23 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 24 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 25 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 26 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 27 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 28 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 29 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 30 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 31 cells ([31m1%[32m of all).[0m
+[A[32mAnalyzed 32 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 33 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 34 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 35 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 36 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 37 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 38 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 39 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 40 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 41 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 42 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 43 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 44 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 45 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 46 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 47 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 48 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 49 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 50 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 51 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 52 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 53 cells ([31m2%[32m of all).[0m
+[A[32mAnalyzed 54 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 55 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 56 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 57 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 58 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 59 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 60 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 61 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 62 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 63 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 64 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 65 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 66 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 67 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 68 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 69 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 70 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 71 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 72 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 73 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 74 cells ([31m3%[32m of all).[0m
+[A[32mAnalyzed 75 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 76 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 77 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 78 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 79 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 80 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 81 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 82 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 83 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 84 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 85 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 86 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 87 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 88 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 89 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 90 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 91 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 92 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 93 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 94 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 95 cells ([31m4%[32m of all).[0m
+[A[32mAnalyzed 96 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 97 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 98 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 99 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 100 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 101 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 102 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 103 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 104 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 105 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 106 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 107 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 108 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 109 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 110 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 111 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 112 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 113 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 114 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 115 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 116 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 117 cells ([31m5%[32m of all).[0m
+[A[32mAnalyzed 118 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 119 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 120 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 121 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 122 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 123 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 124 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 125 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 126 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 127 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 128 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 129 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 130 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 131 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 132 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 133 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 134 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 135 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 136 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 137 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 138 cells ([31m6%[32m of all).[0m
+[A[32mAnalyzed 139 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 140 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 141 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 142 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 143 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 144 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 145 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 146 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 147 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 148 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 149 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 150 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 151 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 152 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 153 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 154 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 155 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 156 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 157 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 158 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 159 cells ([31m7%[32m of all).[0m
+[A[32mAnalyzed 160 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 161 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 162 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 163 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 164 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 165 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 166 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 167 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 168 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 169 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 170 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 171 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 172 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 173 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 174 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 175 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 176 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 177 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 178 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 179 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 180 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 181 cells ([31m8%[32m of all).[0m
+[A[32mAnalyzed 182 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 183 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 184 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 185 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 186 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 187 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 188 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 189 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 190 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 191 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 192 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 193 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 194 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 195 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 196 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 197 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 198 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 199 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 200 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 201 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 202 cells ([31m9%[32m of all).[0m
+[A[32mAnalyzed 203 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 204 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 205 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 206 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 207 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 208 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 209 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 210 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 211 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 212 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 213 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 214 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 215 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 216 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 217 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 218 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 219 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 220 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 221 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 222 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 223 cells ([31m10%[32m of all).[0m
+[A[32mAnalyzed 224 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 225 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 226 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 227 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 228 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 229 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 230 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 231 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 232 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 233 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 234 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 235 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 236 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 237 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 238 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 239 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 240 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 241 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 242 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 243 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 244 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 245 cells ([31m11%[32m of all).[0m
+[A[32mAnalyzed 246 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 247 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 248 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 249 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 250 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 251 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 252 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 253 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 254 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 255 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 256 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 257 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 258 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 259 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 260 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 261 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 262 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 263 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 264 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 265 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 266 cells ([31m12%[32m of all).[0m
+[A[32mAnalyzed 267 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 268 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 269 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 270 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 271 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 272 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 273 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 274 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 275 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 276 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 277 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 278 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 279 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 280 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 281 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 282 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 283 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 284 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 285 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 286 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 287 cells ([31m13%[32m of all).[0m
+[A[32mAnalyzed 288 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 289 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 290 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 291 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 292 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 293 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 294 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 295 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 296 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 297 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 298 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 299 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 300 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 301 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 302 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 303 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 304 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 305 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 306 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 307 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 308 cells ([31m14%[32m of all).[0m
+[A[32mAnalyzed 309 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 310 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 311 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 312 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 313 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 314 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 315 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 316 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 317 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 318 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 319 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 320 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 321 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 322 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 323 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 324 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 325 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 326 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 327 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 328 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 329 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 330 cells ([31m15%[32m of all).[0m
+[A[32mAnalyzed 331 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 332 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 333 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 334 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 335 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 336 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 337 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 338 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 339 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 340 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 341 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 342 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 343 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 344 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 345 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 346 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 347 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 348 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 349 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 350 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 351 cells ([31m16%[32m of all).[0m
+[A[32mAnalyzed 352 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 353 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 354 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 355 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 356 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 357 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 358 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 359 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 360 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 361 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 362 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 363 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 364 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 365 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 366 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 367 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 368 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 369 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 370 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 371 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 372 cells ([31m17%[32m of all).[0m
+[A[32mAnalyzed 373 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 374 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 375 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 376 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 377 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 378 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 379 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 380 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 381 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 382 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 383 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 384 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 385 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 386 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 387 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 388 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 389 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 390 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 391 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 392 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 393 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 394 cells ([31m18%[32m of all).[0m
+[A[32mAnalyzed 395 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 396 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 397 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 398 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 399 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 400 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 401 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 402 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 403 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 404 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 405 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 406 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 407 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 408 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 409 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 410 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 411 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 412 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 413 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 414 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 415 cells ([31m19%[32m of all).[0m
+[A[32mAnalyzed 416 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 417 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 418 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 419 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 420 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 421 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 422 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 423 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 424 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 425 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 426 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 427 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 428 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 429 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 430 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 431 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 432 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 433 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 434 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 435 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 436 cells ([31m20%[32m of all).[0m
+[A[32mAnalyzed 437 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 438 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 439 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 440 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 441 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 442 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 443 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 444 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 445 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 446 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 447 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 448 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 449 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 450 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 451 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 452 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 453 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 454 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 455 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 456 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 457 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 458 cells ([31m21%[32m of all).[0m
+[A[32mAnalyzed 459 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 460 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 461 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 462 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 463 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 464 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 465 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 466 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 467 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 468 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 469 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 470 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 471 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 472 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 473 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 474 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 475 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 476 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 477 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 478 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 479 cells ([31m22%[32m of all).[0m
+[A[32mAnalyzed 480 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 481 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 482 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 483 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 484 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 485 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 486 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 487 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 488 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 489 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 490 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 491 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 492 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 493 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 494 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 495 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 496 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 497 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 498 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 499 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 500 cells ([31m23%[32m of all).[0m
+[A[32mAnalyzed 501 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 502 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 503 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 504 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 505 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 506 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 507 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 508 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 509 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 510 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 511 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 512 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 513 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 514 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 515 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 516 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 517 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 518 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 519 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 520 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 521 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 522 cells ([31m24%[32m of all).[0m
+[A[32mAnalyzed 523 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 524 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 525 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 526 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 527 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 528 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 529 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 530 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 531 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 532 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 533 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 534 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 535 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 536 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 537 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 538 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 539 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 540 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 541 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 542 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 543 cells ([31m25%[32m of all).[0m
+[A[32mAnalyzed 544 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 545 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 546 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 547 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 548 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 549 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 550 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 551 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 552 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 553 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 554 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 555 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 556 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 557 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 558 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 559 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 560 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 561 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 562 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 563 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 564 cells ([31m26%[32m of all).[0m
+[A[32mAnalyzed 565 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 566 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 567 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 568 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 569 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 570 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 571 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 572 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 573 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 574 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 575 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 576 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 577 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 578 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 579 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 580 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 581 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 582 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 583 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 584 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 585 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 586 cells ([31m27%[32m of all).[0m
+[A[32mAnalyzed 587 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 588 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 589 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 590 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 591 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 592 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 593 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 594 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 595 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 596 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 597 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 598 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 599 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 600 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 601 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 602 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 603 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 604 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 605 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 606 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 607 cells ([31m28%[32m of all).[0m
+[A[32mAnalyzed 608 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 609 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 610 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 611 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 612 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 613 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 614 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 615 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 616 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 617 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 618 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 619 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 620 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 621 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 622 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 623 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 624 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 625 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 626 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 627 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 628 cells ([31m29%[32m of all).[0m
+[A[32mAnalyzed 629 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 630 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 631 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 632 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 633 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 634 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 635 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 636 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 637 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 638 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 639 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 640 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 641 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 642 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 643 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 644 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 645 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 646 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 647 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 648 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 649 cells ([31m30%[32m of all).[0m
+[A[32mAnalyzed 650 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 651 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 652 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 653 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 654 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 655 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 656 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 657 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 658 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 659 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 660 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 661 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 662 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 663 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 664 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 665 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 666 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 667 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 668 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 669 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 670 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 671 cells ([31m31%[32m of all).[0m
+[A[32mAnalyzed 672 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 673 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 674 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 675 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 676 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 677 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 678 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 679 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 680 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 681 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 682 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 683 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 684 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 685 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 686 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 687 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 688 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 689 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 690 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 691 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 692 cells ([31m32%[32m of all).[0m
+[A[32mAnalyzed 693 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 694 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 695 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 696 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 697 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 698 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 699 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 700 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 701 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 702 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 703 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 704 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 705 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 706 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 707 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 708 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 709 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 710 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 711 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 712 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 713 cells ([31m33%[32m of all).[0m
+[A[32mAnalyzed 714 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 715 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 716 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 717 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 718 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 719 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 720 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 721 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 722 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 723 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 724 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 725 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 726 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 727 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 728 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 729 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 730 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 731 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 732 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 733 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 734 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 735 cells ([31m34%[32m of all).[0m
+[A[32mAnalyzed 736 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 737 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 738 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 739 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 740 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 741 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 742 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 743 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 744 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 745 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 746 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 747 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 748 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 749 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 750 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 751 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 752 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 753 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 754 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 755 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 756 cells ([31m35%[32m of all).[0m
+[A[32mAnalyzed 757 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 758 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 759 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 760 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 761 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 762 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 763 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 764 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 765 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 766 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 767 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 768 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 769 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 770 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 771 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 772 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 773 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 774 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 775 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 776 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 777 cells ([31m36%[32m of all).[0m
+[A[32mAnalyzed 778 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 779 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 780 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 781 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 782 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 783 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 784 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 785 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 786 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 787 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 788 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 789 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 790 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 791 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 792 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 793 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 794 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 795 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 796 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 797 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 798 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 799 cells ([31m37%[32m of all).[0m
+[A[32mAnalyzed 800 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 801 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 802 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 803 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 804 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 805 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 806 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 807 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 808 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 809 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 810 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 811 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 812 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 813 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 814 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 815 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 816 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 817 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 818 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 819 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 820 cells ([31m38%[32m of all).[0m
+[A[32mAnalyzed 821 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 822 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 823 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 824 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 825 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 826 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 827 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 828 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 829 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 830 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 831 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 832 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 833 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 834 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 835 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 836 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 837 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 838 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 839 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 840 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 841 cells ([31m39%[32m of all).[0m
+[A[32mAnalyzed 842 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 843 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 844 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 845 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 846 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 847 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 848 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 849 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 850 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 851 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 852 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 853 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 854 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 855 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 856 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 857 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 858 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 859 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 860 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 861 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 862 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 863 cells ([31m40%[32m of all).[0m
+[A[32mAnalyzed 864 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 865 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 866 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 867 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 868 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 869 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 870 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 871 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 872 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 873 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 874 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 875 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 876 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 877 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 878 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 879 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 880 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 881 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 882 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 883 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 884 cells ([31m41%[32m of all).[0m
+[A[32mAnalyzed 885 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 886 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 887 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 888 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 889 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 890 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 891 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 892 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 893 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 894 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 895 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 896 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 897 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 898 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 899 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 900 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 901 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 902 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 903 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 904 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 905 cells ([31m42%[32m of all).[0m
+[A[32mAnalyzed 906 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 907 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 908 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 909 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 910 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 911 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 912 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 913 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 914 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 915 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 916 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 917 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 918 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 919 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 920 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 921 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 922 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 923 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 924 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 925 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 926 cells ([31m43%[32m of all).[0m
+[A[32mAnalyzed 927 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 928 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 929 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 930 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 931 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 932 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 933 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 934 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 935 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 936 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 937 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 938 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 939 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 940 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 941 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 942 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 943 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 944 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 945 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 946 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 947 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 948 cells ([31m44%[32m of all).[0m
+[A[32mAnalyzed 949 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 950 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 951 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 952 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 953 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 954 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 955 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 956 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 957 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 958 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 959 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 960 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 961 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 962 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 963 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 964 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 965 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 966 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 967 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 968 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 969 cells ([31m45%[32m of all).[0m
+[A[32mAnalyzed 970 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 971 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 972 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 973 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 974 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 975 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 976 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 977 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 978 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 979 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 980 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 981 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 982 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 983 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 984 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 985 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 986 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 987 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 988 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 989 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 990 cells ([31m46%[32m of all).[0m
+[A[32mAnalyzed 991 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 992 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 993 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 994 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 995 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 996 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 997 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 998 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 999 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1000 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1001 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1002 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1003 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1004 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1005 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1006 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1007 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1008 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1009 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1010 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1011 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1012 cells ([31m47%[32m of all).[0m
+[A[32mAnalyzed 1013 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1014 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1015 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1016 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1017 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1018 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1019 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1020 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1021 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1022 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1023 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1024 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1025 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1026 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1027 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1028 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1029 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1030 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1031 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1032 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1033 cells ([31m48%[32m of all).[0m
+[A[32mAnalyzed 1034 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1035 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1036 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1037 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1038 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1039 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1040 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1041 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1042 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1043 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1044 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1045 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1046 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1047 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1048 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1049 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1050 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1051 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1052 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1053 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1054 cells ([31m49%[32m of all).[0m
+[A[32mAnalyzed 1055 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1056 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1057 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1058 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1059 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1060 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1061 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1062 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1063 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1064 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1065 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1066 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1067 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1068 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1069 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1070 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1071 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1072 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1073 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1074 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1075 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1076 cells ([31m50%[32m of all).[0m
+[A[32mAnalyzed 1077 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1078 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1079 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1080 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1081 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1082 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1083 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1084 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1085 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1086 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1087 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1088 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1089 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1090 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1091 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1092 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1093 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1094 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1095 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1096 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1097 cells ([31m51%[32m of all).[0m
+[A[32mAnalyzed 1098 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1099 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1100 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1101 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1102 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1103 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1104 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1105 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1106 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1107 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1108 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1109 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1110 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1111 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1112 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1113 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1114 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1115 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1116 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1117 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1118 cells ([31m52%[32m of all).[0m
+[A[32mAnalyzed 1119 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1120 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1121 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1122 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1123 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1124 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1125 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1126 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1127 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1128 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1129 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1130 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1131 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1132 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1133 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1134 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1135 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1136 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1137 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1138 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1139 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1140 cells ([31m53%[32m of all).[0m
+[A[32mAnalyzed 1141 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1142 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1143 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1144 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1145 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1146 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1147 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1148 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1149 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1150 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1151 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1152 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1153 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1154 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1155 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1156 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1157 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1158 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1159 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1160 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1161 cells ([31m54%[32m of all).[0m
+[A[32mAnalyzed 1162 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1163 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1164 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1165 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1166 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1167 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1168 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1169 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1170 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1171 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1172 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1173 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1174 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1175 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1176 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1177 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1178 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1179 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1180 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1181 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1182 cells ([31m55%[32m of all).[0m
+[A[32mAnalyzed 1183 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1184 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1185 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1186 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1187 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1188 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1189 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1190 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1191 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1192 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1193 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1194 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1195 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1196 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1197 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1198 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1199 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1200 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1201 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1202 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1203 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1204 cells ([31m56%[32m of all).[0m
+[A[32mAnalyzed 1205 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1206 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1207 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1208 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1209 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1210 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1211 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1212 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1213 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1214 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1215 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1216 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1217 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1218 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1219 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1220 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1221 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1222 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1223 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1224 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1225 cells ([31m57%[32m of all).[0m
+[A[32mAnalyzed 1226 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1227 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1228 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1229 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1230 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1231 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1232 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1233 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1234 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1235 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1236 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1237 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1238 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1239 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1240 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1241 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1242 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1243 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1244 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1245 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1246 cells ([31m58%[32m of all).[0m
+[A[32mAnalyzed 1247 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1248 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1249 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1250 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1251 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1252 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1253 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1254 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1255 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1256 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1257 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1258 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1259 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1260 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1261 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1262 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1263 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1264 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1265 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1266 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1267 cells ([31m59%[32m of all).[0m
+[A[32mAnalyzed 1268 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1269 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1270 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1271 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1272 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1273 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1274 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1275 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1276 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1277 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1278 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1279 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1280 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1281 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1282 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1283 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1284 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1285 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1286 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1287 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1288 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1289 cells ([31m60%[32m of all).[0m
+[A[32mAnalyzed 1290 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1291 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1292 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1293 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1294 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1295 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1296 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1297 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1298 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1299 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1300 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1301 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1302 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1303 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1304 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1305 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1306 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1307 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1308 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1309 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1310 cells ([31m61%[32m of all).[0m
+[A[32mAnalyzed 1311 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1312 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1313 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1314 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1315 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1316 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1317 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1318 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1319 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1320 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1321 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1322 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1323 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1324 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1325 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1326 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1327 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1328 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1329 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1330 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1331 cells ([31m62%[32m of all).[0m
+[A[32mAnalyzed 1332 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1333 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1334 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1335 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1336 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1337 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1338 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1339 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1340 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1341 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1342 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1343 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1344 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1345 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1346 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1347 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1348 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1349 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1350 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1351 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1352 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1353 cells ([31m63%[32m of all).[0m
+[A[32mAnalyzed 1354 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1355 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1356 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1357 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1358 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1359 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1360 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1361 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1362 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1363 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1364 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1365 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1366 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1367 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1368 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1369 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1370 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1371 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1372 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1373 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1374 cells ([31m64%[32m of all).[0m
+[A[32mAnalyzed 1375 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1376 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1377 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1378 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1379 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1380 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1381 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1382 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1383 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1384 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1385 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1386 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1387 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1388 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1389 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1390 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1391 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1392 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1393 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1394 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1395 cells ([31m65%[32m of all).[0m
+[A[32mAnalyzed 1396 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1397 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1398 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1399 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1400 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1401 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1402 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1403 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1404 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1405 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1406 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1407 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1408 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1409 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1410 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1411 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1412 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1413 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1414 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1415 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1416 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1417 cells ([31m66%[32m of all).[0m
+[A[32mAnalyzed 1418 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1419 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1420 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1421 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1422 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1423 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1424 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1425 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1426 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1427 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1428 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1429 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1430 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1431 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1432 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1433 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1434 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1435 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1436 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1437 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1438 cells ([31m67%[32m of all).[0m
+[A[32mAnalyzed 1439 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1440 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1441 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1442 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1443 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1444 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1445 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1446 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1447 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1448 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1449 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1450 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1451 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1452 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1453 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1454 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1455 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1456 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1457 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1458 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1459 cells ([31m68%[32m of all).[0m
+[A[32mAnalyzed 1460 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1461 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1462 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1463 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1464 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1465 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1466 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1467 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1468 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1469 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1470 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1471 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1472 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1473 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1474 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1475 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1476 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1477 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1478 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1479 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1480 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1481 cells ([31m69%[32m of all).[0m
+[A[32mAnalyzed 1482 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1483 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1484 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1485 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1486 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1487 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1488 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1489 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1490 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1491 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1492 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1493 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1494 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1495 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1496 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1497 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1498 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1499 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1500 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1501 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1502 cells ([31m70%[32m of all).[0m
+[A[32mAnalyzed 1503 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1504 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1505 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1506 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1507 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1508 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1509 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1510 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1511 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1512 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1513 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1514 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1515 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1516 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1517 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1518 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1519 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1520 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1521 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1522 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1523 cells ([31m71%[32m of all).[0m
+[A[32mAnalyzed 1524 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1525 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1526 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1527 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1528 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1529 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1530 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1531 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1532 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1533 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1534 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1535 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1536 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1537 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1538 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1539 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1540 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1541 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1542 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1543 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1544 cells ([31m72%[32m of all).[0m
+[A[32mAnalyzed 1545 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1546 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1547 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1548 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1549 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1550 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1551 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1552 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1553 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1554 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1555 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1556 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1557 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1558 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1559 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1560 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1561 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1562 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1563 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1564 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1565 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1566 cells ([31m73%[32m of all).[0m
+[A[32mAnalyzed 1567 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1568 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1569 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1570 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1571 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1572 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1573 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1574 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1575 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1576 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1577 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1578 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1579 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1580 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1581 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1582 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1583 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1584 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1585 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1586 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1587 cells ([31m74%[32m of all).[0m
+[A[32mAnalyzed 1588 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1589 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1590 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1591 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1592 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1593 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1594 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1595 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1596 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1597 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1598 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1599 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1600 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1601 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1602 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1603 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1604 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1605 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1606 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1607 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1608 cells ([31m75%[32m of all).[0m
+[A[32mAnalyzed 1609 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1610 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1611 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1612 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1613 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1614 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1615 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1616 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1617 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1618 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1619 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1620 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1621 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1622 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1623 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1624 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1625 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1626 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1627 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1628 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1629 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1630 cells ([31m76%[32m of all).[0m
+[A[32mAnalyzed 1631 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1632 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1633 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1634 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1635 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1636 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1637 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1638 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1639 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1640 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1641 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1642 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1643 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1644 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1645 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1646 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1647 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1648 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1649 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1650 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1651 cells ([31m77%[32m of all).[0m
+[A[32mAnalyzed 1652 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1653 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1654 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1655 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1656 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1657 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1658 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1659 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1660 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1661 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1662 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1663 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1664 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1665 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1666 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1667 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1668 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1669 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1670 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1671 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1672 cells ([31m78%[32m of all).[0m
+[A[32mAnalyzed 1673 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1674 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1675 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1676 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1677 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1678 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1679 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1680 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1681 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1682 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1683 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1684 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1685 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1686 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1687 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1688 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1689 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1690 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1691 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1692 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1693 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1694 cells ([31m79%[32m of all).[0m
+[A[32mAnalyzed 1695 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1696 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1697 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1698 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1699 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1700 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1701 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1702 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1703 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1704 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1705 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1706 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1707 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1708 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1709 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1710 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1711 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1712 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1713 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1714 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1715 cells ([31m80%[32m of all).[0m
+[A[32mAnalyzed 1716 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1717 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1718 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1719 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1720 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1721 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1722 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1723 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1724 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1725 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1726 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1727 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1728 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1729 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1730 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1731 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1732 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1733 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1734 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1735 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1736 cells ([31m81%[32m of all).[0m
+[A[32mAnalyzed 1737 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1738 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1739 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1740 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1741 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1742 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1743 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1744 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1745 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1746 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1747 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1748 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1749 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1750 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1751 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1752 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1753 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1754 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1755 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1756 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1757 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1758 cells ([31m82%[32m of all).[0m
+[A[32mAnalyzed 1759 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1760 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1761 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1762 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1763 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1764 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1765 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1766 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1767 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1768 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1769 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1770 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1771 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1772 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1773 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1774 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1775 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1776 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1777 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1778 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1779 cells ([31m83%[32m of all).[0m
+[A[32mAnalyzed 1780 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1781 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1782 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1783 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1784 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1785 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1786 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1787 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1788 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1789 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1790 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1791 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1792 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1793 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1794 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1795 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1796 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1797 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1798 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1799 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1800 cells ([31m84%[32m of all).[0m
+[A[32mAnalyzed 1801 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1802 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1803 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1804 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1805 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1806 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1807 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1808 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1809 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1810 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1811 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1812 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1813 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1814 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1815 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1816 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1817 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1818 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1819 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1820 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1821 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1822 cells ([31m85%[32m of all).[0m
+[A[32mAnalyzed 1823 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1824 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1825 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1826 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1827 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1828 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1829 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1830 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1831 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1832 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1833 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1834 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1835 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1836 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1837 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1838 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1839 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1840 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1841 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1842 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1843 cells ([31m86%[32m of all).[0m
+[A[32mAnalyzed 1844 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1845 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1846 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1847 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1848 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1849 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1850 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1851 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1852 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1853 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1854 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1855 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1856 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1857 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1858 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1859 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1860 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1861 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1862 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1863 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1864 cells ([31m87%[32m of all).[0m
+[A[32mAnalyzed 1865 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1866 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1867 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1868 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1869 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1870 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1871 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1872 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1873 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1874 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1875 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1876 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1877 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1878 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1879 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1880 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1881 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1882 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1883 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1884 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1885 cells ([31m88%[32m of all).[0m
+[A[32mAnalyzed 1886 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1887 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1888 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1889 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1890 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1891 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1892 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1893 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1894 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1895 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1896 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1897 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1898 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1899 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1900 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1901 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1902 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1903 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1904 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1905 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1906 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1907 cells ([31m89%[32m of all).[0m
+[A[32mAnalyzed 1908 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1909 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1910 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1911 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1912 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1913 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1914 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1916 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1917 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1918 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1919 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1920 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1921 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1922 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1923 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1924 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1925 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1926 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1927 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1928 cells ([31m90%[32m of all).[0m
+[A[32mAnalyzed 1929 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1930 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1931 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1932 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1933 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1934 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1935 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1936 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1937 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1938 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1939 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1940 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1941 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1942 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1943 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1944 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1945 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1946 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1947 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1948 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1949 cells ([31m91%[32m of all).[0m
+[A[32mAnalyzed 1950 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1951 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1952 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1953 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1954 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1955 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1956 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1957 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1958 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1959 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1960 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1961 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1962 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1963 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1964 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1965 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1966 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1967 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1968 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1969 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1970 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1971 cells ([31m92%[32m of all).[0m
+[A[32mAnalyzed 1972 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1973 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1974 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1975 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1976 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1977 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1978 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1979 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1980 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1981 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1982 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1983 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1984 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1985 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1986 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1987 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1988 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1989 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1990 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1991 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1992 cells ([31m93%[32m of all).[0m
+[A[32mAnalyzed 1993 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 1994 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 1995 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 1996 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 1997 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 1998 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 1999 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2000 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2001 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2002 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2003 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2004 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2005 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2006 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2007 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2008 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2009 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2010 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2011 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2012 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2013 cells ([31m94%[32m of all).[0m
+[A[32mAnalyzed 2014 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2015 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2016 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2017 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2018 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2019 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2020 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2021 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2022 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2023 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2024 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2025 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2026 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2027 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2028 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2029 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2030 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2031 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2032 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2033 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2034 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2035 cells ([31m95%[32m of all).[0m
+[A[32mAnalyzed 2036 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2037 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2038 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2039 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2040 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2041 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2042 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2043 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2044 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2045 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2046 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2047 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2048 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2049 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2050 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2051 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2052 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2053 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2054 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2055 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2056 cells ([31m96%[32m of all).[0m
+[A[32mAnalyzed 2057 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2058 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2059 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2060 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2061 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2062 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2063 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2064 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2065 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2066 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2067 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2068 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2069 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2070 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2071 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2072 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2073 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2074 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2075 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2076 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2077 cells ([31m97%[32m of all).[0m
+[A[32mAnalyzed 2078 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2079 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2080 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2081 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2082 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2083 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2084 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2085 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2086 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2087 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2088 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2089 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2090 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2091 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2092 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2093 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2094 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2095 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2096 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2097 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2098 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2099 cells ([31m98%[32m of all).[0m
+[A[32mAnalyzed 2100 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2101 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2102 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2103 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2104 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2105 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2106 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2107 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2108 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2109 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2110 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2111 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2112 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2113 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2114 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2115 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2116 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2117 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2118 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2119 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2120 cells ([31m99%[32m of all).[0m
+[A[32mAnalyzed 2121 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2122 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2123 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2124 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2125 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2126 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2127 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2128 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2129 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2130 cells ([31m100%[32m of all).[0m
+[A[32mAnalyzed 2131 cells ([31m100%[32m of all).[0m
+[2019-07-01 16:13:53.597] [alevinLog] [info] Total 4423177.00 UMI after deduplicating.
+[2019-07-01 16:13:53.597] [alevinLog] [info] Total 304078 BiDirected Edges.
+[2019-07-01 16:13:53.597] [alevinLog] [info] Total 70263 UniDirected Edges.
+[2019-07-01 16:13:53.597] [alevinLog] [warning] Skipped 1 barcodes due to No mapped read
+[2019-07-01 16:13:53.650] [alevinLog] [info] Clearing EqMap; Might take some time.
+[2019-07-01 16:13:54.398] [alevinLog] [info] Starting white listing of 2130 cells
+[2019-07-01 16:13:54.398] [alevinLog] [info] Starting to make feature Matrix
+[2019-07-01 16:13:54.406] [alevinLog] [info] Done making feature Matrix
+[2019-07-01 16:13:54.856] [alevinLog] [info] Finished white listing
+[2019-07-01 16:13:55.557] [alevinLog] [info] Starting dumping cell v gene counts in mtx format
+[2019-07-01 16:14:00.244] [alevinLog] [info] Finished dumping counts into mtx
+[2019-07-01 16:14:00.248] [alevinLog] [info] Finished optimizer
+0.00735232	0.00112951	0.0184009	894719	49778	0.0337074	1.68643e-05	8.32045e-05	
+0.00581155	0.00146188	0.0112879	15817.9	836.093	0.0381837	0.000124779	0.00245894	

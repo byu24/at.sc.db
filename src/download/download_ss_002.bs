@@ -1,6 +1,4 @@
 #!/bin/bash
-#SBATCH --mail-user=brendayu@lbl.gov
-#SBATCH --mail-type=ALL
 #SBATCH -A gtrnd
 #SBATCH -q genepool_shared
 #SBATCH -J download_SRA_ss_002
@@ -13,9 +11,11 @@
 module load python3
 source activate /global/projectb/scratch/bjcole/env_STARsolo
 cd /global/projectb/scratch/bjcole/at.sc.db/
-/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206655 -o scratch/ss_002 -t http
-/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/ss_002 \
+
+mkdir scratch/ss_002
+/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206655 -o scratch/ss_002/ss_002.raw -t http
+/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/ss_002/ss_002.raw \
   -o ss_002.fastq \
-  -O /global/projectb/scratch/bjcole/at.sc.db/scratch \
-  -t /global/projectb/scratch/bjcole/at.sc.db/scratch \
+  -O /global/projectb/scratch/bjcole/at.sc.db/scratch/ss_002 \
+  -t /global/projectb/scratch/bjcole/at.sc.db/scratch/ss_002 \
   -sS --include-technical

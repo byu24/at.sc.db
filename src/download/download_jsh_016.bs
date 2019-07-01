@@ -1,6 +1,4 @@
 #!/bin/bash
-#SBATCH --mail-user=brendayu@lbl.gov
-#SBATCH --mail-type=ALL
 #SBATCH -A gtrnd
 #SBATCH -q genepool_shared
 #SBATCH -J download_SRA_jsh_016
@@ -13,6 +11,8 @@
 module load python3
 source activate /global/projectb/scratch/bjcole/env_STARsolo
 cd /global/projectb/scratch/bjcole/at.sc.db/
+
+mkdir scratch/jsh_016
 wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086586/whole_root_Heatshock_possorted_genome_bam.bam \
   -q -O- | samtools view -F 256 | \
     awk '{ \
@@ -20,5 +20,5 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086586/whole_root_Heatshock_pos
     match($0, "UR:Z:([ATCGN]+)", arr2)
     match($0, "CY:Z:([[:graph:]]+)", arr3)
     match($0, "UY:Z:([[:graph:]]+)", arr4)
-    print "@"$1"\n" arr1[1] arr2[1] "\n+\n" arr3[1] arr4[1] > "scratch/jsh_016_1.fastq"
-    print "@"$1"\n"$10"\n+\n"$11 > "scratch/jsh_016_2.fastq"}'
+    print "@"$1"\n" arr1[1] arr2[1] "\n+\n" arr3[1] arr4[1] > "scratch/jsh_016/jsh_016_1.fastq"
+    print "@"$1"\n"$10"\n+\n"$11 > "scratch/jsh_016/jsh_016_2.fastq"}'

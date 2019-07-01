@@ -10,8 +10,6 @@ while [ "$i" -lt "$len" ]; do
   srr_name=${srr_names[$i]}
 
   echo "#!/bin/bash" > src/download/download_${set_name}.bs
-  echo "#SBATCH --mail-user=brendayu@lbl.gov" >> src/download/download_${set_name}.bs
-  echo "#SBATCH --mail-type=ALL" >> src/download/download_${set_name}.bs
   echo "#SBATCH -A gtrnd" >> src/download/download_${set_name}.bs
   echo "#SBATCH -q genepool_shared" >> src/download/download_${set_name}.bs
   echo "#SBATCH -J download_SRA_${set_name}" >> src/download/download_${set_name}.bs
@@ -24,13 +22,14 @@ while [ "$i" -lt "$len" ]; do
   echo "module load python3" >> src/download/download_${set_name}.bs
   echo "source activate /global/projectb/scratch/bjcole/env_STARsolo" >> src/download/download_${set_name}.bs
   echo "cd $BSCRATCH/at.sc.db/" >> src/download/download_${set_name}.bs
-
+  echo "" >> src/download/download_${set_name}.bs
+  echo "mkdir scratch/${set_name}" >> src/download/download_${set_name}.bs
   if ! [[ $set_name =~ js|zc ]]; then 
-    echo "$BSCRATCH/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 ${srr_name} -o scratch/${set_name} -t http" >> src/download/download_${set_name}.bs
-    echo "$BSCRATCH/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/${set_name} \\" >> src/download/download_${set_name}.bs
+    echo "$BSCRATCH/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 ${srr_name} -o scratch/${set_name}/${set_name}.raw -t http" >> src/download/download_${set_name}.bs
+    echo "$BSCRATCH/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/${set_name}/${set_name}.raw \\" >> src/download/download_${set_name}.bs
     echo "  -o ${set_name}.fastq \\" >> src/download/download_${set_name}.bs
-    echo "  -O $BSCRATCH/at.sc.db/scratch \\" >> src/download/download_${set_name}.bs
-    echo "  -t $BSCRATCH/at.sc.db/scratch \\" >> src/download/download_${set_name}.bs
+    echo "  -O $BSCRATCH/at.sc.db/scratch/${set_name} \\" >> src/download/download_${set_name}.bs
+    echo "  -t $BSCRATCH/at.sc.db/scratch/${set_name} \\" >> src/download/download_${set_name}.bs
     echo "  -sS --include-technical" >> src/download/download_${set_name}.bs
   fi
 
@@ -53,19 +52,19 @@ while [ "$i" -lt "$len" ]; do
     echo -e "    match(\$0, \"UR:Z:([ATCGN]+)\", arr2)" >> src/download/download_${set_name}.bs
     echo -e "    match(\$0, \"CY:Z:([[:graph:]]+)\", arr3)" >> src/download/download_${set_name}.bs
     echo -e "    match(\$0, \"UY:Z:([[:graph:]]+)\", arr4)" >> src/download/download_${set_name}.bs
-    echo -E "    print \"@\"\$1\"\\n\" arr1[1] arr2[1] \"\\n+\\n\" arr3[1] arr4[1] > \"scratch/${set_name}_1.fastq\""  >> src/download/download_${set_name}.bs
-    echo -E "    print \"@\"\$1\"\\n\"\$10\"\\n+\\n\"\$11 > \"scratch/${set_name}_2.fastq\"}'"  >> src/download/download_${set_name}.bs
+    echo -E "    print \"@\"\$1\"\\n\" arr1[1] arr2[1] \"\\n+\\n\" arr3[1] arr4[1] > \"scratch/${set_name}/${set_name}_1.fastq\""  >> src/download/download_${set_name}.bs
+    echo -E "    print \"@\"\$1\"\\n\"\$10\"\\n+\\n\"\$11 > \"scratch/${set_name}/${set_name}_2.fastq\"}'"  >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "zc" ]]; then
-    echo "wget ftp://download.big.ac.cn/gsa/CRA001559/CRR054647/CRR054647_f1.tar.gz -O scratch/${set_name}_1.tar.gz" >> src/download/download_${set_name}.bs
-    echo "tar -xzvf scratch/${set_name}_1.tar.gz -C scratch/" >> src/download/download_${set_name}.bs
-    echo "zcat scratch/Root_R1.fastq.gz > scratch/${set_name}_1.fastq" >> src/download/download_${set_name}.bs
-    echo "wget ftp://download.big.ac.cn/gsa/CRA001559/CRR054647/CRR054647_r2.fastq.gz -O scratch/${set_name}_2.fastq.gz" >> src/download/download_${set_name}.bs
-    echo "zcat scratch/${set_name}_2.fastq.gz > scratch/${set_name}_2.fastq" >> src/download/download_${set_name}.bs
+    echo "wget ftp://download.big.ac.cn/gsa/CRA001559/CRR054647/CRR054647_f1.tar.gz -O scratch/${set_name}/${set_name}_1.tar.gz" >> src/download/download_${set_name}.bs
+    echo "tar -xzvf scratch/${set_name}/${set_name}_1.tar.gz -C scratch/${set_name}/" >> src/download/download_${set_name}.bs
+    echo "zcat scratch/${set_name}/Root_R1.fastq.gz > scratch/${set_name}/${set_name}_1.fastq" >> src/download/download_${set_name}.bs
+    echo "wget ftp://download.big.ac.cn/gsa/CRA001559/CRR054647/CRR054647_r2.fastq.gz -O scratch/${set_name}/${set_name}_2.fastq.gz" >> src/download/download_${set_name}.bs
+    echo "zcat scratch/${set_name}/${set_name}_2.fastq.gz > scratch/${set_name}/${set_name}_2.fastq" >> src/download/download_${set_name}.bs
   fi
 
   i=$(($i + 1))
 done
 
-awk -F, '{if(NR > 1) print "sbatch src/download/download_"$1".bs &"}' data/sample_metadata.csv > src/launch_download.sh
+awk -F, '{if(NR > 1) print "sbatch src/download/download_"$1".bs &"}' data/sample_metadata.csv > src/download/launch_download.sh

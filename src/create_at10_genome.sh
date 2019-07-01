@@ -10,7 +10,7 @@ wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141643.1/?report=fasta 
 wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141642.1/?report=fasta -O ${genomedir}/at10_rrna2.fa
 wget https://www.ncbi.nlm.nih.gov/search/api/sequence/X52320.1/?report=fasta -O ${genomedir}/at10_rrna3.fa
 
-## Create genome files
+# Create genome files
 wget $fa_source -O ${genomedir}/arabidopsis.fa.gz
 wget $gff_source -O ${genomedir}/at10.gff3.gz
 
@@ -70,3 +70,8 @@ $BSCRATCH/bin/gffread -g ${genomedir}/at10.fa -w ${genomedir}/at10_transcripts.f
 # Use salmon to create a transcriptome index
 salmon index -t ${genomedir}/at10_transcripts.fa -i $genomedir -k 31
 grep -E '>' ${genomedir}/at10_transcripts.fa | sed -E 's/>([[:alnum:]]+)([[:graph:]]+?).*/\1\2\t\1/' > ${genomedir}/at10_tgMap.tsv
+grep -E AT[MC]G ${genomedir}/at10_tgMap.tsv | awk '{print $2}' > ${genomedir}/at10_ptGenes.tsv
+echo "AT2G01010" >> ${genomedir}/at10_riboGenes.tsv
+echo "AT2G01020" >> ${genomedir}/at10_riboGenes.tsv
+echo "AT3G41768" >> ${genomedir}/at10_riboGenes.tsv
+echo "AT3G41979" >> ${genomedir}/at10_riboGenes.tsv

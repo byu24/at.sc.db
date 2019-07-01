@@ -68,7 +68,7 @@ STAR \
   --genomeDir ${genomedir} \
   --readFilesIn ${in2} \
   --outFileNamePrefix ${file_prefix}_step03_ \
-  --runThreadN 2
+  --runThreadN 4
 
 picard SortSam \
   INPUT=${file_prefix}_step03_Aligned.out.sam \
