@@ -24,7 +24,6 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --cpus-per-task=4" >> src/alevin/alevin_${set_name}.bs
   echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/alevin_SRA_${set_name}.out" >> src/alevin/alevin_${set_name}.bs
   echo "" >> src/alevin/alevin_${set_name}.bs
-  echo "export PATH=$PATH:$BSCRATCH/bin/salmon/bin" >> src/alevin/alevin_${set_name}.bs
   echo "cd $BSCRATCH/at.sc.db/" >> src/alevin/alevin_${set_name}.bs
 
   echo "" >> src/alevin/alevin_${set_name}.bs

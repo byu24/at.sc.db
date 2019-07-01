@@ -1,0 +1,58 @@
+WARNING: A conda environment already exists at '/global/projectb/scratch/byu24/bin/env_STAR'
+Remove existing environment (y/[n])? 
+
+Exiting.
+
+dc_021
+10x_V2
+src/trim_filter.sh: line 21: [[: 10x_V2: value too great for base (error token is "10x_V2")
+src/trim_filter.sh: line 24: [[: 10x_V2: value too great for base (error token is "10x_V2")
+src/trim_filter.sh: line 27: [[10x_V2: command not found
+java -ea -Xmx26054m -Xms26054m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_1.fastq in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_2.fastq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_1.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_2.fastq k=21 edist=2 ref=/global/projectb/scratch/byu24/at.sc.db/scratch/at10/rrna_seqs.fa
+Executing jgi.BBDuk [in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_1.fastq, in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_2.fastq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_1.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_2.fastq, k=21, edist=2, ref=/global/projectb/scratch/byu24/at.sc.db/scratch/at10/rrna_seqs.fa]
+Version 38.51
+
+0.032 seconds.
+Initial:
+Memory: max=26181m, total=26181m, free=25633m, used=548m
+
+Added 38749053 kmers; time: 	9.549 seconds.
+Memory: max=26181m, total=26181m, free=23761m, used=2420m
+
+Input is being processed as paired
+Started output streams:	0.705 seconds.
+Processing time:   		1183.847 seconds.
+
+Input:                  	416657060 reads 		25832737720 bases.
+Contaminants:           	6128966 reads (1.47%) 	379995892 bases (1.47%)
+Total Removed:          	6128966 reads (1.47%) 	379995892 bases (1.47%)
+Result:                 	410528094 reads (98.53%) 	25452741828 bases (98.53%)
+
+Time:                         	1194.117 seconds.
+Reads Processed:        416m 	348.92k reads/sec
+Bases Processed:      25832m 	21.63m bases/sec
+java -ea -Xmx25641m -Xms25641m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_1.fastq in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_2.fastq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_adapter_filtered_1.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_R2.fastq ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa k=21 mink=11 minlen=-1 edist=2 ktrim=r qtrim=30
+Executing jgi.BBDuk [in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_1.fastq, in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_filtered_2.fastq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_rRNA_adapter_filtered_1.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021_R2.fastq, ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa, k=21, mink=11, minlen=-1, edist=2, ktrim=r, qtrim=30]
+Version 38.51
+
+maskMiddle was disabled because useShortKmers=true
+0.032 seconds.
+Initial:
+Memory: max=25767m, total=25767m, free=25229m, used=538m
+
+Added 20330313 kmers; time: 	7.612 seconds.
+Memory: max=25767m, total=25767m, free=24019m, used=1748m
+
+Input is being processed as paired
+Started output streams:	1.465 seconds.
+Processing time:   		845.150 seconds.
+
+Input:                  	410528094 reads 		25452741828 bases.
+QTrimmed:               	178082725 reads (43.38%) 	5515273341 bases (21.67%)
+KTrimmed:               	11548809 reads (2.81%) 	138417455 bases (0.54%)
+Total Removed:          	0 reads (0.00%) 	5653690796 bases (22.21%)
+Result:                 	410528094 reads (100.00%) 	19799051032 bases (77.79%)
+
+Time:                         	854.254 seconds.
+Reads Processed:        410m 	480.57k reads/sec
+Bases Processed:      25452m 	29.80m bases/sec

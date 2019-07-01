@@ -1,0 +1,55 @@
+WARNING: A conda environment already exists at '/global/projectb/scratch/byu24/bin/env_STAR'
+Remove existing environment (y/[n])? 
+
+Exiting.
+
+sc_005
+DropSeq
+java -ea -Xmx26589m -Xms26589m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_1.fastq in2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_2.fastq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_1.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_2.fastq k=21 edist=2 ref=/global/projectb/scratch/byu24/at.sc.db/scratch/at10/rrna_seqs.fa
+Executing jgi.BBDuk [in1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_1.fastq, in2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_2.fastq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_1.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_2.fastq, k=21, edist=2, ref=/global/projectb/scratch/byu24/at.sc.db/scratch/at10/rrna_seqs.fa]
+Version 38.51
+
+0.034 seconds.
+Initial:
+Memory: max=26720m, total=26720m, free=26161m, used=559m
+
+Added 38749053 kmers; time: 	8.938 seconds.
+Memory: max=26720m, total=26720m, free=24249m, used=2471m
+
+Input is being processed as paired
+Started output streams:	1.027 seconds.
+Processing time:   		513.400 seconds.
+
+Input:                  	91749454 reads 		13854167554 bases.
+Contaminants:           	4149874 reads (4.52%) 	626630974 bases (4.52%)
+Total Removed:          	4149874 reads (4.52%) 	626630974 bases (4.52%)
+Result:                 	87599580 reads (95.48%) 	13227536580 bases (95.48%)
+
+Time:                         	523.376 seconds.
+Reads Processed:      91749k 	175.30k reads/sec
+Bases Processed:      13854m 	26.47m bases/sec
+java -ea -Xmx39957m -Xms39957m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_1.fastq in2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_2.fastq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_adapter_filtered_1.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_R2.fastq ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa k=21 mink=11 minlen=19 edist=2 ktrim=r qtrim=30
+Executing jgi.BBDuk [in1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_1.fastq, in2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_filtered_2.fastq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_rRNA_adapter_filtered_1.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/sc_005_R2.fastq, ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa, k=21, mink=11, minlen=19, edist=2, ktrim=r, qtrim=30]
+Version 38.51
+
+maskMiddle was disabled because useShortKmers=true
+0.046 seconds.
+Initial:
+Memory: max=40153m, total=40153m, free=39313m, used=840m
+
+Added 20330313 kmers; time: 	9.266 seconds.
+Memory: max=40153m, total=40153m, free=37428m, used=2725m
+
+Input is being processed as paired
+Started output streams:	0.529 seconds.
+Processing time:   		333.394 seconds.
+
+Input:                  	87599580 reads 		13227536580 bases.
+QTrimmed:               	81909919 reads (93.50%) 	8597462335 bases (65.00%)
+KTrimmed:               	8541761 reads (9.75%) 	831648906 bases (6.29%)
+Total Removed:          	23726962 reads (27.09%) 	9429111241 bases (71.28%)
+Result:                 	63872618 reads (72.91%) 	3798425339 bases (28.72%)
+
+Time:                         	343.207 seconds.
+Reads Processed:      87599k 	255.24k reads/sec
+Bases Processed:      13227m 	38.54m bases/sec

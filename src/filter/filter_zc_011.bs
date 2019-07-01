@@ -15,4 +15,4 @@ conda create --mkdir --prefix=/global/projectb/scratch/byu24/bin/env_STAR
 source activate /global/projectb/scratch/byu24/bin/env_STAR
 cd /global/projectb/scratch/byu24/at.sc.db/
 
-sh src/trim_filter.sh zc_011 10x.V2
+sh src/trim_filter.sh zc_011 10x_V2
