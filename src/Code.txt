@@ -108,6 +108,19 @@ test -x denyer.sh && echo true || echo false #Repeat for each .sh file you want 
 sbatch fastqpull.sh #Take note of job ID
 
 
+#Extracts gff3 file for genome
 wget ftp://ftp.ensemblgenomes.org/pub/release-43/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.43.gff3.gz
 
-gffread -w at10_transcripts.fa -g at10.fa at10.gtf
+export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
+export PATH=$PATH:$BSCRATCH/bin/salmon/bin
+
+#Creates transcriptome index file from gff3/gtf file
+gffread -w at10_transcripts.fa -g at10.fa at10.gff3
+
+#Create .TSV file needed for salmon alevin
+#Find all lines from the fasta file and pipes into sed command with regular expression
+#Finds instance of transcript or gene with alphanumeric characters
+grep -E '>' at10_transcripts.fa | sed -E 's/>(transcript:|gene:)([[:alnum:]]+)([[:graph:]]+?).*/\1\2\3\t\2/' > at10_tgMap.tsv
+
+#Create salmon index into accessible directory
+salmon index -t at10_transcripts.fa -i at10_index -k 21
