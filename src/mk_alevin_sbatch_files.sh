@@ -32,4 +32,4 @@ while [ "$i" -lt "$len" ]; do
   i=$(($i + 1))
 done
 
-awk -F, '{if(NR > 1) print "sbatch src/alevin/alevin_"$1".bs &"}' data/sample_metadata.csv > src/alevin/launch_alevin.sh
+awk -F, '{if(NR > 1) print "sbatch $BSCRATCH/at.sc.db/src/alevin/alevin_"$1".bs &"}' data/sample_metadata.csv > src/alevin/launch_alevin.sh
