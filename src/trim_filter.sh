@@ -21,10 +21,10 @@ echo $technology
 if [[ $technology -eq "DropSeq" ]]; then
   cb_len=12
   umi_len=8
-elif [[ $technology -eq "10x_V2" ]]; then
+elif [[ $technology -eq "TenxV2" ]]; then
   cb_len=16
   umi_len=10
-elif [[$technology -eq "10x_V3" ]]; then
+elif [[$technology -eq "TenxV3" ]]; then
   cb_len=16
   umi_len=12
 fi
