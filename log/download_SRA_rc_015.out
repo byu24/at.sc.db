@@ -1,7 +1,13 @@
+WARNING: A conda environment already exists at '/global/projectb/scratch/byu24/env_STAR'
+Remove existing environment (y/[n])? 
 
-2019-06-12T17:31:20 prefetch.2.9.3: 1) Downloading 'SRR8257100'...
-2019-06-12T17:31:20 prefetch.2.9.3:  Downloading via https...
-2019-06-12T17:40:28 prefetch.2.9.3 sys: timeout exhausted while reading file within network system module - mbedtls_ssl_read returned -76 ( NET - Reading information from the socket failed )
-2019-06-12T17:40:28 prefetch.2.9.3 int: timeout exhausted while reading file within network system module - Cannot KStreamRead: https://sra-download.ncbi.nlm.nih.gov/sos/sra-pub-run-1/SRR8257100/SRR8257100.1
-2019-06-12T17:40:28 prefetch.2.9.3: 1) failed to download SRR8257100
-2019-06-12T17:40:28 fasterq-dump.2.9.6 err: invalid accession 'scratch/rc_015'
+Exiting.
+
+
+2019-06-16T01:09:13 prefetch.2.9.3: 1) Downloading 'SRR8257100'...
+2019-06-16T01:09:13 prefetch.2.9.3:  Downloading via https...
+2019-06-16T01:20:25 prefetch.2.9.3: 1) 'SRR8257100' was downloaded successfully
+2019-06-16T01:20:27 prefetch.2.9.3: 'SRR8257100' has 0 unresolved dependencies
+spots read      : 189,337,914
+reads read      : 568,013,742
+reads written   : 568,013,742

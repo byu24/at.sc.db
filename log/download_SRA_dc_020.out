@@ -1,8 +1,13 @@
+WARNING: A conda environment already exists at '/global/projectb/scratch/byu24/env_STAR'
+Remove existing environment (y/[n])? 
 
-2019-06-12T17:31:17 prefetch.2.9.3: 1) Downloading 'SRR8315910'...
-2019-06-12T17:31:17 prefetch.2.9.3:  Downloading via https...
-2019-06-12T17:35:37 prefetch.2.9.3: 1) 'SRR8315910' was downloaded successfully
-2019-06-12T17:35:39 prefetch.2.9.3: 'SRR8315910' has 0 unresolved dependencies
+Exiting.
+
+
+2019-06-16T01:14:25 prefetch.2.9.3: 1) Downloading 'SRR8315910'...
+2019-06-16T01:14:25 prefetch.2.9.3:  Downloading via https...
+2019-06-16T01:17:35 prefetch.2.9.3: 1) 'SRR8315910' was downloaded successfully
+2019-06-16T01:17:37 prefetch.2.9.3: 'SRR8315910' has 0 unresolved dependencies
 spots read      : 96,973,742
 reads read      : 193,947,484
 reads written   : 96,973,742

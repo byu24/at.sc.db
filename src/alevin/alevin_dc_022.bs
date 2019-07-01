@@ -10,7 +10,6 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --output=/global/projectb/scratch/byu24/at.sc.db/log/alevin_SRA_dc_022.out
 
-export PATH=/usr/common/software/darshan/3.1.4/bin:/usr/common/software/altd/2.0/bin:/usr/common/software/bin:/usr/common/mss/bin:/usr/common/nsg/bin:/opt/gcc/7.3.0/bin:/opt/cray/pe/mpt/7.7.3/gni/bin:/opt/cray/rca/2.2.18-6.0.7.1_5.48__g2aa4f39.ari/bin:/opt/cray/alps/6.6.43-6.0.7.1_5.46__ga796da32.ari/sbin:/opt/cray/job/2.2.3-6.0.7.1_5.44__g6c4e934.ari/bin:/opt/cray/pe/craype/2.5.15/bin:/opt/intel/compilers_and_libraries_2018.1.163/linux/bin/intel64:/opt/ovis/bin:/opt/ovis/sbin:/usr/syscom/nsg/sbin:/usr/syscom/nsg/bin:/opt/cray/pe/modules/3.2.10.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin:/opt/cray/pe/bin:/global/projectb/scratch/byu24/bin/gffread/gffread:/global/projectb/scratch/byu24/bin/salmon/bin:/global/projectb/scratch/byu24/bin/salmon/bin
 cd /global/projectb/scratch/byu24/at.sc.db/
 
 sh src/salmon_pipeline.sh dc_022 10x_V2
