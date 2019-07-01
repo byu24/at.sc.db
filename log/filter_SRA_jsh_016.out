@@ -1,0 +1,51 @@
+Not a conda environment: /global/projectb/scratch/bjcole/bin/env_STARsolo
+jsh_016
+10x_V2
+java -ea -Xmx26413m -Xms26413m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_2.fastq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_2.fastq k=21 edist=2 ref=/global/projectb/scratch/bjcole/at.sc.db/scratch/at10/rrna_seqs.fa
+Executing jgi.BBDukF [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_2.fastq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_2.fastq, k=21, edist=2, ref=/global/projectb/scratch/bjcole/at.sc.db/scratch/at10/rrna_seqs.fa]
+Version 38.26
+
+0.168 seconds.
+Initial:
+Memory: max=26543m, total=26543m, free=25989m, used=554m
+
+Added 38749053 kmers; time: 	8.468 seconds.
+Memory: max=26543m, total=26543m, free=24090m, used=2453m
+
+Input is being processed as paired
+Started output streams:	0.107 seconds.
+Processing time:   		516.059 seconds.
+
+Input:                  	332509016 reads 		20615558992 bases.
+Contaminants:           	7006862 reads (2.11%) 	434425444 bases (2.11%)
+Total Removed:          	7006862 reads (2.11%) 	434425444 bases (2.11%)
+Result:                 	325502154 reads (97.89%) 	20181133548 bases (97.89%)
+
+Time:                         	524.639 seconds.
+Reads Processed:        332m 	633.79k reads/sec
+Bases Processed:      20615m 	39.29m bases/sec
+java -ea -Xmx26420m -Xms26420m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_2.fastq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_R1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_R2.fastq ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa k=21 mink=11 minlen=25 edist=2 ktrim=r qtrim=30
+Executing jgi.BBDukF [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_rRNA_filtered_2.fastq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_R1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/jsh_016_R2.fastq, ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa, k=21, mink=11, minlen=25, edist=2, ktrim=r, qtrim=30]
+Version 38.26
+
+maskMiddle was disabled because useShortKmers=true
+0.032 seconds.
+Initial:
+Memory: max=26549m, total=26549m, free=25994m, used=555m
+
+Added 20133279 kmers; time: 	9.028 seconds.
+Memory: max=26549m, total=26549m, free=24747m, used=1802m
+
+Input is being processed as paired
+Started output streams:	0.086 seconds.
+Processing time:   		524.907 seconds.
+
+Input:                  	325502154 reads 		20181133548 bases.
+QTrimmed:               	152857666 reads (46.96%) 	7888925687 bases (39.09%)
+KTrimmed:               	11523152 reads (3.54%) 	552276154 bases (2.74%)
+Total Removed:          	85761296 reads (26.35%) 	8441201841 bases (41.83%)
+Result:                 	239740858 reads (73.65%) 	11739931707 bases (58.17%)
+
+Time:                         	534.025 seconds.
+Reads Processed:        325m 	609.53k reads/sec
+Bases Processed:      20181m 	37.79m bases/sec

@@ -56,7 +56,7 @@ mkdir ${parent_dir}\/${run_name}
 
 file_prefix=${parent_dir}/${run_name}/${run_name}
 
-python3 src/tag_fastq_file.py --in1=${in1} --in2=${in2} --out=${file_prefix}_step01.sam --run=${run_name}
+python3 src/map/tag_fastq_file.py --in1=${in1} --in2=${in2} --out=${file_prefix}_step01.sam --run=${run_name}
 
 picard SortSam \
   INPUT=${file_prefix}_step01.sam \

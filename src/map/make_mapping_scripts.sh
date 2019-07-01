@@ -5,13 +5,13 @@ lib_types=($(awk -F, '{if(NR>1) print $8}' data/sample_metadata.csv))
 
 len=${#lib_names[@]}
 i=0
-echo "" > src/launch_mapping_scripts.sh
+echo "" > src/map/launch_mapping_scripts.sh
 
 while [ "$i" -lt "$len" ]; do
   lib_name=${lib_names[$i]}
   lib_type=${lib_types[$i]}
 
-  echo "#!/bin/bash" > src/${lib_name}_run.bs
+  echo "#!/bin/bash" > src/map/${lib_name}_run.bs
   echo "#SBATCH -A gtrnd" >> src/map/${lib_name}_run.bs
   echo "#SBATCH -q genepool_shared" >> src/map/${lib_name}_run.bs
   echo "#SBATCH -J ${lib_name}_run" >> src/map/${lib_name}_run.bs
@@ -30,12 +30,12 @@ while [ "$i" -lt "$len" ]; do
 
   if [[ $lib_type == "DropSeq" ]]; then
     echo "" >> src/map/${lib_name}_run.bs
-    echo "sh src/map_dropseq.sh \\" >> src/map/${lib_name}_run.bs
+    echo "sh src/map/map_dropseq.sh \\" >> src/map/${lib_name}_run.bs
     echo "  --in1=scratch/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
     echo "  --in2=scratch/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
     echo "  --run_type="DropSeq" \\" >> src/map/${lib_name}_run.bs
     echo "  --run_name="${lib_name}" \\" >> src/map/${lib_name}_run.bs
-    echo "  --genome=at10 \\" >> src/map/${lib_name}_run.bs
+    echo "  --genome=at10_hg38 \\" >> src/map/${lib_name}_run.bs
     echo "  --parent_dir=scratch/" >> src/map/${lib_name}_run.bs
     echo "" >> src/map/${lib_name}_run.bs
     echo "awk '{if(NR > 1) {print \$1}}' scratch/${lib_name}/${lib_name}_synthesis_error_stats.txt > \\" >> src/map/${lib_name}_run.bs
@@ -44,28 +44,28 @@ while [ "$i" -lt "$len" ]; do
   fi
 
   if [[ $lib_type == "10x_V2" ]]; then
-    echo "zcat data/whitelist.txt > \\" >> src/map/${lib_name}_run.bs
+    echo "cat data/whitelist.txt > \\" >> src/map/${lib_name}_run.bs
     echo "  scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
   fi
 
   echo "salmon alevin -l ISR \\" >> src/map/${lib_name}_run.bs
-  echo "  -1 scratch/${lib_name}/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
-  echo "  -2 scratch/${lib_name}/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
+  echo "  -1 scratch/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
+  echo "  -2 scratch/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
   
   if [[ $lib_type == "DropSeq" ]]; then
     echo "  --dropseq  \\" >> src/map/${lib_name}_run.bs
   fi
   if [[ $lib_type == "10x_V2" ]]; then
-    echo "  --chromiumV2 \\" >> src/map/${lib_name}_run.bs
+    echo "  --chromium \\" >> src/map/${lib_name}_run.bs
   fi
 
-  echo "  -i $BSCRATCH/at.sc.db/scratch/at10 \\" >> src/map/${lib_name}_run.bs 
+  echo "  -i $BSCRATCH/at.sc.db/scratch/at10_hg38 \\" >> src/map/${lib_name}_run.bs 
   echo "  -p 2 -o scratch/${lib_name}/ \\" >> src/map/${lib_name}_run.bs
   echo "  --dumpMtx \\" >> src/map/${lib_name}_run.bs
-  echo "  --tgMap $BSCRATCH/at.sc.db/scratch/at10/at10_tgMap.tsv \\" >> src/map/${lib_name}_run.bs
+  echo "  --tgMap $BSCRATCH/at.sc.db/scratch/at10_hg38/at10_hg38_tgMap.tsv \\" >> src/map/${lib_name}_run.bs
   echo "  --whitelist scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
 
-  echo "sbatch src/${lib_name}_run.bs &" >> src/map/launch_mapping_scripts.sh
+  echo "sbatch src/map/${lib_name}_run.bs &" >> src/map/launch_mapping_scripts.sh
 
   i=$(($i + 1))
  

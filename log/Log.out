@@ -381,7 +381,7 @@ soloUMIdedup                      1MM_All
 ----------------------------------------
 
 Finished loading and checking parameters
-Jun 30 21:19:56 ... starting to generate Genome files
+Jun 30 14:27:26 ... starting to generate Genome files
 /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.fa : chr # 0  "1" chrStart: 0
 /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.fa : chr # 1  "2" chrStart: 30670848
 /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.fa : chr # 2  "3" chrStart: 50593792
@@ -389,47 +389,47 @@ Jun 30 21:19:56 ... starting to generate Genome files
 /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.fa : chr # 4  "5" chrStart: 92798976
 /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.fa : chr # 5  "Mt" chrStart: 119799808
 /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.fa : chr # 6  "Pt" chrStart: 120324096
-WARNING: --genomeSAindexNbases 14 is too large for the genome size=120586240, which may cause seg-fault at the mapping step. Re-run genome generation with recommended --genomeSAindexNbases 12 : Jun 30 21:20:01
+WARNING: --genomeSAindexNbases 14 is too large for the genome size=120586240, which may cause seg-fault at the mapping step. Re-run genome generation with recommended --genomeSAindexNbases 12 : Jun 30 14:27:31
 Estimated genome size=321586240   120586240   201000000
 GstrandBit=32
 Number of SA indices: 238963086
-Jun 30 21:20:02 ... starting to sort Suffix Array. This may take a long time...
+Jun 30 14:27:32 ... starting to sort Suffix Array. This may take a long time...
 Number of chunks: 4;   chunks size limit: 637234896 bytes
-Jun 30 21:20:02 ... sorting Suffix Array chunks and saving them to disk...
-Writing 32463224 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_3 ; empty space on disk = 1091599927869440 bytes ... done
-Writing 608535328 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_2 ; empty space on disk = 1091599373172736 bytes ... done
-Writing 633765864 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_1 ; empty space on disk = 1091599373172736 bytes ...Writing 636940272 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_0 ; empty space on disk = 1091606979543040 bytes ... done
- done
-Jun 30 21:20:47 ... loading chunks from disk, packing SA...
-Jun 30 21:20:51 ... finished generating suffix array
-Jun 30 21:20:51 ... generating Suffix Array index
-Jun 30 21:21:23 ... completed Suffix Array index
-Jun 30 21:21:23 ..... processing annotations GTF
+Jun 30 14:27:32 ... sorting Suffix Array chunks and saving them to disk...
+Writing 32463224 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_3 ; empty space on disk = 1094199580557312 bytes ... done
+Writing 608535328 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_2 ; empty space on disk = 1094200014667776 bytes ... done
+Writing 636940272 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_0 ; empty space on disk = 1094200356503552 bytes ... done
+Writing 633765864 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA_1 ; empty space on disk = 1094200921686016 bytes ... done
+Jun 30 14:28:15 ... loading chunks from disk, packing SA...
+Jun 30 14:28:18 ... finished generating suffix array
+Jun 30 14:28:18 ... generating Suffix Array index
+Jun 30 14:28:51 ... completed Suffix Array index
+Jun 30 14:28:51 ..... processing annotations GTF
 Processing pGe.sjdbGTFfile=/global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.gtf, found:
 		54013 transcripts
 		313952 exons (non-collapsed)
 		132526 collapsed junctions
-Jun 30 21:21:28 ..... finished GTF processing
-Jun 30 21:21:28   Loaded database junctions from the GTF file: /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.gtf: 132526 total junctions
+Jun 30 14:29:00 ..... finished GTF processing
+Jun 30 14:29:00   Loaded database junctions from the GTF file: /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10.gtf: 132526 total junctions
 
 WARNING: long repeat for junction # 52116 : 2 17206886 17207050; left shift = 17; right shift = 255
-Jun 30 21:21:28   Finished preparing junctions
-Jun 30 21:21:28 ..... inserting junctions into the genome indices
-Jun 30 21:21:56   Finished SA search: number of new junctions=132509, old junctions=0
-Jun 30 21:22:09   Finished sorting SA indicesL nInd=53003522
+Jun 30 14:29:00   Finished preparing junctions
+Jun 30 14:29:00 ..... inserting junctions into the genome indices
+Jun 30 14:29:28   Finished SA search: number of new junctions=132509, old junctions=0
+Jun 30 14:29:41   Finished sorting SA indicesL nInd=53003522
 Genome size with junctions=147220549  120586240   26634309
 GstrandBit1=32   GstrandBit=32
-Jun 30 21:22:13   Finished inserting junction indices
-Jun 30 21:22:30   Finished SAi
-Jun 30 21:22:30 ..... finished inserting junctions into genome
-Jun 30 21:22:30 ... writing Genome to disk ...
-Writing 147220549 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/Genome ; empty space on disk = 1091604397948928 bytes ... done
+Jun 30 14:29:45   Finished inserting junction indices
+Jun 30 14:30:02   Finished SAi
+Jun 30 14:30:02 ..... finished inserting junctions into genome
+Jun 30 14:30:02 ... writing Genome to disk ...
+Writing 147220549 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/Genome ; empty space on disk = 1094178900541440 bytes ... done
 SA size in bytes: 1204362261
-Jun 30 21:22:31 ... writing Suffix Array to disk ...
-Writing 1204362261 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA ; empty space on disk = 1091604397948928 bytes ... done
-Jun 30 21:22:31 ... writing SAindex to disk
-Writing 8 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SAindex ; empty space on disk = 1091605430796288 bytes ... done
-Writing 120 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SAindex ; empty space on disk = 1091605430796288 bytes ... done
-Writing 1565873491 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SAindex ; empty space on disk = 1091605430796288 bytes ... done
-Jun 30 21:22:32 ..... finished successfully
+Jun 30 14:30:02 ... writing Suffix Array to disk ...
+Writing 1204362261 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SA ; empty space on disk = 1094178690826240 bytes ... done
+Jun 30 14:30:03 ... writing SAindex to disk
+Writing 8 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SAindex ; empty space on disk = 1094177263714304 bytes ... done
+Writing 120 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SAindex ; empty space on disk = 1094177263714304 bytes ... done
+Writing 1565873491 bytes into /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/SAindex ; empty space on disk = 1094177263714304 bytes ... done
+Jun 30 14:30:04 ..... finished successfully
 DONE: Genome generation, EXITING
