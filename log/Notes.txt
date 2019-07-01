@@ -95,38 +95,17 @@ Submitted batch job 22445830
 Submitted batch job 22445831
 
 6/30/19 - Jobs for Alevin
-Submitted batch job 22698113
-Submitted batch job 22698114
-Submitted batch job 22698115
-Submitted batch job 22698116
-Submitted batch job 22698117
-Submitted batch job 22698118
-Submitted batch job 22698119
-Submitted batch job 22698120
-Submitted batch job 22698121
-Submitted batch job 22698122
-Submitted batch job 22698123
-Submitted batch job 22698124
-Submitted batch job 22698125
-Submitted batch job 22698126
-Submitted batch job 22698127
-Submitted batch job 22698128
-Submitted batch job 22698129
-Submitted batch job 22698130
-Submitted batch job 22698131
-Submitted batch job 22698132
-Submitted batch job 22698133
-Submitted batch job 22698134
-
-Submitted batch job 22698913
-Submitted batch job 22698914
-Submitted batch job 22698915
-Submitted batch job 22698916
-Submitted batch job 22698917
-Submitted batch job 22698918
-Submitted batch job 22698919
-Submitted batch job 22698920
-Submitted batch job 22698921
-Submitted batch job 22698922
-Submitted batch job 22698923
+Error in running 10xV2 samples...reran samples 
+Submitted batch job 22698950
+Submitted batch job 22698951
+Submitted batch job 22698952
+Submitted batch job 22698953
+Submitted batch job 22698954
+Submitted batch job 22698955
+Submitted batch job 22698956
+Submitted batch job 22698957
+Submitted batch job 22698958
+Submitted batch job 22698959
+Submitted batch job 22698960
+Submitted batch job 22698961
 

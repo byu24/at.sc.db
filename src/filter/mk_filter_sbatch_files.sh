@@ -22,7 +22,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --mem-per-cpu=4000" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH --ntasks=1" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH --cpus-per-task=4" >> src/filter/filter_${set_name}.bs
-  echo "#SBATCH --output=filter_SRA_${set_name}.out" >> src/filter/filter_${set_name}.bs
+  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/filter_SRA_${set_name}.out" >> src/filter/filter_${set_name}.bs
   echo "" >> src/filter/filter_${set_name}.bs
   echo "module load python3" >> src/filter/filter_${set_name}.bs
   echo "source activate $BSCRATCH/bin/env_STAR" >> src/filter/filter_${set_name}.bs
