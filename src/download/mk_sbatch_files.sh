@@ -19,10 +19,9 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --mem-per-cpu=4000" >> src/download/download_${set_name}.bs
   echo "#SBATCH --ntasks=1" >> src/download/download_${set_name}.bs
   echo "#SBATCH --cpus-per-task=4" >> src/download/download_${set_name}.bs
-  echo "#SBATCH --output=download_SRA_${set_name}.out" >> src/download/download_${set_name}.bs
+  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/download_SRA_${set_name}.out" >> src/download/download_${set_name}.bs
   echo "" >> src/download/download_${set_name}.bs
   echo "module load python3" >> src/download/download_${set_name}.bs
-  echo "conda create --mkdir --prefix=$BSCRATCH/bin/env_STAR" >> src/download/download_${set_name}.bs
   echo "source activate $BSCRATCH/bin/env_STAR" >> src/download/download_${set_name}.bs
 
   echo "cd $BSCRATCH/at.sc.db/" >> src/download/download_${set_name}.bs
@@ -73,4 +72,4 @@ while [ "$i" -lt "$len" ]; do
   i=$(($i + 1))
 done
 
-awk -F, '{if(NR > 1) print "sbatch src/download/download_"$1".bs &"}' data/sample_metadata.csv > src/launch_download.sh
+awk -F, '{if(NR > 1) print "sbatch $BSCRATCH/at.sc.db/src/download/download_"$1".bs &"}' data/sample_metadata.csv > $BSCRATCH/at.sc.db/src/download/launch_download.sh
