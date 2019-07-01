@@ -9,15 +9,15 @@ sc_007,SRX5025985,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Cont
 sc_008,SRX5025986,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,DropSeq,SRR8206661
 sc_009,SRX5025987,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,DropSeq,SRR8206662
 sc_010,SRX5025988,Col-0,Shulse,https://doi.org/10.1016/j.celrep.2019.04.054,Control,DropSeq,DropSeq,SRR8206663
-zc_011,SRR8485805,Col-0,Zhang,https://doi.org/10.1016/j.molp.2019.04.004,Control,10XGenomics,10x_V2,SRR8485805
-rc_012,SRX5074332,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10x_V2,SRR8257103
-rc_013,SRX5074331,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10x_V2,SRR8257102
-rc_014,SRX5074330,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10x_V2,SRR8257101
-rc_015,SRX5074330,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10x_V2,SRR8257100
-jsh_016,SRX4913500,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose + Heatshock,10XGenomics,10x_V2,SRR8086586
-js_017,SRX4913499,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose,10XGenomics,10x_V2,SRR8086585
-js_018,SRX4913498,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose,10XGenomics,10x_V2,SRR8086584
-dc_019,SRX5128616,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10x_V2,SRR8315911
-dc_020,SRX5128616,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10x_V2,SRR8315910
-dc_021,SRX5128615,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10x_V2,SRR8315909
-dc_022,SRX5128615,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10x_V2,SRR8315908
+zc_011,SRR8485805,Col-0,Zhang,https://doi.org/10.1016/j.molp.2019.04.004,Control,10XGenomics,10xV2,SRR8485805
+rc_012,SRX5074332,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10xV2,SRR8257103
+rc_013,SRX5074331,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10xV2,SRR8257102
+rc_014,SRX5074330,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10xV2,SRR8257101
+rc_015,SRX5074330,Col-0,Ryu,https://doi.org/10.1104/pp.18.01482,Control,10XGenomics,10xV2,SRR8257100
+jsh_016,SRX4913500,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose + Heatshock,10XGenomics,10xV2,SRR8086586
+js_017,SRX4913499,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose,10XGenomics,10xV2,SRR8086585
+js_018,SRX4913498,Col-0,JB,https://doi.org/10.1105/tpc.18.00785,Sucrose,10XGenomics,10xV2,SRR8086584
+dc_019,SRX5128616,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10xV2,SRR8315911
+dc_020,SRX5128616,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10xV2,SRR8315910
+dc_021,SRX5128615,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10xV2,SRR8315909
+dc_022,SRX5128615,Col-0,Denyer,https://doi.org/10.1016/j.devcel.2019.02.022,Control,10XGenomics,10xV2,SRR8315908
