@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH -A gtrnd
+#SBATCH -q genepool_shared
+#SBATCH -J download_SRA_sc_004
+#SBATCH -t 12:00:00
+#SBATCH --mem-per-cpu=4000
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --output=download_SRA_sc_004.out
+
+module load python3
+source activate /global/projectb/scratch/bjcole/env_STARsolo
+cd /global/projectb/scratch/bjcole/at.sc.db/
+
+mkdir scratch/sc_004
+/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/prefetch.2.9.3 SRR8206657 -o scratch/sc_004/sc_004.raw -t http
+/global/projectb/scratch/bjcole/bin/sratoolkit.2.9.6-1-ubuntu64/bin/fasterq-dump scratch/sc_004/sc_004.raw \
+  -o sc_004.fastq \
+  -O /global/projectb/scratch/bjcole/at.sc.db/scratch/sc_004 \
+  -t /global/projectb/scratch/bjcole/at.sc.db/scratch/sc_004 \
+  -sS --include-technical

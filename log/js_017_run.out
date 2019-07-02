@@ -1,0 +1,35 @@
+mkdir: cannot create directory 'scratch/js_017': File exists
+Version Info: This is the most recent version of salmon.
+Logs will be written to scratch/js_017/logs
+[2019-07-01 15:39:54.503] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-07-01 15:39:54.503] [jointLog] [info] Usage of --validateMappings implies use of minScoreFraction. Since not explicitly specified, it is being set to 0.65
+[2019-07-01 15:39:54.503] [jointLog] [info] Usage of --validateMappings, without --hardFilter implies use of range factorization. rangeFactorizationBins is being set to 4
+[2019-07-01 15:39:54.503] [jointLog] [info] Usage of --validateMappings implies a default consensus slack of 0.2. Setting consensusSlack to 0.2.
+[2019-07-01 15:39:54.503] [jointLog] [info] Using default value of 0.87 for minScoreFraction in Alevin
+Using default value of 0.6 for consensusSlack in Alevin
+[2019-07-01 15:39:54.503] [alevinLog] [info] Loading Header
+[2019-07-01 15:39:54.504] [alevinLog] [info] Loading Transcript Info 
+### alevin (dscRNA-seq quantification) v0.14.1
+### [ program ] => salmon 
+### [ command ] => alevin 
+### [ libType ] => { ISR }
+### [ mates1 ] => { scratch/js_017/js_017_R1.fastq }
+### [ mates2 ] => { scratch/js_017/js_017_R2.fastq }
+### [ chromium ] => { }
+### [ index ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10 }
+### [ threads ] => { 2 }
+### [ output ] => { scratch/js_017/ }
+### [ dumpMtx ] => { }
+### [ tgMap ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10_tgMap.tsv }
+### [ mrna ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10_ptGenes.tsv }
+### [ rrna ] => { /global/projectb/scratch/bjcole/at.sc.db/scratch/at10/at10_riboGenes.tsv }
+
+
+[2019-07-01 15:39:54.688] [alevinLog] [info] Found all transcripts to gene mappings
+Exception : [Error reading from the FASTA/Q stream. Make sure the file is valid.]
+salmon alevin was invoked improperly.
+For usage information, try salmon alevin --help
+Exiting.
+[2019-07-01 15:39:54.700] [alevinLog] [info] Processing barcodes files (if Present) 
+
+ 

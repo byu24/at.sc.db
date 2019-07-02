@@ -1,0 +1,28 @@
+Not a conda environment: /global/projectb/scratch/bjcole/bin/env_STARsolo
+js_018
+10x_V2
+java -ea -Xmx6676m -Xms6676m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_2.fastq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_R1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_R2.fastq ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa k=21 mink=11 minlen=26 edist=2 ktrim=r qtrim=10
+Executing jgi.BBDukF [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_2.fastq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_R1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/js_018/js_018_R2.fastq, ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa, k=21, mink=11, minlen=26, edist=2, ktrim=r, qtrim=10]
+Version 38.26
+
+maskMiddle was disabled because useShortKmers=true
+0.032 seconds.
+Initial:
+Memory: max=6708m, total=6708m, free=6567m, used=141m
+
+Added 20133279 kmers; time: 	9.395 seconds.
+Memory: max=6708m, total=6708m, free=5355m, used=1353m
+
+Input is being processed as paired
+Started output streams:	0.120 seconds.
+Processing time:   		707.219 seconds.
+
+Input:                  	158965998 reads 		12180596700 bases.
+QTrimmed:               	411104 reads (0.26%) 	14355575 bases (0.12%)
+KTrimmed:               	6616450 reads (4.16%) 	414750364 bases (3.41%)
+Total Removed:          	4410752 reads (2.77%) 	429105939 bases (3.52%)
+Result:                 	154555246 reads (97.23%) 	11751490761 bases (96.48%)
+
+Time:                         	716.741 seconds.
+Reads Processed:        158m 	221.79k reads/sec
+Bases Processed:      12180m 	16.99m bases/sec
