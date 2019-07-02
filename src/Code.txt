@@ -1,0 +1,126 @@
+#cd into the directory keeping all the data
+cd $BSCRATCH
+
+#Create database directory
+#Structure
+mkdir at.sc.db
+cd at.sc.db
+mkdir data #final data generated, charts, etc.
+mkdir log #log files from each step of the data processing
+mkdir reports #any reports that are generated
+mkdir scratch	#all in-progress work should be stored here and worked on here
+mkdir src	#all working code should be stored here
+
+#Create bin directory in home page for all software
+cd $BSCRATCH
+mkdir bin
+
+#Install necessary software in bin directory
+#
+#
+#SRATools
+wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz.
+tar -zxvf sratoolkit.2.9.2-ubuntu64.tar.gz
+#Add SRA Tools binaries into path to utilize executables
+export PATH=$PATH:/global/projectb/scratch/byu24/bin/sratoolkit.2.9.6-1-ubuntu64/bin
+#
+#
+#
+#HKlibs, Bcftools, Samtools
+git clone git://github.com/samtools/htslib.git
+git clone git://github.com/samtools/bcftools.git
+git clone git://github.com/samtools/samtools.git  
+#cd into each directory
+autoheader
+autoconf
+./configure prefix=/where/to/install #install it where you want it
+make
+make install
+#
+#
+#
+#STAR
+#Create a conda environment for executables 
+module load python3
+conda create --mkdir --prefix=$BSCRATCH/env_STAR
+source activate $BSCRATCH/env_STAR
+conda install -c bioconda star
+#
+# 
+# 
+#JAVA 
+#Install the latest version of Java (older than 1.8.x) to run Picard 
+#Go to https://www.oracle.com/technetwork/java/javase/downloads/index.html
+#Download the latest JDK file (not JRE) as a tar.gz file for Linux x64
+tar -xzvg jdk-12.0.1_linux-x64_bin.tar.gz
+#Set Java path to the folder
+export JAVA_HOME=$BSCRATCH/bin/jdk-12.0.1
+export PATH=$JAVA_HOME/bin:$PATH
+java -version
+#
+# 
+#PICARD
+#Install Picard .jar files (do not install source files as they have bugs from gradle) 
+#Necessary to utilize Drop-Seq Tools  
+mkdir picard
+cd picard
+wget https://github.com/broadinstitute/picard/releases/download/2.20.2/picard.jar
+wget https://github.com/broadinstitute/picard/releases/download/2.20.2/picardcloud.jar
+#test picard
+java -jar picard.jar
+#Create an environmental variable
+PICARD='$BSCRATCH/bin/picard/picard.jar'
+alias picard="java -jar $PICARD"
+#
+#
+#
+#DROP-SEQ-Tools
+#Install Drop-seq tools by downloading .tar.gz file
+wget https://github.com/broadinstitute/Drop-seq/archive/v2.3.0.tar.gz
+#NOTE: DROP-SEQ-Tools comes with an older version of Picard. Download latest version as above and use that one.
+#
+#
+#
+#SALMON (download binaries)
+wget https://github.com/COMBINE-lab/salmon/releases/download/v0.14.0/salmon-0.14.0_linux_x86_64.tar.gz
+export PATH=$PATH:$BSCRATCH/bin/salmon/bin
+#
+#
+#
+#Gffread
+mkdir gffread
+cd gffread
+git clone https://github.com/gpertea/gclib
+git clone https://github.com/gpertea/gffread
+cd gffread
+make release
+export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
+#
+#Extract fastq files with fasterq-dump.
+
+#Create batch script to pull multiple SRRs. Convert each batch script into executables
+chmod +x denyer.sh #Only do once for batch script. Repeat for each batch script
+
+#test to make sure the .sh files are executables
+test -x denyer.sh && echo true || echo false #Repeat for each .sh file you want to set 
+
+#Edit sbatch.sh file to include the correct file after "srun"
+sbatch fastqpull.sh #Take note of job ID
+
+
+#Extracts gff3 file for genome
+wget ftp://ftp.ensemblgenomes.org/pub/release-43/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.43.gff3.gz
+
+export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
+export PATH=$PATH:$BSCRATCH/bin/salmon/bin
+
+#Creates transcriptome index file from gff3/gtf file
+gffread -w at10_transcripts.fa -g at10.fa at10.gff3
+
+#Create .TSV file needed for salmon alevin
+#Find all lines from the fasta file and pipes into sed command with regular expression
+#Finds instance of transcript or gene with alphanumeric characters
+grep -E '>' at10_transcripts.fa | sed -E 's/>(transcript:|gene:)([[:alnum:]]+)([[:graph:]]+?).*/\1\2\3\t\2/' > at10_tgMap.tsv
+
+#Create salmon index into accessible directory
+salmon index -t at10_transcripts.fa -i at10_index -k 21
