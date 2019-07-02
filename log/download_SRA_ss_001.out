@@ -1,7 +1,0 @@
-
-2019-06-12T17:31:17 prefetch.2.9.3: 1) Downloading 'SRR8206654'...
-2019-06-12T17:31:17 prefetch.2.9.3:  Downloading via https...
-2019-06-12T17:35:33 prefetch.2.9.3: 1) 'SRR8206654' was downloaded successfully
-spots read      : 70,758,378
-reads read      : 141,516,756
-reads written   : 141,516,756
