@@ -109,3 +109,26 @@ Submitted batch job 22698959
 Submitted batch job 22698960
 Submitted batch job 22698961
 
+7/2/19 - Redownload fastq files
+Submitted batch job 22748886
+Submitted batch job 22748887
+Submitted batch job 22748888
+Submitted batch job 22748889
+Submitted batch job 22748890
+Submitted batch job 22748891
+Submitted batch job 22748892
+Submitted batch job 22748893
+Submitted batch job 22748894
+Submitted batch job 22748895
+Submitted batch job 22748896
+Submitted batch job 22748897
+Submitted batch job 22748898
+Submitted batch job 22748899
+Submitted batch job 22748900
+Submitted batch job 22748901
+Submitted batch job 22748902
+Submitted batch job 22748903
+Submitted batch job 22748904
+Submitted batch job 22748905
+Submitted batch job 22748906
+Submitted batch job 22748908
