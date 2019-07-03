@@ -17,7 +17,7 @@ elif [[$technology == "10x_V3" ]]; then
   umi_len=12
 fi
 
-file_prefix=$BSCRATCH/at.sc.db/scratch/${prefix}/${prefix}
+file_prefix=$BSCRATCH/at.sc.db/scratch/${prefix}
 
 #${bbmap_path}/bbduk.sh \
 #  in1=${file_prefix}_1.fastq \

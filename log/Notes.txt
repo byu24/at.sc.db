@@ -113,3 +113,6 @@ Submitted batch job 22698961
 Submitted batch job 22749026
 Submitted batch job 22749027
 Submitted batch job 22749028
+
+Refilter all fastq files 
+
