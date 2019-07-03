@@ -28,9 +28,9 @@ while [ "$i" -lt "$len" ]; do
   echo "cd \$BSCRATCH/at.sc.db/" >> src/filter/filter_${set_name}.bs
 
   echo "" >> src/filter/filter_${set_name}.bs
-  echo "sh src/trim_filter.sh ${set_name} ${run_name}" >> src/filter/filter_${set_name}.bs
+  echo "sh $BSCRATCH/at.sc.db/src/trim_filter.sh ${set_name} ${run_name}" >> src/filter/filter_${set_name}.bs
 
   i=$(($i + 1))
 done
 
-awk -F, '{if(NR > 1) print "sbatch src/filter/filter_"$1".bs &"}' data/sample_metadata.csv > src/launch_filter.sh
+awk -F, '{if(NR > 1) print "sbatch $BSCRATCH/at.sc.db/src/filter/filter_"$1".bs &"}' data/sample_metadata.csv > src/launch_filter.sh
