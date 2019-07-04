@@ -10,6 +10,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 PICARD='$BSCRATCH/bin/picard/picard.jar'
 alias picard="java -jar $PICARD"
 export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
+export PATH=$PATH:$BSCRATCH/bin/salmon/bin
 
 mkdir $genomedir
 wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141643.1/?report=fasta -O ${genomedir}/at10_rrna1.fa
