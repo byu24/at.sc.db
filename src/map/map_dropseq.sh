@@ -8,7 +8,7 @@ run_name=""
 parent_dir=""
 genome=""
 bbtools_dir="$BSCRATCH/bin/bbmap"
-dropseq_dir="$BSCRATCH/Drop-seq_tools-2.3.0"
+dropseq_dir="$BSCRATCH/bin/Drop-seq_tools-2.3.0"
 # Fetch parameters
 
 for i in "$@"
