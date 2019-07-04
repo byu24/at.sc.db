@@ -1,5 +1,5 @@
 module load python3
-source activate /global/projectb/scratch/bjcole/env_STARsolo
+source activate $BSCRATCH/bin/env_STAR
 
 genomedir=$BSCRATCH/at.sc.db/scratch/at10
 fa_source=ftp://ftp.ensemblgenomes.org/pub/release-43/plants/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
@@ -33,22 +33,22 @@ picard CreateSequenceDictionary \
   OUTPUT=${genomedir}/at10.dict \
   SPECIES=Arabidopsis
 
-$BSCRATCH/Drop-seq_tools-2.3.0/FilterGtf \
+$BSCRATCH/bin/Drop-seq_tools-2.3.0/FilterGtf \
   GTF=${genomedir}/arabidopsis.gtf \
   SEQUENCE_DICTIONARY=${genomedir}/at10.dict \
   OUTPUT=${genomedir}/at10.gtf
 
-$BSCRATCH/Drop-seq_tools-2.3.0/ConvertToRefFlat \
+$BSCRATCH/bin/Drop-seq_tools-2.3.0/ConvertToRefFlat \
   ANNOTATIONS_FILE=${genomedir}/at10.gtf \
   SEQUENCE_DICTIONARY=${genomedir}/at10.dict \
   OUTPUT=${genomedir}/at10.refFlat
 
-$BSCRATCH/Drop-seq_tools-2.3.0/ReduceGtf \
+$BSCRATCH/bin/Drop-seq_tools-2.3.0/ReduceGtf \
   GTF=${genomedir}/at10.gtf \
   SEQUENCE_DICTIONARY=${genomedir}/at10.dict \
   OUTPUT=${genomedir}/at10.reduced.gtf
 
-$BSCRATCH/Drop-seq_tools-2.3.0/CreateIntervalsFiles \
+$BSCRATCH/bin/Drop-seq_tools-2.3.0/CreateIntervalsFiles \
   SEQUENCE_DICTIONARY=${genomedir}/at10.dict \
   REDUCED_GTF=${genomedir}/at10.reduced.gtf \
   PREFIX=at10 \
