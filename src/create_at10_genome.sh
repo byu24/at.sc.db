@@ -5,6 +5,12 @@ genomedir=$BSCRATCH/at.sc.db/scratch/at10
 fa_source=ftp://ftp.ensemblgenomes.org/pub/release-43/plants/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
 gff_source=ftp://ftp.ensemblgenomes.org/pub/release-43/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.43.gff3.gz
 
+export JAVA_HOME=$BSCRATCH/bin/jdk-12.0.1
+export PATH=$JAVA_HOME/bin:$PATH
+PICARD='$BSCRATCH/bin/picard/picard.jar'
+alias picard="java -jar $PICARD"
+export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
+
 mkdir $genomedir
 wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141643.1/?report=fasta -O ${genomedir}/at10_rrna1.fa
 wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141642.1/?report=fasta -O ${genomedir}/at10_rrna2.fa
@@ -23,11 +29,6 @@ $BSCRATCH/bin/gffread -g ${genomedir}/arabidopsis.fa -T -o ${genomedir}/arabidop
 
 sed -E 's/transcript_id \"transcript:([[:alnum:]]+)([[:graph:]]+).*/transcript_id "\1\2 transcript_name "\1\2 gene_id "\1"; gene_name "\1";/' \
   ${genomedir}/arabidopsis_raw.gtf > ${genomedir}/arabidopsis.gtf
-
-export JAVA_HOME=$BSCRATCH/bin/jdk-12.0.1
-export PATH=$JAVA_HOME/bin:$PATH
-PICARD='$BSCRATCH/bin/picard/picard.jar'
-alias picard="java -jar $PICARD"
 
 picard NormalizeFasta \
   INPUT=${genomedir}/arabidopsis.fa \
