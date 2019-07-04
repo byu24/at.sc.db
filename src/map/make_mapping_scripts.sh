@@ -49,8 +49,8 @@ while [ "$i" -lt "$len" ]; do
 #  fi
 
   echo "salmon alevin -l ISR \\" >> src/map/${lib_name}_run.bs
-  echo "  -1 scratch/${lib_name}/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
-  echo "  -2 scratch/${lib_name}/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
+  echo "  -1 scratch/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
+  echo "  -2 scratch/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
   
   if [[ $lib_type == "DropSeq" ]]; then
     echo "  --dropseq  \\" >> src/map/${lib_name}_run.bs
