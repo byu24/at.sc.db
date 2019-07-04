@@ -22,7 +22,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --output=${lib_name}_run.out" >> src/map/${lib_name}_run.bs
   echo "" >> src/map/${lib_name}_run.bs
   echo "module load python3" >> src/map/${lib_name}_run.bs
-  echo "source activate $BSCRATCH/env_STARsolo" >> src/map/${lib_name}_run.bs
+  echo "source activate $BSCRATCH/bin/env_STAR" >> src/map/${lib_name}_run.bs
 
   echo "cd $BSCRATCH/at.sc.db/" >> src/map/${lib_name}_run.bs
   echo "mkdir scratch/${lib_name}" >> src/map/${lib_name}_run.bs
@@ -55,7 +55,7 @@ while [ "$i" -lt "$len" ]; do
   if [[ $lib_type == "DropSeq" ]]; then
     echo "  --dropseq  \\" >> src/map/${lib_name}_run.bs
   fi
-  if [[ $lib_type == "10x_V2" ]]; then
+  if [[ $lib_type == "TenxV2" ]]; then
     echo "  --chromium \\" >> src/map/${lib_name}_run.bs
   fi
 
@@ -67,7 +67,7 @@ while [ "$i" -lt "$len" ]; do
   echo "  --rrna $BSCRATCH/at.sc.db/scratch/at10/at10_riboGenes.tsv " >> src/map/${lib_name}_run.bs
 #  echo "  --whitelist scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
 
-  echo "sbatch src/map/${lib_name}_run.bs &" >> src/map/launch_mapping_scripts.sh
+  echo "sbatch $BSCRATCH/at.sc.db/src/map/${lib_name}_run.bs &" >> $BSCRATCH/at.sc.db/src/map/launch_mapping_scripts.sh
 
   i=$(($i + 1))
  
