@@ -24,6 +24,11 @@ $BSCRATCH/bin/gffread -g ${genomedir}/arabidopsis.fa -T -o ${genomedir}/arabidop
 sed -E 's/transcript_id \"transcript:([[:alnum:]]+)([[:graph:]]+).*/transcript_id "\1\2 transcript_name "\1\2 gene_id "\1"; gene_name "\1";/' \
   ${genomedir}/arabidopsis_raw.gtf > ${genomedir}/arabidopsis.gtf
 
+export JAVA_HOME=$BSCRATCH/bin/jdk-12.0.1
+export PATH=$JAVA_HOME/bin:$PATH
+PICARD='$BSCRATCH/bin/picard/picard.jar'
+alias picard="java -jar $PICARD"
+
 picard NormalizeFasta \
   INPUT=${genomedir}/arabidopsis.fa \
   OUTPUT=${genomedir}/at10.fa

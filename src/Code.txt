@@ -76,7 +76,7 @@ alias picard="java -jar $PICARD"
 #
 #DROP-SEQ-Tools
 #Install Drop-seq tools by downloading .tar.gz file
-wget https://github.com/broadinstitute/Drop-seq/archive/v2.3.0.tar.gz
+wget https://github.com/broadinstitute/Drop-seq/releases/download/v2.3.0/Drop-seq_tools-2.3.0.zip
 #NOTE: DROP-SEQ-Tools comes with an older version of Picard. Download latest version as above and use that one.
 #
 #
