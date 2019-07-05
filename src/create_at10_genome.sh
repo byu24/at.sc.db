@@ -1,13 +1,3 @@
-#!/bin/bash
-#SBATCH -A gtrnd
-#SBATCH -q genepool_shared
-#SBATCH -J create_at10_genome
-#SBATCH -t 12:00:00
-#SBATCH --mem-per-cpu=4000
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --output=$BSCRATCH/at.sc.db/log/create_at10_genome.out
-
 module load python3
 source activate $BSCRATCH/bin/env_STAR
 
