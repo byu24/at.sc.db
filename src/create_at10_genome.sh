@@ -1,13 +1,3 @@
-#!/bin/bash
-#SBATCH -A gtrnd
-#SBATCH -q genepool_shared
-#SBATCH -J create_at10
-#SBATCH -t 12:00:00
-#SBATCH --mem-per-cpu=4000
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --output=$BSCRATCH/at.sc.db/log/create_at10.out
-
 module load python3
 source activate $BSCRATCH/bin/env_STAR
 
@@ -23,22 +13,22 @@ export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
 export PATH=$PATH:$BSCRATCH/bin/salmon/bin
 
 mkdir $genomedir
-#wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141643.1/?report=fasta -O ${genomedir}/at10_rrna1.fa
-#wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141642.1/?report=fasta -O ${genomedir}/at10_rrna2.fa
-#wget https://www.ncbi.nlm.nih.gov/search/api/sequence/X52320.1/?report=fasta -O ${genomedir}/at10_rrna3.fa
+wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141643.1/?report=fasta -O ${genomedir}/at10_rrna1.fa
+wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141642.1/?report=fasta -O ${genomedir}/at10_rrna2.fa
+wget https://www.ncbi.nlm.nih.gov/search/api/sequence/X52320.1/?report=fasta -O ${genomedir}/at10_rrna3.fa
 
-# Create genome files
-#wget $fa_source -O ${genomedir}/arabidopsis.fa.gz
-#wget $gff_source -O ${genomedir}/at10.gff3.gz
+Create genome files
+wget $fa_source -O ${genomedir}/arabidopsis.fa.gz
+wget $gff_source -O ${genomedir}/at10.gff3.gz
 
-#cat ${genomedir}/at10_rrna*.fa > ${genomedir}/rrna_seqs.fa
+cat ${genomedir}/at10_rrna*.fa > ${genomedir}/rrna_seqs.fa
 
-#gunzip ${genomedir}/arabidopsis.fa.gz
-#gunzip ${genomedir}/at10.gff3.gz
+gunzip ${genomedir}/arabidopsis.fa.gz
+gunzip ${genomedir}/at10.gff3.gz
 
-#$BSCRATCH/bin/gffread -g ${genomedir}/arabidopsis.fa -T -o ${genomedir}/arabidopsis_raw.gtf ${genomedir}/at10.gff3
+$BSCRATCH/bin/gffread -g ${genomedir}/arabidopsis.fa -T -o ${genomedir}/arabidopsis_raw.gtf ${genomedir}/at10.gff3
 
-#sed -E 's/transcript_id \"transcript:([[:alnum:]]+)([[:graph:]]+).*/transcript_id "\1\2 transcript_name "\1\2 gene_id "\1"; gene_name "\1";/' \
+sed -E 's/transcript_id \"transcript:([[:alnum:]]+)([[:graph:]]+).*/transcript_id "\1\2 transcript_name "\1\2 gene_id "\1"; gene_name "\1";/' \
   ${genomedir}/arabidopsis_raw.gtf > ${genomedir}/arabidopsis.gtf
 
 picard NormalizeFasta \
