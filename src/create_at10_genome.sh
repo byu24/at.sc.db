@@ -26,7 +26,7 @@ cat ${genomedir}/at10_rrna*.fa > ${genomedir}/rrna_seqs.fa
 gunzip ${genomedir}/arabidopsis.fa.gz
 gunzip ${genomedir}/at10.gff3.gz
 
-$BSCRATCH/bin/gffread -g ${genomedir}/arabidopsis.fa -T -o ${genomedir}/arabidopsis_raw.gtf ${genomedir}/at10.gff3
+gffread -g ${genomedir}/arabidopsis.fa -T -o ${genomedir}/arabidopsis_raw.gtf ${genomedir}/at10.gff3
 
 sed -E 's/transcript_id \"transcript:([[:alnum:]]+)([[:graph:]]+).*/transcript_id "\1\2 transcript_name "\1\2 gene_id "\1"; gene_name "\1";/' \
   ${genomedir}/arabidopsis_raw.gtf > ${genomedir}/arabidopsis.gtf
@@ -72,7 +72,7 @@ STAR \
   -Xmx15G
 
 # Create transcript files
-$BSCRATCH/bin/gffread -g ${genomedir}/at10.fa -w ${genomedir}/at10_transcripts.fa ${genomedir}/at10.gtf
+gffread -g ${genomedir}/at10.fa -w ${genomedir}/at10_transcripts.fa ${genomedir}/at10.gtf
 
 # Use salmon to create a transcriptome index
 salmon index -t ${genomedir}/at10_transcripts.fa -i $genomedir -k 31
