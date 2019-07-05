@@ -17,7 +17,7 @@ wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141643.1/?report=fasta 
 wget https://www.ncbi.nlm.nih.gov/search/api/sequence/NR_141642.1/?report=fasta -O ${genomedir}/at10_rrna2.fa
 wget https://www.ncbi.nlm.nih.gov/search/api/sequence/X52320.1/?report=fasta -O ${genomedir}/at10_rrna3.fa
 
-Create genome files
+#Create genome files
 wget $fa_source -O ${genomedir}/arabidopsis.fa.gz
 wget $gff_source -O ${genomedir}/at10.gff3.gz
 
