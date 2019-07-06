@@ -19,7 +19,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --mem-per-cpu=8000" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --ntasks=1" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --cpus-per-task=4" >> src/map/${lib_name}_run.bs
-  echo "#SBATCH --output=${lib_name}_run.out" >> src/map/${lib_name}_run.bs
+  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/${lib_name}_run.out" >> src/map/${lib_name}_run.bs
   echo "" >> src/map/${lib_name}_run.bs
   echo "module load python3" >> src/map/${lib_name}_run.bs
   echo "source activate $BSCRATCH/bin/env_STAR" >> src/map/${lib_name}_run.bs
@@ -48,6 +48,7 @@ while [ "$i" -lt "$len" ]; do
 #    echo "  scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
 #  fi
 
+  echo "export PATH=$PATH:$BSCRATCH/bin/salmon/bin" >> src/map/${lib_name}_run.bs
   echo "salmon alevin -l ISR \\" >> src/map/${lib_name}_run.bs
   echo "  -1 scratch/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
   echo "  -2 scratch/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
