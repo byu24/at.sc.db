@@ -24,8 +24,8 @@ while [ "$i" -lt "$len" ]; do
   echo "module load python3" >> src/map/${lib_name}_run.bs
   echo "source activate $BSCRATCH/bin/env_STAR" >> src/map/${lib_name}_run.bs
 
-  echo "cd $BSCRATCH/at.sc.db/" >> src/map/${lib_name}_run.bs
-  echo "mkdir scratch/${lib_name}" >> src/map/${lib_name}_run.bs
+  echo "cd $BSCRATCH/at.sc.db" >> src/map/${lib_name}_run.bs
+  echo "mkdir $BSCRATCH/at.sc.db/scratch/${lib_name}" >> src/map/${lib_name}_run.bs
   echo "" >> src/map/${lib_name}_run.bs
 
 #  if [[ $lib_type == "DropSeq" ]]; then
