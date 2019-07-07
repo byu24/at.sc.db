@@ -175,7 +175,3 @@ Submitted batch job 22833454
 Submitted batch job 22833455
 
 
-
-
-sbatch /global/projectb/scratch/byu24/at.sc.db/src/map/dc_019_run.bs &
-
