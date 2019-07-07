@@ -56,7 +56,12 @@ mkdir ${parent_dir}\/${run_name}
 
 file_prefix=${parent_dir}/${run_name}/${run_name}
 
-python3 src/map/tag_fastq_file.py --in1=${in1} --in2=${in2} --out=${file_prefix}_step01.sam --run=${run_name}
+python3 $BSCRATCH/at.sc.db/src/map/tag_fastq_file.py --in1=${in1} --in2=${in2} --out=${file_prefix}_step01.sam --run=${run_name}
+
+export JAVA_HOME=$BSCRATCH/bin/jdk-12.0.1
+export PATH=$JAVA_HOME/bin:$PATH
+PICARD='$BSCRATCH/bin/picard/picard.jar'
+alias picard="java -jar $PICARD"
 
 picard SortSam \
   INPUT=${file_prefix}_step01.sam \
