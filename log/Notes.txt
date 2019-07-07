@@ -151,8 +151,31 @@ Submitted batch job 22767686
 Create new genome - Submitted batch job 22796999
 
 7/6/19
-Submitted batch job 22833066
+Submitted batch job 22833112
+Submitted batch job 22833435
+Submitted batch job 22833436
+Submitted batch job 22833437
+Submitted batch job 22833438
+Submitted batch job 22833439
+Submitted batch job 22833440
+Submitted batch job 22833441
+Submitted batch job 22833442
+Submitted batch job 22833443
+Submitted batch job 22833444
+Submitted batch job 22833445
+Submitted batch job 22833446
+Submitted batch job 22833447
+Submitted batch job 22833448
+Submitted batch job 22833449
+Submitted batch job 22833450
+Submitted batch job 22833451
+Submitted batch job 22833452
+Submitted batch job 22833453
+Submitted batch job 22833454
+Submitted batch job 22833455
 
 
 
+
+sbatch /global/projectb/scratch/byu24/at.sc.db/src/map/dc_019_run.bs &
 
