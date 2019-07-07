@@ -46,7 +46,7 @@ case $i in
 esac
 done
 
-genomedir=$BSCRATCH/at.sc.db/scratch
+genomedir=$BSCRATCH/at.sc.db/scratch/at10
 genomefa=${genomedir}/${genome}.fa
 
 echo "Setting up directory ${parent_dir}/${run_name}"

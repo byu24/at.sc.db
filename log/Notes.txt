@@ -199,7 +199,9 @@ ss_002	37.0666	37.3968
 ss_003	55.3061	32.2635
 zc_011	56.6602	34.5665
 
-
+7/7/19 - Run whitelists
+Submitted batch job 22843830 - dc019
+Submitted batch job 22843831 - sc004
 
 
 
