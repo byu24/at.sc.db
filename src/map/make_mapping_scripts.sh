@@ -44,8 +44,8 @@ while [ "$i" -lt "$len" ]; do
   fi
 
   if [[ $lib_type == "TenxV2" ]]; then
-    echo "cat data/whitelist.txt > \\" >> src/map/${lib_name}_run.bs
-    echo "  scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
+    echo "cat $BSCRATCH/at.sc.db/data/whitelist.txt > \\" >> src/map/${lib_name}_run.bs
+    echo "  $BSCRATCH/at.sc.db/scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
   fi
 
   echo "export PATH=$PATH:$BSCRATCH/bin/salmon/bin" >> src/map/${lib_name}_run.bs
@@ -65,7 +65,7 @@ while [ "$i" -lt "$len" ]; do
   echo "  --dumpMtx \\" >> src/map/${lib_name}_run.bs
   echo "  --tgMap $BSCRATCH/at.sc.db/scratch/at10/at10_tgMap.tsv \\" >> src/map/${lib_name}_run.bs
   echo "  --mrna $BSCRATCH/at.sc.db/scratch/at10/at10_ptGenes.tsv \\" >> src/map/${lib_name}_run.bs
-  echo "  --rrna $BSCRATCH/at.sc.db/scratch/at10/at10_riboGenes.tsv " >> src/map/${lib_name}_run.bs
+  echo "  --rrna $BSCRATCH/at.sc.db/scratch/at10/at10_riboGenes.tsv \\" >> src/map/${lib_name}_run.bs
   echo "  --whitelist scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
 
   echo "sbatch $BSCRATCH/at.sc.db/src/map/${lib_name}_run.bs &" >> $BSCRATCH/at.sc.db/src/map/launch_mapping_scripts.sh
