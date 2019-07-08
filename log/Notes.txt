@@ -201,7 +201,7 @@ zc_011	56.6602	34.5665
 
 7/7/19 - Run whitelists
 Submitted batch job 22846066 - dc019
-Submitted batch job 22843866 - sc004
+Submitted batch job 22846644 - sc004
 
 
 
