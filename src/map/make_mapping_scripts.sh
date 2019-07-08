@@ -46,10 +46,10 @@ while [ "$i" -lt "$len" ]; do
   if [[ $lib_type == "TenxV2" ]]; then
     echo "cat $BSCRATCH/at.sc.db/data/whitelist.txt > \\" >> src/map/${lib_name}_run.bs
     echo "  $BSCRATCH/at.sc.db/scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
+	echo "module load python3" >> src/map/${lib_name}_run.bs	
+	echo "source activate $BSCRATCH/bin/env_STAR" >> src/map/${lib_name}_run.bs
   fi
 
-  echo "module load python3" >> src/map/${lib_name}_run.bs
-  echo "source activate $BSCRATCH/bin/env_STAR" >> src/map/${lib_name}_run.bs
   echo "export PATH=$PATH:$BSCRATCH/bin/salmon/bin" >> src/map/${lib_name}_run.bs
   echo "salmon alevin -l ISR \\" >> src/map/${lib_name}_run.bs
   echo "  -1 scratch/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
