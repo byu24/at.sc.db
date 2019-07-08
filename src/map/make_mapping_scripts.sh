@@ -27,7 +27,6 @@ while [ "$i" -lt "$len" ]; do
   echo "" >> src/map/${lib_name}_run.bs
 
   if [[ $lib_type == "DropSeq" ]]; then
-    echo "" >> src/map/${lib_name}_run.bs
     echo "module load python3" >> src/map/${lib_name}_run.bs
 	echo "source activate /global/projectb/scratch/bjcole/env_STARsolo/bin/python3" >> src/map/${lib_name}_run.bs
 	echo "sh src/map/map_dropseq.sh \\" >> src/map/${lib_name}_run.bs
