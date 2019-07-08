@@ -21,16 +21,16 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --cpus-per-task=4" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/${lib_name}_run.out" >> src/map/${lib_name}_run.bs
   echo "" >> src/map/${lib_name}_run.bs
-  echo "module load python3" >> src/map/${lib_name}_run.bs
-  echo "source activate $BSCRATCH/bin/env_STAR" >> src/map/${lib_name}_run.bs
-
+ 
   echo "cd $BSCRATCH/at.sc.db" >> src/map/${lib_name}_run.bs
   echo "mkdir $BSCRATCH/at.sc.db/scratch/${lib_name}" >> src/map/${lib_name}_run.bs
   echo "" >> src/map/${lib_name}_run.bs
 
   if [[ $lib_type == "DropSeq" ]]; then
     echo "" >> src/map/${lib_name}_run.bs
-    echo "sh src/map/map_dropseq.sh \\" >> src/map/${lib_name}_run.bs
+    echo "module load python3" >> src/map/${lib_name}_run.bs
+	echo "source activate /global/projectb/scratch/bjcole/env_STARsolo/bin/python3" >> src/map/${lib_name}_run.bs
+	echo "sh src/map/map_dropseq.sh \\" >> src/map/${lib_name}_run.bs
     echo "  --in1=scratch/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
     echo "  --in2=scratch/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
     echo "  --run_type="DropSeq" \\" >> src/map/${lib_name}_run.bs
@@ -48,6 +48,8 @@ while [ "$i" -lt "$len" ]; do
     echo "  $BSCRATCH/at.sc.db/scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
   fi
 
+  echo "module load python3" >> src/map/${lib_name}_run.bs
+  echo "source activate $BSCRATCH/bin/env_STAR" >> src/map/${lib_name}_run.bs
   echo "export PATH=$PATH:$BSCRATCH/bin/salmon/bin" >> src/map/${lib_name}_run.bs
   echo "salmon alevin -l ISR \\" >> src/map/${lib_name}_run.bs
   echo "  -1 scratch/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
