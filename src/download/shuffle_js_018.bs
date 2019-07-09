@@ -8,12 +8,6 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --output=$BSCRATCH/at.sc.db/log/shuffle_js_018.out
 
-module use /global/common/software/m342/nersc-builds/denovo/Modules/jgi
-module use /global/common/software/m342/nersc-builds/denovo/Modules/usg
-module unload java
-module load java/1.8.0_144
-module load pigz
-
 cd $BSCRATCH/at.sc.db/scratch
 
 sh $BSCRATCH/bin/bbmap/shuffle2.sh in1=js_018_R1.fastq in2=js_018_R2.fastq out1=js_018_tmp1.fastq out2=js_018_tmp2.fastq
