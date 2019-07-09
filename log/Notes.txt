@@ -203,28 +203,70 @@ zc_011	56.6602	34.5665
 Submitted batch job 22846066 - dc019
 Submitted batch job 22846731 - sc004
 
-Submitted batch job 22848662
-Submitted batch job 22848663
+Submitted batch job 22848662 - sc007
+Submitted batch job 22848663 - sc008
 Submitted batch job 22848664
 Submitted batch job 22848665
-Submitted batch job 22848666
+Submitted batch job 22848666 - js017
 Submitted batch job 22848667
-Submitted batch job 22848668
-Submitted batch job 22848669
-Submitted batch job 22848670
-Submitted batch job 22848671
-Submitted batch job 22848672
-Submitted batch job 22848673
-Submitted batch job 22848674
-Submitted batch job 22848675
+Submitted batch job 22848668 - zc011
+Submitted batch job 22848669 - ss001
+Submitted batch job 22848670 - sc005
+Submitted batch job 22848671 - sc010
+Submitted batch job 22848672 - sc009
+Submitted batch job 22848673 
+Submitted batch job 22848674 - dc021
+Submitted batch job 22848675 - rc014
 Submitted batch job 22848676
-Submitted batch job 22848677
-Submitted batch job 22848678
-Submitted batch job 22848679
-Submitted batch job 22848680
-Submitted batch job 22848681
+Submitted batch job 22848677 - ss002
+Submitted batch job 22848678 - sc006
+Submitted batch job 22848679 - rc013
+Submitted batch job 22848680 - ss003
+Submitted batch job 22848681 - rc015
 
+Whitelists
+sample	%thrown	%mapped	UMI			Barcodes
+dc_019	4.84318	81.9175	93384472	32m182404442/32m182404442
+dc_020	4.29233	65.8282	28084017	32m47172687/31m48486871
+dc_021	4.75626	81.7045	119998078	32m202775871/31m208328530
+dc_022	4.16434	66.9008	32265531	32m51252648/31m52684504
+js_017	3.9743	21.0696	17748634	32m174793521/31m180130042
+js_018	7.42971	2.5892	1946905 	32m77071792/31m79482999
+jsh_016	3.8251	19.0118	17246684	32m161376757/31m166254508
+rc_012	2.33505	83.2586	63349165	32m105603979/31m109683199
+rc_013	2.43271	82.5597	59229610	32m101551159/31m105491683
+rc_014	3.25582	84.2251	130293722	32m181811796/32m181811796
+rc_015	2.29697	84.52	131602089	32m182805308/31m189337914
+sc_004	
+sc_005	
+sc_006	
+sc_007	33.1905	29.9502	1749445		32m20388041/31m20397904
+sc_008	16.0646	36.5299	2316720		32m14860166/31m14861863
+sc_009	15.9882	32.0644	6257721		32m38989338/31m39009376
+sc_010	16.0941	31.4989	5593002		32m44011899/31m44035017
+ss_001	
+ss_002	
+ss_003	
+zc_011	3.59378	78.301	83464001	32m308884920/31m317339569
 
+7/8
+Submitted batch job 22858398 - sc005
+Submitted batch job 22858399 - ss003
+Submitted batch job 22858400
+Submitted batch job 22858403 - ss002
+Submitted batch job 22858404
+Submitted batch job 22858405 - zc011
+Submitted batch job 22858406
+Submitted batch job 22858408 - ss001
+Submitted batch job 22858409 - dc021
+Submitted batch job 22858411 - sc004
+Submitted batch job 22858412 - sc009
+Submitted batch job 22858413 
+Submitted batch job 22858414
+Submitted batch job 22858415
+Submitted batch job 22858416 - sc010
+Submitted batch job 22858417 - sc006
+Submitted batch job 22858418
 
 
 
