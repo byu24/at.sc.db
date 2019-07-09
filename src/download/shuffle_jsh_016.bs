@@ -8,7 +8,9 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --output=$BSCRATCH/at.sc.db/log/shuffle_jsh_016.out
 
-$BSCRATCH/bin/bbmap/shuffle2.sh in1=$BSCRATCH/at.sc.db/scratch/jsh_016_R1.fastq in2=$BSCRATCH/at.sc.db/scratch/jsh_016_R2.fastq out1=$BSCRATCH/at.sc.db/scratch/jsh_016_tmp1.fastq out2=$BSCRATCH/at.sc.db/scratch/jsh_016_tmp2.fastq
+cd $BSCRATCH/at.sc.db/scratch
 
-head -n 4000000 $BSCRATCH/at.sc.db/scratch/jsh_016_tmp1.fastq > $BSCRATCH/at.sc.db/scratch/tmp/jsh_016_tmpR1.fastq
-head -n 4000000 $BSCRATCH/at.sc.db/scratch/jsh_016_tmp2.fastq > $BSCRATCH/at.sc.db/scratch/tmp/jsh_016_tmpR2.fastq
+sh $BSCRATCH/bin/bbmap/shuffle2.sh in1=jsh_016_R1.fastq in2=jsh_016_R2.fastq out1=jsh_016_tmp1.fastq out2=jsh_016_tmp2.fastq
+
+head -n 4000000 jsh_016_tmp1.fastq > jsh_016_tmpR1.fastq
+head -n 4000000 jsh_016_tmp2.fastq > jsh_016_tmpR2.fastq
