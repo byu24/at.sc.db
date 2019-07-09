@@ -6,7 +6,7 @@
 #SBATCH --mem-per-cpu=4000
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --output=shuffle_js_017.out
+#SBATCH --output=$BSCRATCH/at.sc.db/log/shuffle_js_017.out
 
 $BSCRATCH/bin/bbmap/shuffle2.sh in1=$BSCRATCH/at.sc.db/scratch/js_017_R1.fastq in2=$BSCRATCH/at.sc.db/scratch/js_017_R2.fastq out1=$BSCRATCH/at.sc.db/scratch/js_017_tmp1.fastq out2=$BSCRATCH/at.sc.db/scratch/js_017_tmp2.fastq
 
