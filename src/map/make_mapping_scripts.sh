@@ -15,7 +15,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH -A gtrnd" >> src/map/${lib_name}_run.bs
   echo "#SBATCH -q genepool_shared" >> src/map/${lib_name}_run.bs
   echo "#SBATCH -J ${lib_name}_run" >> src/map/${lib_name}_run.bs
-  echo "#SBATCH -t 6:00:00" >> src/map/${lib_name}_run.bs
+  echo "#SBATCH -t 12:00:00" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --mem-per-cpu=8000" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --ntasks=1" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --cpus-per-task=4" >> src/map/${lib_name}_run.bs
