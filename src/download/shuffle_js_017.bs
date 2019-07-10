@@ -10,7 +10,7 @@
 
 cd $BSCRATCH/at.sc.db/scratch
 
-sh $BSCRATCH/bin/bbmap/shuffle2.sh in1=js_017_R1.fastq in2=js_017_R2.fastq out1=js_017_tmp1.fastq out2=js_017_tmp2.fastq &
+sh $BSCRATCH/bin/bbmap/shuffle2.sh in1=js_017_R1.fastq in2=js_017_R2.fastq out1=js_017_tmp1.fastq out2=js_017_tmp2.fastq
 
 head -n 4000000 js_017_tmp1.fastq > js_017_tmpR1.fastq
 head -n 4000000 js_017_tmp2.fastq > js_017_tmpR2.fastq
