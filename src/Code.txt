@@ -124,3 +124,8 @@ grep -E '>' at10_transcripts.fa | sed -E 's/>(transcript:|gene:)([[:alnum:]]+)([
 
 #Create salmon index into accessible directory
 salmon index -t at10_transcripts.fa -i at10_index -k 21
+
+
+$BSCRATCH/bin/bbmap/reformat.sh in1=js_018_R1.fastq in2=js_018_R2.fastq out=stdout.fq addslash=t | \
+  $BSCRATCH/bin/bbmap/shuffle2.sh in=stdin.fq out=stdout.fq -Xmx4G -da int=t | \
+  $BSCRATCH/bin/bbmap/reformat.sh in=stdin.fq out1=tmp_shuffled_1.fq out2=tmp_shuffled_2.fq int=t
