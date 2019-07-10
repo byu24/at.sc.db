@@ -1,0 +1,34 @@
+java -ea -Xmx182870m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ sort.Shuffle2 in1=jsh_016_R1.fastq in2=jsh_016_R2.fastq out1=jsh_016_tmp1.fastq out2=jsh_016_tmp2.fastq
+Executing sort.Shuffle2 [in1=jsh_016_R1.fastq, in2=jsh_016_R2.fastq, out1=jsh_016_tmp1.fastq, out2=jsh_016_tmp2.fastq]
+
+Input is being processed as paired
+Created a WriteThread for ./sort_temp_5388828564534274584.fq.gz
+Created a WriteThread for ./sort_temp_2856623404736851454.fq.gz
+Created a WriteThread for ./sort_temp_2481656460363243354.fq.gz
+Created a WriteThread for ./sort_temp_1185530541858805281.fq.gz
+Finished reading input.
+Created a WriteThread for ./sort_temp_5384204277751583679.fq.gz
+Merging 3 files.
+Reduced buffer sizes prior to merging due to low memory.
+Merging [./sort_temp_5388828564534274584.fq.gz, ./sort_temp_1185530541858805281.fq.gz, ./sort_temp_5384204277751583679.fq.gz]
+Exception in thread "Thread-15" java.lang.AssertionError:
+NS500272:352:H5MHNBGX3:2:12203:21737:19429      2009    -1      +       -1    -                                                1       1000000000000000000     1       0       0       GAGCTCCGTTCACGGCGGTTCTG                                                AAATTCGCAGCAGAAGAGTTCAAGGTTCCTCCACAAACCAGCGCCATCATCACTAATGATGGGATCGGGATCAAT   A                                                AAAAEEEEEEEEEEEEEEEEEEAE/EEEEEEEEEEEAEEEEEEEEEEEEEEEEEEE<<A/EEEEEEE<EE/EEEAEEEE                                                A/EAEE/AAA<<<EE/66      .       .       .       .
+
+null
+        at stream.ReadStreamByteWriter.writeFastq(ReadStreamByteWriter.java:460                                                )
+        at stream.ReadStreamByteWriter.processJobs(ReadStreamByteWriter.java:97                                                )
+        at stream.ReadStreamByteWriter.run2(ReadStreamByteWriter.java:42)
+        at stream.ReadStreamByteWriter.run(ReadStreamByteWriter.java:28)
+Finished reading input.
+Created a WriteThread for ./sort_temp_2114770118899822691.fq.gz
+Merging 3 files.
+Reduced buffer sizes prior to merging due to low memory.
+Merging [./sort_temp_2856623404736851454.fq.gz, ./sort_temp_2481656460363243354.fq.gz, ./sort_temp_2114770118899822691.fq.gz]
+Exception in thread "Thread-15" java.lang.AssertionError:
+NS500272:352:H5MHNBGX3:3:13511:11405:12544      6622    -1      +       -1      -1      1000000000000000000     1       0     0GGGACCTGTCTAACGTGCGGTAGTCC      A6A6AEEE/EEEE/AAAEEEE6AEEA      .       .       .       .
+
+null
+        at stream.ReadStreamByteWriter.writeFastq(ReadStreamByteWriter.java:460)
+        at stream.ReadStreamByteWriter.processJobs(ReadStreamByteWriter.java:97)
+        at stream.ReadStreamByteWriter.run2(ReadStreamByteWriter.java:42)
+        at stream.ReadStreamByteWriter.run(ReadStreamByteWriter.java:28)

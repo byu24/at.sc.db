@@ -66,11 +66,11 @@ mkdir picard
 cd picard
 wget https://github.com/broadinstitute/picard/releases/download/2.20.2/picard.jar
 wget https://github.com/broadinstitute/picard/releases/download/2.20.2/picardcloud.jar
-#test picard
-java -jar picard.jar
 #Create an environmental variable
 PICARD='$BSCRATCH/bin/picard/picard.jar'
 alias picard="java -jar $PICARD"
+#test picard
+java -jar picard.jar
 #
 #
 #
