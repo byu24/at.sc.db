@@ -19,17 +19,13 @@ fi
 
 file_prefix=$BSCRATCH/at.sc.db/scratch/${prefix}/${prefix}
 
-#${bbmap_path}/bbduk.sh \
-#  in1=${file_prefix}_1.fastq \
-#  in2=${file_prefix}_2.fastq \
-#  out1=${file_prefix}_rRNA_filtered_1.fastq \
-#  out2=${file_prefix}_rRNA_filtered_2.fastq \
-#  k=21 edist=2 ref=$BSCRATCH/at.sc.db/scratch/at10/rrna_seqs.fa
+${bbmap_path}/reformat.sh in1=${file_prefix}_1.fastq in2=${file_prefix}_2.fastq out=stdout.fq addslash=t | \
+  ${bbmap_path}/shuffle2.sh in=stdin.fq out=stdout.fq -Xmx4G -da int=t | \
+  ${bbmap_path}/bbduk.sh in=stdin.fq out=stdout.fq ref=${bbmap_path}/resources/adapters.fa k=23 mink=11 hdist=1 ktrim=r qtrim=10 -Xmx1g t=16 int=t | \
+  ${bbmap_path}/bbduk.sh in=stdin.fq out=stdout.fq k=23 mink=11 literal=AAGCAGTGGTATCAACGCAGAGTGAATGGG hdist=1 ktrim=l -Xmx1g t=16 int=t | \
+  ${bbmap_path}/reformat.sh in=stdin.fq out1=${file_prefix}_tmp_1.fastq out2=${file_prefix}_R2.fastq int=t minlen=$((cb_len + umi_len))
 
-${bbmap_path}/bbduk.sh \
-  in1=${file_prefix}_1.fastq \
-  in2=${file_prefix}_2.fastq \
-  out1=${file_prefix}_R1.fastq \
-  out2=${file_prefix}_R2.fastq \
-  ref=${bbmap_path}/resources/adapters.fa \
-  k=21 mink=11 minlen=$((cb_len + umi_len)) edist=2 ktrim=r qtrim=10
+${bbmap_path}/bbduk.sh in=${file_prefix}_tmp_1.fastq \
+  out=${file_prefix}_R1.fastq \
+  ftr=$((cb_len+umi_len-1)) \
+  -Xmx4g t=1

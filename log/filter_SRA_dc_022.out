@@ -1,54 +1,242 @@
 Not a conda environment: /global/projectb/scratch/bjcole/bin/env_STARsolo
 dc_022
 10x_V2
-src/trim_filter.sh: line 9: [[: 10x_V2: value too great for base (error token is "10x_V2")
-src/trim_filter.sh: line 12: [[: 10x_V2: value too great for base (error token is "10x_V2")
-src/trim_filter.sh: line 15: [[10x_V2: command not found
-java -ea -Xmx22308m -Xms22308m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_2.fastq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_2.fastq k=21 edist=2 ref=/global/projectb/scratch/bjcole/at.sc.db/scratch/at10/rrna_seqs.fa
-Executing jgi.BBDukF [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_2.fastq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_2.fastq, k=21, edist=2, ref=/global/projectb/scratch/bjcole/at.sc.db/scratch/at10/rrna_seqs.fa]
+java -da -Xmx4G -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ sort.Shuffle2 in=stdin.fq out=stdout.fq -Xmx4G -da int=t
+Executing sort.Shuffle2 [in=stdin.fq, out=stdout.fq, -Xmx4G, -da, int=t]
+
+Set INTERLEAVED to true
+Input is being processed as paired
+java -ea -Xmx200m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.ReformatReads in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_2.fastq out=stdout.fq addslash=t
+java -ea -Xmx200m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.ReformatReads in=stdin.fq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_tmp_1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_R2.fq int=t minlen=26
+java -ea -Xmx1g -Xms1g -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in=stdin.fq out=stdout.fq k=23 mink=11 literal=AAGCAGTGGTATCAACGCAGAGTGAATGGG hdist=1 ktrim=l -Xmx1g t=16 int=t
+java -ea -Xmx1g -Xms1g -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in=stdin.fq out=stdout.fq ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa k=23 mink=11 hdist=1 ktrim=r qtrim=10 -Xmx1g t=16 int=t
+Executing jgi.ReformatReads [in=stdin.fq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_tmp_1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_R2.fq, int=t, minlen=26]
+
+Executing jgi.ReformatReads [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_2.fastq, out=stdout.fq, addslash=t]
+
+Executing jgi.BBDukF [in=stdin.fq, out=stdout.fq, k=23, mink=11, literal=AAGCAGTGGTATCAACGCAGAGTGAATGGG, hdist=1, ktrim=l, -Xmx1g, t=16, int=t]
 Version 38.26
 
-0.220 seconds.
-Initial:
-Memory: max=22416m, total=22416m, free=21949m, used=467m
+Executing jgi.BBDukF [in=stdin.fq, out=stdout.fq, ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa, k=23, mink=11, hdist=1, ktrim=r, qtrim=10, -Xmx1g, t=16, int=t]
+Version 38.26
 
-Added 38749053 kmers; time: 	8.743 seconds.
-Memory: max=22416m, total=22416m, free=20346m, used=2070m
+Set INTERLEAVED to true
+Set threads to 16
+Set INTERLEAVED to true
+Set threads to 16
+Set INTERLEAVED to true
+maskMiddle was disabled because useShortKmers=true
+maskMiddle was disabled because useShortKmers=true
+Set INTERLEAVED to false
+Input is being processed as paired
+0.029 seconds.
+Initial:
+Memory: max=1029m, total=1029m, free=989m, used=40m
 
 Input is being processed as paired
-Started output streams:	0.060 seconds.
-Processing time:   		240.331 seconds.
+Writing interleaved.
+0.032 seconds.
+Initial:
+Memory: max=1029m, total=1029m, free=989m, used=40m
+
+Added 1772 kmers; time: 	0.040 seconds.
+Memory: max=1029m, total=1029m, free=952m, used=77m
+
+Input is being processed as paired
+Started output streams:	0.046 seconds.
+Added 216529 kmers; time: 	0.130 seconds.
+Memory: max=1029m, total=1029m, free=930m, used=99m
+
+Input is being processed as paired
+Started output streams:	0.016 seconds.
+Created a WriteThread for ./sort_temp_5783163071186445787.fq.gz
+Wed Jul 10 12:40:19 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:40:19 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4509763358397887970.fq.gz
+Wed Jul 10 12:40:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:40:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8966177073369650407.fq.gz
+Wed Jul 10 12:40:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:40:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_444395112027746576.fq.gz
+Wed Jul 10 12:40:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:40:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8258716258818847080.fq.gz
+Wed Jul 10 12:40:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:40:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2542746820528906835.fq.gz
+Wed Jul 10 12:40:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:40:54 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8107137329737459259.fq.gz
+Wed Jul 10 12:40:59 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:40:59 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7466874352825159335.fq.gz
+Wed Jul 10 12:41:08 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:08 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5000430809804821483.fq.gz
+Wed Jul 10 12:41:16 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:16 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3388734187576717664.fq.gz
+Wed Jul 10 12:41:23 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:23 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7778261048664934297.fq.gz
+Wed Jul 10 12:41:32 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:32 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1109899365099694212.fq.gz
+Wed Jul 10 12:41:38 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:38 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4761808383859872121.fq.gz
+Wed Jul 10 12:41:45 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:45 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7006467141167089736.fq.gz
+Wed Jul 10 12:41:52 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:52 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8437316670598465526.fq.gz
+Wed Jul 10 12:41:59 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:41:59 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4737368692199730570.fq.gz
+Wed Jul 10 12:42:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_671904974901063953.fq.gz
+Wed Jul 10 12:42:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3616441764263757167.fq.gz
+Wed Jul 10 12:42:19 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:19 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_9119294127285484273.fq.gz
+Wed Jul 10 12:42:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7353251971516513368.fq.gz
+Wed Jul 10 12:42:34 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:34 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_292802836810605822.fq.gz
+Wed Jul 10 12:42:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1043197861454329098.fq.gz
+Wed Jul 10 12:42:46 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:46 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1164517089086999574.fq.gz
+Wed Jul 10 12:42:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4918598329482609228.fq.gz
+Wed Jul 10 12:42:59 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:42:59 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6457162825415329927.fq.gz
+Wed Jul 10 12:43:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1516708936840201500.fq.gz
+Wed Jul 10 12:43:12 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:12 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_810407531719832666.fq.gz
+Wed Jul 10 12:43:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7130897916450824981.fq.gz
+Wed Jul 10 12:43:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1998491528188878967.fq.gz
+Wed Jul 10 12:43:34 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:34 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1379623317122498677.fq.gz
+Wed Jul 10 12:43:44 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:44 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7903263347460270378.fq.gz
+Wed Jul 10 12:43:50 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:50 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2284831345765931965.fq.gz
+Wed Jul 10 12:43:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:43:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1276082882064661877.fq.gz
+Wed Jul 10 12:44:06 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:06 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6830801567908159434.fq.gz
+Wed Jul 10 12:44:14 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:14 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8792962157393030548.fq.gz
+Wed Jul 10 12:44:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4091966270207391722.fq.gz
+Wed Jul 10 12:44:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3724673751177632382.fq.gz
+Wed Jul 10 12:44:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5238573262257128119.fq.gz
+Wed Jul 10 12:44:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1426158785773301659.fq.gz
+Wed Jul 10 12:44:49 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:49 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1708408972896618531.fq.gz
+Wed Jul 10 12:44:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:44:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4386741518663442083.fq.gz
+Wed Jul 10 12:45:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:45:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1507684061831587653.fq.gz
+Wed Jul 10 12:45:11 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:45:11 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Input:                  	105369008 reads          	6532878496 bases
+Output:                 	105369008 reads (100.00%) 	6532878496 bases (100.00%)
+
+Time:                         	299.600 seconds.
+Reads Processed:        105m 	351.70k reads/sec
+Bases Processed:       6532m 	21.81m bases/sec
+Finished reading input.
+Created a WriteThread for ./sort_temp_2094532898526576478.fq.gz
+Wed Jul 10 12:45:11 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Wed Jul 10 12:45:11 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging 43 files.
+Reduced buffer sizes prior to merging due to low memory.
+Merging [./sort_temp_5783163071186445787.fq.gz, ./sort_temp_4509763358397887970.fq.gz, ./sort_temp_8966177073369650407.fq.gz, ./sort_temp_444395112027746576.fq.gz, ./sort_temp_8258716258818847080.fq.gz, ./sort_temp_2542746820528906835.fq.gz, ./sort_temp_8107137329737459259.fq.gz, ./sort_temp_7466874352825159335.fq.gz, ./sort_temp_5000430809804821483.fq.gz, ./sort_temp_3388734187576717664.fq.gz, ./sort_temp_7778261048664934297.fq.gz, ./sort_temp_1109899365099694212.fq.gz, ./sort_temp_4761808383859872121.fq.gz, ./sort_temp_7006467141167089736.fq.gz, ./sort_temp_8437316670598465526.fq.gz, ./sort_temp_4737368692199730570.fq.gz, ./sort_temp_671904974901063953.fq.gz, ./sort_temp_3616441764263757167.fq.gz, ./sort_temp_9119294127285484273.fq.gz, ./sort_temp_7353251971516513368.fq.gz, ./sort_temp_292802836810605822.fq.gz, ./sort_temp_1043197861454329098.fq.gz, ./sort_temp_1164517089086999574.fq.gz, ./sort_temp_4918598329482609228.fq.gz, ./sort_temp_6457162825415329927.fq.gz, ./sort_temp_1516708936840201500.fq.gz, ./sort_temp_810407531719832666.fq.gz, ./sort_temp_7130897916450824981.fq.gz, ./sort_temp_1998491528188878967.fq.gz, ./sort_temp_1379623317122498677.fq.gz, ./sort_temp_7903263347460270378.fq.gz, ./sort_temp_2284831345765931965.fq.gz, ./sort_temp_1276082882064661877.fq.gz, ./sort_temp_6830801567908159434.fq.gz, ./sort_temp_8792962157393030548.fq.gz, ./sort_temp_4091966270207391722.fq.gz, ./sort_temp_3724673751177632382.fq.gz, ./sort_temp_5238573262257128119.fq.gz, ./sort_temp_1426158785773301659.fq.gz, ./sort_temp_1708408972896618531.fq.gz, ./sort_temp_4386741518663442083.fq.gz, ./sort_temp_1507684061831587653.fq.gz, ./sort_temp_2094532898526576478.fq.gz]
+Time:                         	478.192 seconds.
+Reads Processed:        105m 	220.35k reads/sec
+Bases Processed:       6532m 	13.66m bases/sec
+Processing time:   		477.894 seconds.
 
 Input:                  	105369008 reads 		6532878496 bases.
-Contaminants:           	1499976 reads (1.42%) 	92998512 bases (1.42%)
-Total Removed:          	1499976 reads (1.42%) 	92998512 bases (1.42%)
-Result:                 	103869032 reads (98.58%) 	6439879984 bases (98.58%)
+QTrimmed:               	22726 reads (0.02%) 	599871 bases (0.01%)
+KTrimmed:               	79148 reads (0.08%) 	2162428 bases (0.03%)
+Total Removed:          	17250 reads (0.02%) 	2762299 bases (0.04%)
+Result:                 	105351758 reads (99.98%) 	6530116197 bases (99.96%)
 
-Time:                         	249.287 seconds.
-Reads Processed:        105m 	422.68k reads/sec
-Bases Processed:       6532m 	26.21m bases/sec
-java -ea -Xmx12622m -Xms12622m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_2.fastq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_R1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_R2.fastq ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa k=21 mink=11 minlen=-1 edist=2 ktrim=r qtrim=30
-Executing jgi.BBDukF [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_rRNA_filtered_2.fastq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_R1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022_R2.fastq, ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa, k=21, mink=11, minlen=-1, edist=2, ktrim=r, qtrim=30]
+Time:                         	478.045 seconds.
+Reads Processed:        105m 	220.42k reads/sec
+Bases Processed:       6532m 	13.67m bases/sec
+Processing time:   		478.008 seconds.
+
+Input:                  	105351758 reads 		6530116197 bases.
+KTrimmed:               	811353 reads (0.77%) 	19640447 bases (0.30%)
+Total Removed:          	21794 reads (0.02%) 	19640447 bases (0.30%)
+Result:                 	105329964 reads (99.98%) 	6510475750 bases (99.70%)
+
+Time:                         	478.099 seconds.
+Reads Processed:        105m 	220.36k reads/sec
+Bases Processed:       6530m 	13.66m bases/sec
+Input:                  	105329964 reads          	6510475750 bases
+Short Read Discards:    	24110 reads (0.02%) 	365342 bases (0.01%)
+Output:                 	105281918 reads (99.95%) 	6507991013 bases (99.96%)
+
+Time:                         	478.509 seconds.
+Reads Processed:        105m 	220.12k reads/sec
+Bases Processed:       6510m 	13.61m bases/sec
+java -ea -Xmx4g -Xms4g -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_tmp_1.fastq out=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_R1.fastq ftr=25 -Xmx4g t=1
+Executing jgi.BBDukF [in=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_tmp_1.fastq, out=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_022/dc_022_R1.fastq, ftr=25, -Xmx4g, t=1]
 Version 38.26
 
-maskMiddle was disabled because useShortKmers=true
-0.031 seconds.
+Set threads to 1
+0.033 seconds.
 Initial:
-Memory: max=12684m, total=12684m, free=12417m, used=267m
+Memory: max=4116m, total=4116m, free=3965m, used=151m
 
-Added 20133279 kmers; time: 	8.353 seconds.
-Memory: max=12684m, total=12684m, free=11511m, used=1173m
+Input is being processed as unpaired
+Started output streams:	0.105 seconds.
+Processing time:   		93.916 seconds.
 
-Input is being processed as paired
-Started output streams:	0.035 seconds.
-Processing time:   		197.041 seconds.
+Input:                  	52640959 reads 		1368664934 bases.
+FTrimmed:               	0 reads (0.00%) 	0 bases (0.00%)
+Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+Result:                 	52640959 reads (100.00%) 	1368664934 bases (100.00%)
 
-Input:                  	103869032 reads 		6439879984 bases.
-QTrimmed:               	59763802 reads (57.54%) 	3108832295 bases (48.27%)
-KTrimmed:               	2514581 reads (2.42%) 	30881872 bases (0.48%)
-Total Removed:          	0 reads (0.00%) 	3139714167 bases (48.75%)
-Result:                 	103869032 reads (100.00%) 	3300165817 bases (51.25%)
-
-Time:                         	205.433 seconds.
-Reads Processed:        103m 	505.61k reads/sec
-Bases Processed:       6439m 	31.35m bases/sec
+Time:                         	94.044 seconds.
+Reads Processed:      52640k 	559.75k reads/sec
+Bases Processed:       1368m 	14.55m bases/sec

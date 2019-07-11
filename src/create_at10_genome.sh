@@ -1,3 +1,13 @@
+#!/bin/bash
+#SBATCH -A gtrnd
+#SBATCH -q genepool_shared
+#SBATCH -J create_at10
+#SBATCH -t 4:00:00
+#SBATCH --mem-per-cpu=4000
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --output=create_at10.out
+
 module load python3
 source activate /global/projectb/scratch/bjcole/env_STARsolo
 
@@ -68,7 +78,7 @@ STAR \
 $BSCRATCH/bin/gffread -g ${genomedir}/at10.fa -w ${genomedir}/at10_transcripts.fa ${genomedir}/at10.gtf
 
 # Use salmon to create a transcriptome index
-salmon index -t ${genomedir}/at10_transcripts.fa -i $genomedir -k 31
+salmon index -t ${genomedir}/at10_transcripts.fa -i $genomedir -k 21
 grep -E '>' ${genomedir}/at10_transcripts.fa | sed -E 's/>([[:alnum:]]+)([[:graph:]]+?).*/\1\2\t\1/' > ${genomedir}/at10_tgMap.tsv
 grep -E AT[MC]G ${genomedir}/at10_tgMap.tsv | awk '{print $2}' > ${genomedir}/at10_ptGenes.tsv
 echo "AT2G01010" >> ${genomedir}/at10_riboGenes.tsv

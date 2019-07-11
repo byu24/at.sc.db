@@ -1,0 +1,96 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --ntasks=1
+#SBATCH -c 32
+#SBATCH --mem-per-cpu=1000
+#SBATCH -t 8:00:00
+#SBATCH -A gtrnd
+#SBATCH -q genepool
+#SBATCH -J create_at10_hg38_index
+#SBATCH --output=create_at10_hg38.out
+#SBATCH --mail-user=bjcole@lbl.gov
+#SBATCH --mail-type=ALL
+
+mkdir $BSCRATCH/at.sc.db/scratch/genomes/
+mkdir $BSCRATCH/at.sc.db/scratch/genomes/at10
+mkdir $BSCRATCH/at.sc.db/scratch/genomes/at10_hg38
+mkdir $BSCRATCH/at.sc.db/scratch/genomes/at10_mm10
+cd $BSCRATCH/at.sc.db/scratch/genomes/
+
+module load python3
+source activate $BSCRATCH/env_STARsolo
+
+# Download Human genome and annotation
+wget ftp://ftp.ensembl.org/pub/release-96/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz -O- | zcat > human.fa
+wget ftp://ftp.ensembl.org/pub/release-96/gff3/homo_sapiens/Homo_sapiens.GRCh38.96.chr.gff3.gz -O- | zcat > human.gff3
+
+# Download Arabidopsis genome and annotation
+wget ftp://ftp.ensemblgenomes.org/pub/release-43/plants/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz -O- | zcat > arabidopsis.fa
+wget ftp://ftp.ensemblgenomes.org/pub/release-43/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.43.gff3.gz -O- | zcat > arabidopsis.gff3
+
+# Download Mouse genome and annotation
+wget ftp://ftp.ensembl.org/pub/release-96/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.primary_assembly.fa.gz -O- | zcat > mouse.fa 
+wget ftp://ftp.ensembl.org/pub/release-96/gff3/mus_musculus/Mus_musculus.GRCm38.96.chr.gff3.gz -O- | zcat > mouse.gff3
+
+# Download gffread tool to convert gff3 to gtf format
+wget http://ccb.jhu.edu/software/stringtie/dl/gffread-0.11.4.Linux_x86_64.tar.gz -O- | tar -xzvf -
+
+# Convert gff3 files to gtf format
+gffread-0.11.4.Linux_x86_64/gffread -g human.fa -T -o human.gtf human.gff3
+gffread-0.11.4.Linux_x86_64/gffread -g mouse.fa -T -o mouse.gtf mouse.gff3
+gffread-0.11.4.Linux_x86_64/gffread -g arabidopsis.fa -T -o arabidopsis.gtf arabidopsis.gff3
+
+# Edit gtf files to contain information needed by Drop-seq_tools, and to specify genome for megareference
+sed -E 's/^/at10_/' arabidopsis.gtf |
+  sed -E 's/transcript_id ([[:graph:]]+);/transcript_id \1; transcript_name \1;/' |
+  sed -E 's/gene_id ([[:graph:]]+);/gene_id \1; gene_name \1;/' > arabidopsis_fixed.gtf
+
+sed -E 's/^/hg38_/' human.gtf |
+  sed -E 's/transcript_id ([[:graph:]]+);/transcript_id \1; transcript_name \1;/' |
+  sed -E 's/gene_id ([[:graph:]]+);/gene_id \1; gene_name \1;/' > human_fixed.gtf
+
+sed -E 's/^/mm10_/' mouse.gtf |
+  sed -E 's/transcript_id ([[:graph:]]+);/transcript_id \1; transcript_name \1;/' |
+  sed -E 's/gene_id ([[:graph:]]+);/gene_id \1; gene_name \1;/' > mouse_fixed.gtf
+
+# Edit fasta file sequence names to specify genome for megareference
+sed -E 's/>/>at10_/' arabidopsis.fa > arabidopsis_fixed.fa
+sed -E 's/>/>hg38_/' human.fa > human_fixed.fa
+sed -E 's/>/>mm10_/' mouse.fa > mouse_fixed.fa
+
+# Create megareference files
+cat arabidopsis_fixed.fa human_fixed.fa > arabidopsis_human.fa
+cat arabidopsis_fixed.fa mouse_fixed.fa > arabidopsis_mouse.fa
+cat arabidopsis_fixed.gtf human_fixed.gtf > arabidopsis_human.gtf
+cat arabidopsis_fixed.gtf mouse_fixed.gtf > arabidopsis_mouse.gtf
+
+sh $BSCRATCH/Drop-seq_tools-2.3.0/create_Drop-seq_reference_metadata.sh \
+  -n at10 \
+  -r arabidopsis_fixed.fa \
+  -s Arabidopsis \
+  -g arabidopsis_fixed.gtf \
+  -d $BSCRATCH/Drop-seq_tools-2.3.0/ \
+  -o at10 \
+  -t at10
+
+sh $BSCRATCH/Drop-seq_tools-2.3.0/create_Drop-seq_reference_metadata.sh \
+  -n at10_hg38 \
+  -r arabidopsis_human.fa \
+  -s ArabidopsisHuman \
+  -g arabidopsis_human.gtf \
+  -d $BSCRATCH/Drop-seq_tools-2.3.0/ \
+  -o at10_hg38 \
+  -t at10_hg38
+
+sh $BSCRATCH/Drop-seq_tools-2.3.0/create_Drop-seq_reference_metadata.sh \
+  -n at10_mm10 \
+  -r arabidopsis_mouse.fa \
+  -s ArabidopsisMouse \
+  -g arabidopsis_mouse.gtf \
+  -d $BSCRATCH/Drop-seq_tools-2.3.0/ \
+  -o at10_mm10 \
+  -t at10_mm10
+
+zcat at10/at10.fasta.gz > at10/at10.fa
+zcat at10_hg38/at10_hg38.fasta.gz > at10_hg38/at10_hg38.fa
+zcat at10_mm10/at10_mm10.fasta.gz > at10_mm10/at10_mm10.fa

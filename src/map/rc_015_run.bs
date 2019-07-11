@@ -1,0 +1,27 @@
+#!/bin/bash
+#SBATCH -A gtrnd
+#SBATCH -q genepool_shared
+#SBATCH -J rc_015_run
+#SBATCH -t 24:00:00
+#SBATCH --mem-per-cpu=4000
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --output=rc_015_run.out
+
+module load python3
+source activate /global/projectb/scratch/bjcole/env_STARsolo
+cd /global/projectb/scratch/bjcole/at.sc.db/
+mkdir scratch/rc_015
+
+cat data/whitelist.txt > \
+  scratch/rc_015/rc_015_whitelist.csv
+STAR \
+  --genomeDir scratch/genomes/at10 \
+  --readFilesIn scratch/rc_015/rc_015_R2.fastq scratch/rc_015/rc_015_R1.fastq \
+  --soloCBwhitelist scratch/rc_015/rc_015_whitelist.csv \
+  --outFileNamePrefix scratch/rc_015/rc_015_star. \
+  --soloType Droplet \
+  --soloCBlen 16 \
+  --soloUMIlen 10 \
+  --soloUMIstart 17 \
+  --runThreadN 8

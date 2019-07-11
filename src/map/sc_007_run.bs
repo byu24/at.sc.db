@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH -A gtrnd
+#SBATCH -q genepool_shared
+#SBATCH -J sc_007_run
+#SBATCH -t 24:00:00
+#SBATCH --mem-per-cpu=4000
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --output=sc_007_run.out
+
+module load python3
+source activate /global/projectb/scratch/bjcole/env_STARsolo
+cd /global/projectb/scratch/bjcole/at.sc.db/
+mkdir scratch/sc_007
+
+
+sh src/map/map_dropseq.sh \
+  --in1=scratch/sc_007/sc_007_R1.fastq \
+  --in2=scratch/sc_007/sc_007_R2.fastq \
+  --run_type=DropSeq \
+  --run_name=sc_007 \
+  --genome=at10_mm10 \
+  --parent_dir=scratch/
+
+awk '{if(NR > 1) {print $1}}' scratch/sc_007/sc_007_synthesis_error_stats.txt > \
+  scratch/sc_007/sc_007_whitelist.csv
+
+STAR \
+  --genomeDir scratch/genomes/at10_mm10 \
+  --readFilesIn scratch/sc_007/sc_007_R2.fastq scratch/sc_007/sc_007_R1.fastq \
+  --soloCBwhitelist scratch/sc_007/sc_007_whitelist.csv \
+  --outFileNamePrefix scratch/sc_007/sc_007_star. \
+  --soloType Droplet \
+  --soloCBlen 12 \
+  --soloUMIlen 8 \
+  --soloUMIstart 13 \
+  --runThreadN 8
