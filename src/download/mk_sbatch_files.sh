@@ -17,10 +17,10 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --mem-per-cpu=4000" >> src/download/download_${set_name}.bs
   echo "#SBATCH --ntasks=1" >> src/download/download_${set_name}.bs
   echo "#SBATCH --cpus-per-task=4" >> src/download/download_${set_name}.bs
-  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/download_SRA_${set_name}.out" >> src/download/download_${set_name}.bs
+  echo "#SBATCH --output=download_SRA_${set_name}.out" >> src/download/download_${set_name}.bs
   echo "" >> src/download/download_${set_name}.bs
   echo "module load python3" >> src/download/download_${set_name}.bs
-  echo "source activate $BSCRATCH/bin/env_STAR" >> src/download/download_${set_name}.bs
+  echo "source activate /global/projectb/scratch/bjcole/env_STARsolo" >> src/download/download_${set_name}.bs
   echo "cd $BSCRATCH/at.sc.db/" >> src/download/download_${set_name}.bs
   echo "" >> src/download/download_${set_name}.bs
   echo "mkdir scratch/${set_name}" >> src/download/download_${set_name}.bs
@@ -34,18 +34,15 @@ while [ "$i" -lt "$len" ]; do
   fi
 
   if [[ $set_name =~ "jsh_016" ]]; then
-    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
-	echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086586/whole_root_Heatshock_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
+    echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086586/whole_root_Heatshock_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js_017" ]]; then
-    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
-	echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086585/whole_root_Control_2_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
+    echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086585/whole_root_Control_2_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js_018" ]]; then
-    echo "export PATH=$PATH:/global/projectb/scratch/byu24/bin/samtools" >> src/download/download_${set_name}.bs
-	echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086584/whole_root_Control_1_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
+    echo "wget ftp://ftp.sra.ebi.ac.uk/vol1/run/SRR808/SRR8086584/whole_root_Control_1_possorted_genome_bam.bam \\" >> src/download/download_${set_name}.bs
   fi
 
   if [[ $set_name =~ "js" ]]; then
@@ -70,4 +67,4 @@ while [ "$i" -lt "$len" ]; do
   i=$(($i + 1))
 done
 
-awk -F, '{if(NR > 1) print "sbatch $BSCRATCH/at.sc.db/src/download/download_"$1".bs &"}' data/sample_metadata.csv > src/download/launch_download.sh
+awk -F, '{if(NR > 1) print "sbatch src/download/download_"$1".bs &"}' data/sample_metadata.csv > src/download/launch_download.sh
