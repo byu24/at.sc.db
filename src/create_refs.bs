@@ -7,9 +7,8 @@
 #SBATCH -A gtrnd
 #SBATCH -q genepool
 #SBATCH -J create_at10_hg38_index
-#SBATCH --output=create_at10_hg38.out
-#SBATCH --mail-user=bjcole@lbl.gov
-#SBATCH --mail-type=ALL
+#SBATCH --output=$BSCRATCH/at.sc.db/log/create_at10_hg38.out
+
 
 mkdir $BSCRATCH/at.sc.db/scratch/genomes/
 mkdir $BSCRATCH/at.sc.db/scratch/genomes/at10
@@ -18,7 +17,8 @@ mkdir $BSCRATCH/at.sc.db/scratch/genomes/at10_mm10
 cd $BSCRATCH/at.sc.db/scratch/genomes/
 
 module load python3
-source activate $BSCRATCH/env_STARsolo
+source activate $BSCRATCH/bin/env_STARsolo
+export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
 
 # Download Human genome and annotation
 wget ftp://ftp.ensembl.org/pub/release-96/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz -O- | zcat > human.fa
@@ -36,9 +36,9 @@ wget ftp://ftp.ensembl.org/pub/release-96/gff3/mus_musculus/Mus_musculus.GRCm38.
 wget http://ccb.jhu.edu/software/stringtie/dl/gffread-0.11.4.Linux_x86_64.tar.gz -O- | tar -xzvf -
 
 # Convert gff3 files to gtf format
-gffread-0.11.4.Linux_x86_64/gffread -g human.fa -T -o human.gtf human.gff3
-gffread-0.11.4.Linux_x86_64/gffread -g mouse.fa -T -o mouse.gtf mouse.gff3
-gffread-0.11.4.Linux_x86_64/gffread -g arabidopsis.fa -T -o arabidopsis.gtf arabidopsis.gff3
+gffread -g human.fa -T -o human.gtf human.gff3
+gffread -g mouse.fa -T -o mouse.gtf mouse.gff3
+gffread -g arabidopsis.fa -T -o arabidopsis.gtf arabidopsis.gff3
 
 # Edit gtf files to contain information needed by Drop-seq_tools, and to specify genome for megareference
 sed -E 's/^/at10_/' arabidopsis.gtf |

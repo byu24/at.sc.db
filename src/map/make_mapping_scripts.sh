@@ -23,10 +23,10 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --mem-per-cpu=4000" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --ntasks=1" >> src/map/${lib_name}_run.bs
   echo "#SBATCH --cpus-per-task=8" >> src/map/${lib_name}_run.bs
-  echo "#SBATCH --output=${lib_name}_run.out" >> src/map/${lib_name}_run.bs
+  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/${lib_name}_run.out" >> src/map/${lib_name}_run.bs
   echo "" >> src/map/${lib_name}_run.bs
   echo "module load python3" >> src/map/${lib_name}_run.bs
-  echo "source activate $BSCRATCH/env_STARsolo" >> src/map/${lib_name}_run.bs
+  echo "source activate $BSCRATCH/bin/env_STARsolo" >> src/map/${lib_name}_run.bs
 
   echo "cd $BSCRATCH/at.sc.db/" >> src/map/${lib_name}_run.bs
   echo "mkdir scratch/${lib_name}" >> src/map/${lib_name}_run.bs
@@ -34,7 +34,7 @@ while [ "$i" -lt "$len" ]; do
 
   if [[ $lib_type == "DropSeq" ]]; then
     echo "" >> src/map/${lib_name}_run.bs
-    echo "sh src/map/map_dropseq.sh \\" >> src/map/${lib_name}_run.bs
+    echo "sh $BSCRATCH/at.sc.db/src/map/map_dropseq.sh \\" >> src/map/${lib_name}_run.bs
     echo "  --in1=scratch/${lib_name}/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
     echo "  --in2=scratch/${lib_name}/${lib_name}_R2.fastq \\" >> src/map/${lib_name}_run.bs
     echo "  --run_type="DropSeq" \\" >> src/map/${lib_name}_run.bs
@@ -50,8 +50,8 @@ while [ "$i" -lt "$len" ]; do
   fi
 
   if [[ $lib_type == "10x_V2" ]]; then
-    echo "cat data/whitelist.txt > \\" >> src/map/${lib_name}_run.bs
-    echo "  scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
+    echo "cat $BSCRATCH/at.sc.db/data/whitelist.txt > \\" >> src/map/${lib_name}_run.bs
+    echo "  $BSCRATCH/at.sc.db/scratch/${lib_name}/${lib_name}_whitelist.csv" >> src/map/${lib_name}_run.bs
     cb_len=16
     umi_len=10
   fi
@@ -67,7 +67,7 @@ while [ "$i" -lt "$len" ]; do
   echo "  --soloUMIstart $((cb_len + 1)) \\" >> src/map/${lib_name}_run.bs
   echo "  --runThreadN 8" >> src/map/${lib_name}_run.bs
  
-  echo "sbatch src/map/${lib_name}_run.bs &" >> src/map/launch_mapping_scripts.sh
+  echo "sbatch $BSCRATCH/at.sc.db/src/map/${lib_name}_run.bs &" >> src/map/launch_mapping_scripts.sh
 
   i=$(($i + 1))
  
