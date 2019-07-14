@@ -288,7 +288,8 @@ Submitted batch job 22947234
 Submitted batch job 22947236
 
 7/13/19 - Rerunning filter and mapping
-Submitted batch job 23025326
+Submitted batch job 23025326 - dc019
+Submitted batch job 23025548 - dc020
 
 
 
