@@ -14,7 +14,7 @@ while [ "$i" -lt "$len" ]; do
 
   echo "#!/bin/bash" > src/filter/filter_${set_name}.bs
   echo "#SBATCH -A gtrnd" >> src/filter/filter_${set_name}.bs
-  echo "#SBATCH -q genepool" >> src/filter/filter_${set_name}.bs
+  echo "#SBATCH -q genepool_shared" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH -J filter_SRA_${set_name}" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH -t 12:00:00" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH --mem-per-cpu=2000" >> src/filter/filter_${set_name}.bs
