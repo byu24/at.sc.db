@@ -287,10 +287,29 @@ Submitted batch job 22932570
 Submitted batch job 22947234
 Submitted batch job 22947236
 
-7/13/19 - Rerunning filter and mapping
-Submitted batch job 23025326 - dc019
-Submitted batch job 23025548 - dc020
-
+7/14/19 - Rerunning filter and mapping
+Submitted batch job 23041422
+Submitted batch job 23041424
+Submitted batch job 23041425
+Submitted batch job 23041426
+Submitted batch job 23041427
+Submitted batch job 23041428
+Submitted batch job 23041429
+Submitted batch job 23041430
+Submitted batch job 23041432
+Submitted batch job 23041433
+Submitted batch job 23041434
+Submitted batch job 23041435
+Submitted batch job 23041436
+Submitted batch job 23041437
+Submitted batch job 23041438
+Submitted batch job 23041439
+Submitted batch job 23041440
+Submitted batch job 23041441
+Submitted batch job 23041442
+Submitted batch job 23041443
+Submitted batch job 23041444
+Submitted batch job 23041445
 
 
 
