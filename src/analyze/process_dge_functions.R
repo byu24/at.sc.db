@@ -1,6 +1,6 @@
 library(tidyverse)
 get_dge <- function(dataset) {
-  dge <- Read10X(data.dir = paste0("scratch/",dataset,"/",dataset,"_star.Solo.out")) %>%
+  dge <- Seurat::Read10X(data.dir = paste0("scratch/",dataset,"/",dataset,"_star.Solo.out")) %>%
     `colnames<-`(c(paste0(colnames(.), "_", dataset)))
 }
 
@@ -32,7 +32,7 @@ get_dge_group <- function(group, sample_metadata) {
   dge <- map(datasets, get_dge) %>% reduce(cbind)
 }
 
-get_sobj <- function(dge, dge_stats) {
+get_sobj <- function(dge, dge_stats, group) {
   dge_stats <- get_dge_stats(dge)
   sobj <- Seurat::CreateSeuratObject(
     counts = dge,
@@ -41,7 +41,7 @@ get_sobj <- function(dge, dge_stats) {
     Seurat::SCTransform(variable.features.n = 3000)
 }
 
-filter_dge(dge, dge_stats, thresh_Gene = 800, thresh_pAt = 0.98, thresh_pCM = 0.1) {
+filter_dge <- function(dge, dge_stats, thresh_Gene = 800, thresh_pAt = 0.98, thresh_pCM = 0.1) {
   keep_cells <- dge_stats %>% 
     as_tibble(rownames = "Cell") %>% 
     filter(pAt > 0.98 & nGene > 800 & pCM < 0.1, .preserve = T) %>% 
