@@ -1,15 +1,15 @@
 #!/bin/bash
 #SBATCH -A gtrnd
-#SBATCH -q genepool
+#SBATCH -q genepool_shared
 #SBATCH -J filter_SRA_dc_019
 #SBATCH -t 12:00:00
 #SBATCH --mem-per-cpu=2000
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --output=filter_SRA_dc_019.out
+#SBATCH --cpus-per-task=8
+#SBATCH --output=/global/projectb/scratch/byu24/at.sc.db/log/filter_SRA_dc_019.out
 
 module load python3
 source activate $BSCRATCH/bin/env_STARsolo
 cd $BSCRATCH/at.sc.db/
 
-sh src/trim_filter.sh dc_019 10x_V2
+sh /global/projectb/scratch/byu24/at.sc.db/src/trim_filter.sh dc_019 10x_V2
