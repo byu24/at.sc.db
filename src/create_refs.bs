@@ -1,14 +1,13 @@
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH --ntasks=1
-#SBATCH -c 32
+#SBATCH -c 16
 #SBATCH --mem-per-cpu=1000
 #SBATCH -t 8:00:00
 #SBATCH -A gtrnd
-#SBATCH -q genepool
+#SBATCH -q genepool_shared
 #SBATCH -J create_at10_hg38_index
 #SBATCH --output=$BSCRATCH/at.sc.db/log/create_at10_hg38.out
-
 
 mkdir $BSCRATCH/at.sc.db/scratch/genomes/
 mkdir $BSCRATCH/at.sc.db/scratch/genomes/at10
