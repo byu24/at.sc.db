@@ -16,9 +16,8 @@ mkdir $BSCRATCH/at.sc.db/scratch/genomes/at10_mm10
 cd $BSCRATCH/at.sc.db/scratch/genomes/
 
 module load python3
-source activate $BSCRATCH/bin/env_STARsolo
+source activate /global/projectb/scratch/bjcole/env_STARsolo
 export PATH=$PATH:$BSCRATCH/bin/gffread/gffread
-export PATH=$PATH:$BSCRATCH/bin/samtools/bin
 
 # Download Human genome and annotation
 wget ftp://ftp.ensembl.org/pub/release-96/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz -O- | zcat > human.fa
