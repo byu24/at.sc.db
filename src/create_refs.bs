@@ -72,7 +72,7 @@ sh $BSCRATCH/Drop-seq_tools-2.3.0/create_Drop-seq_reference_metadata.sh \
   -o at10 \
   -t at10
 
-sh $BSCRATCH/Drop-seq_tools-2.3.0/create_Drop-seq_reference_metadata.sh \
+sh $BSCRATCH/bin/dropseq/share/dropseq_tools-2.0.0-0/create_Drop-seq_reference_metadata.sh \
   -n at10_hg38 \
   -r arabidopsis_human.fa \
   -s ArabidopsisHuman \
@@ -81,7 +81,7 @@ sh $BSCRATCH/Drop-seq_tools-2.3.0/create_Drop-seq_reference_metadata.sh \
   -o at10_hg38 \
   -t at10_hg38
 
-sh $BSCRATCH/Drop-seq_tools-2.3.0/create_Drop-seq_reference_metadata.sh \
+sh $BSCRATCH/bin/dropseq/share/dropseq_tools-2.0.0-0/create_Drop-seq_reference_metadata.sh \
   -n at10_mm10 \
   -r arabidopsis_mouse.fa \
   -s ArabidopsisMouse \
