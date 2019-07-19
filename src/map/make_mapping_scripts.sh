@@ -2,7 +2,7 @@ cd $BSCRATCH/at.sc.db/
 
 lib_names=($(awk -F, '{if(NR>1) print $1}' data/sample_metadata.csv))
 lib_types=($(awk -F, '{if(NR>1) print $8}' data/sample_metadata.csv))
-references=($(awk -F, '{if(NR>1) print $10}' data/sample_metadata.csv))
+references=($(awk -F, '{if(NR>1) print $11}' data/sample_metadata.csv))
 
 len=${#lib_names[@]}
 i=0
