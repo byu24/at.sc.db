@@ -57,10 +57,10 @@ while [ "$i" -lt "$len" ]; do
   fi
 
   echo "STAR \\" >> src/map/${lib_name}_run.bs
-  echo "  --genomeDir scratch/genomes/${reference} \\" >> src/map/${lib_name}_run.bs
-  echo "  --readFilesIn scratch/${lib_name}/${lib_name}_R2.fastq scratch/${lib_name}/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
-  echo "  --soloCBwhitelist scratch/${lib_name}/${lib_name}_whitelist.csv \\" >> src/map/${lib_name}_run.bs
-  echo "  --outFileNamePrefix scratch/${lib_name}/${lib_name}_star. \\" >> src/map/${lib_name}_run.bs
+  echo "  --genomeDir $BSCRATCH/at.sc.db/scratch/genomes/${reference} \\" >> src/map/${lib_name}_run.bs
+  echo "  --readFilesIn $BSCRATCH/at.sc.db/scratch/${lib_name}/${lib_name}_R2.fastq scratch/${lib_name}/${lib_name}_R1.fastq \\" >> src/map/${lib_name}_run.bs
+  echo "  --soloCBwhitelist $BSCRATCH/at.sc.db/scratch/${lib_name}/${lib_name}_whitelist.csv \\" >> src/map/${lib_name}_run.bs
+  echo "  --outFileNamePrefix $BSCRATCH/at.sc.db/scratch/${lib_name}/${lib_name}_star. \\" >> src/map/${lib_name}_run.bs
   echo "  --soloType Droplet \\" >> src/map/${lib_name}_run.bs
   echo "  --soloCBlen $cb_len \\" >> src/map/${lib_name}_run.bs
   echo "  --soloUMIlen $umi_len \\" >> src/map/${lib_name}_run.bs
