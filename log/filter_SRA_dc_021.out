@@ -1,29 +1,28 @@
-Not a conda environment: /global/projectb/scratch/bjcole/bin/env_STARsolo
 dc_021
 10x_V2
-java -da -Xmx4G -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ sort.Shuffle2 in=stdin.fq out=stdout.fq -Xmx4G -da int=t
+java -da -Xmx4G -cp /global/projectb/scratch/byu24/bin/bbmap/current/ sort.Shuffle2 in=stdin.fq out=stdout.fq -Xmx4G -da int=t
 Executing sort.Shuffle2 [in=stdin.fq, out=stdout.fq, -Xmx4G, -da, int=t]
 
+java -ea -Xmx200m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.ReformatReads in=stdin.fq out1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq out2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_R2.fastq int=t minlen=26
+java -ea -Xmx1g -Xms1g -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in=stdin.fq out=stdout.fq k=23 mink=11 literal=AAGCAGTGGTATCAACGCAGAGTGAATGGG hdist=1 ktrim=l -Xmx1g t=16 int=t
+java -ea -Xmx200m -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.ReformatReads in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_1.fastq in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_2.fastq out=stdout.fq addslash=t
+java -ea -Xmx1g -Xms1g -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in=stdin.fq out=stdout.fq ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa k=23 mink=11 hdist=1 ktrim=r qtrim=10 -Xmx1g t=16 int=t
 Set INTERLEAVED to true
 Input is being processed as paired
-java -ea -Xmx200m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.ReformatReads in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_1.fastq in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_2.fastq out=stdout.fq addslash=t
-java -ea -Xmx200m -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.ReformatReads in=stdin.fq out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_R2.fq int=t minlen=26
-java -ea -Xmx1g -Xms1g -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in=stdin.fq out=stdout.fq ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa k=23 mink=11 hdist=1 ktrim=r qtrim=10 -Xmx1g t=16 int=t
-java -ea -Xmx1g -Xms1g -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in=stdin.fq out=stdout.fq k=23 mink=11 literal=AAGCAGTGGTATCAACGCAGAGTGAATGGG hdist=1 ktrim=l -Xmx1g t=16 int=t
-Executing jgi.ReformatReads [in1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_1.fastq, in2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_2.fastq, out=stdout.fq, addslash=t]
+Executing jgi.BBDuk [in=stdin.fq, out=stdout.fq, k=23, mink=11, literal=AAGCAGTGGTATCAACGCAGAGTGAATGGG, hdist=1, ktrim=l, -Xmx1g, t=16, int=t]
+Version 38.51
 
-Executing jgi.ReformatReads [in=stdin.fq, out1=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq, out2=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_R2.fq, int=t, minlen=26]
+Executing jgi.ReformatReads [in1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_1.fastq, in2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_2.fastq, out=stdout.fq, addslash=t]
 
-Executing jgi.BBDukF [in=stdin.fq, out=stdout.fq, k=23, mink=11, literal=AAGCAGTGGTATCAACGCAGAGTGAATGGG, hdist=1, ktrim=l, -Xmx1g, t=16, int=t]
-Version 38.26
+Executing jgi.BBDuk [in=stdin.fq, out=stdout.fq, ref=/global/projectb/scratch/byu24/bin/bbmap/resources/adapters.fa, k=23, mink=11, hdist=1, ktrim=r, qtrim=10, -Xmx1g, t=16, int=t]
+Version 38.51
 
-Executing jgi.BBDukF [in=stdin.fq, out=stdout.fq, ref=/global/projectb/scratch/bjcole/bin/bbmap/resources/adapters.fa, k=23, mink=11, hdist=1, ktrim=r, qtrim=10, -Xmx1g, t=16, int=t]
-Version 38.26
+Executing jgi.ReformatReads [in=stdin.fq, out1=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq, out2=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_R2.fastq, int=t, minlen=26]
 
-Set INTERLEAVED to true
-Set threads to 16
-Set INTERLEAVED to true
-Set threads to 16
+Set threads to 16Set threads to 16
+
+Set INTERLEAVED to trueSet INTERLEAVED to true
+
 Set INTERLEAVED to true
 maskMiddle was disabled because useShortKmers=true
 maskMiddle was disabled because useShortKmers=true
@@ -31,632 +30,626 @@ Set INTERLEAVED to false
 Input is being processed as paired
 Input is being processed as paired
 Writing interleaved.
-0.030 seconds.
-Initial:
-Memory: max=1029m, total=1029m, free=984m, used=45m
+0.036 seconds.
+0.031 seconds.Initial:
 
-0.034 seconds.
-Initial:
+Initial:Memory: max=1029m, total=1029m, free=995m, used=34m
+
 Memory: max=1029m, total=1029m, free=989m, used=40m
 
-Added 1772 kmers; time: 	0.037 seconds.
-Memory: max=1029m, total=1029m, free=947m, used=82m
+
+Added 1772 kmers; time: 	0.012 seconds.
+Memory: max=1029m, total=1029m, free=963m, used=66m
 
 Input is being processed as paired
-Started output streams:	0.045 seconds.
-Added 216529 kmers; time: 	0.132 seconds.
-Memory: max=1029m, total=1029m, free=936m, used=93m
+Started output streams:	0.046 seconds.
+Added 217135 kmers; time: 	0.140 seconds.
+Memory: max=1029m, total=1029m, free=957m, used=72m
 
 Input is being processed as paired
-Started output streams:	0.016 seconds.
-Created a WriteThread for ./sort_temp_1896056769814381998.fq.gz
-Wed Jul 10 12:40:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:40:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2584841414917217895.fq.gz
-Wed Jul 10 12:40:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:40:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1759701697417113803.fq.gz
-Wed Jul 10 12:40:36 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:40:36 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1780806815083531624.fq.gz
-Wed Jul 10 12:40:42 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:40:42 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7766335634480195922.fq.gz
-Wed Jul 10 12:40:49 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:40:49 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7940717883744999927.fq.gz
-Wed Jul 10 12:40:54 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:40:54 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6273079601030224914.fq.gz
-Wed Jul 10 12:41:00 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:00 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_95100411981826533.fq.gz
-Wed Jul 10 12:41:07 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:07 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3830678472730376353.fq.gz
-Wed Jul 10 12:41:15 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:15 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5539358880652150605.fq.gz
-Wed Jul 10 12:41:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2890834894677045132.fq.gz
-Wed Jul 10 12:41:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1432006028872082847.fq.gz
-Wed Jul 10 12:41:34 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:34 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3047604132146843092.fq.gz
-Wed Jul 10 12:41:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1931976867825299845.fq.gz
-Wed Jul 10 12:41:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3910508972567028114.fq.gz
-Wed Jul 10 12:41:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:41:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3721908098807581155.fq.gz
-Wed Jul 10 12:42:01 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:01 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1996197371618471116.fq.gz
-Wed Jul 10 12:42:07 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:07 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4384585189668666548.fq.gz
-Wed Jul 10 12:42:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3236296447701559261.fq.gz
-Wed Jul 10 12:42:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6172739342348267417.fq.gz
-Wed Jul 10 12:42:27 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:27 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_157241959665621268.fq.gz
-Wed Jul 10 12:42:33 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:33 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1662592665019950256.fq.gz
-Wed Jul 10 12:42:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_469040224057721363.fq.gz
-Wed Jul 10 12:42:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3764346834425931701.fq.gz
-Wed Jul 10 12:42:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:42:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_835696167338169548.fq.gz
-Wed Jul 10 12:43:00 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:00 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4080705071678982807.fq.gz
-Wed Jul 10 12:43:06 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:06 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4797631954894402403.fq.gz
-Wed Jul 10 12:43:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2836030101803594138.fq.gz
-Wed Jul 10 12:43:20 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:20 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8310332179778535396.fq.gz
-Wed Jul 10 12:43:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4698799493495295237.fq.gz
-Wed Jul 10 12:43:34 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:34 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8095275001011467328.fq.gz
-Wed Jul 10 12:43:40 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:40 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7319125252388214894.fq.gz
-Wed Jul 10 12:43:49 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:49 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_543581247490942439.fq.gz
-Wed Jul 10 12:43:56 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:43:56 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6705132465676802197.fq.gz
-Wed Jul 10 12:44:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2948487009201605473.fq.gz
-Wed Jul 10 12:44:11 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:11 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1358367796083319278.fq.gz
-Wed Jul 10 12:44:17 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:17 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5140844529875969393.fq.gz
-Wed Jul 10 12:44:24 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:24 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8780835339297630555.fq.gz
-Wed Jul 10 12:44:31 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:31 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6589568595323692254.fq.gz
-Wed Jul 10 12:44:37 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:37 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7198679909870315401.fq.gz
-Wed Jul 10 12:44:44 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:44 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7985284435288180175.fq.gz
-Wed Jul 10 12:44:50 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:50 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5584558331320374087.fq.gz
-Wed Jul 10 12:44:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:44:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1563395815999750962.fq.gz
-Wed Jul 10 12:45:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1371514207114314177.fq.gz
-Wed Jul 10 12:45:11 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:11 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6845011769939863713.fq.gz
-Wed Jul 10 12:45:19 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:19 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8670512780827358470.fq.gz
-Wed Jul 10 12:45:27 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:27 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3267679051611341898.fq.gz
-Wed Jul 10 12:45:33 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:33 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8510898328863549820.fq.gz
-Wed Jul 10 12:45:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8512228521734965602.fq.gz
-Wed Jul 10 12:45:48 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:48 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5829067917955266191.fq.gz
-Wed Jul 10 12:45:56 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:45:56 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7105692536870360145.fq.gz
-Wed Jul 10 12:46:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5494156190034038508.fq.gz
-Wed Jul 10 12:46:11 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:11 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_641672564396305952.fq.gz
-Wed Jul 10 12:46:18 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:18 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1767055358250178814.fq.gz
-Wed Jul 10 12:46:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4658576956397825074.fq.gz
-Wed Jul 10 12:46:32 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:32 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5287708298109360088.fq.gz
-Wed Jul 10 12:46:39 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:39 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6764124936800625882.fq.gz
-Wed Jul 10 12:46:46 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:46 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_9008549313262854737.fq.gz
-Wed Jul 10 12:46:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:46:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2430999169538025715.fq.gz
-Wed Jul 10 12:47:01 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:01 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8917751802549627946.fq.gz
-Wed Jul 10 12:47:09 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:09 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5563138483205029586.fq.gz
-Wed Jul 10 12:47:16 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:16 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5574869060660198951.fq.gz
-Wed Jul 10 12:47:23 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:23 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2499025204730977271.fq.gz
-Wed Jul 10 12:47:31 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:31 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7269353893584943326.fq.gz
-Wed Jul 10 12:47:40 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:40 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7579629294333977202.fq.gz
-Wed Jul 10 12:47:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6805889703439378166.fq.gz
-Wed Jul 10 12:47:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:47:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3650613761480204885.fq.gz
-Wed Jul 10 12:48:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2358195511531368109.fq.gz
-Wed Jul 10 12:48:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5931802411080407068.fq.gz
-Wed Jul 10 12:48:18 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:18 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3261847625849886380.fq.gz
-Wed Jul 10 12:48:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4231487001330421448.fq.gz
-Wed Jul 10 12:48:33 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:33 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_462279529559797652.fq.gz
-Wed Jul 10 12:48:40 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:40 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1350184671493098249.fq.gz
-Wed Jul 10 12:48:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_551685367665582440.fq.gz
-Wed Jul 10 12:48:54 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:48:54 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_471962875713690231.fq.gz
-Wed Jul 10 12:49:01 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:01 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5455505439530451803.fq.gz
-Wed Jul 10 12:49:09 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:09 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4380089977178438157.fq.gz
-Wed Jul 10 12:49:17 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:17 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_848452944075486303.fq.gz
-Wed Jul 10 12:49:24 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:24 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6077607722281625641.fq.gz
-Wed Jul 10 12:49:32 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:32 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3551631663657178221.fq.gz
-Wed Jul 10 12:49:38 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:38 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4965929557829106823.fq.gz
-Wed Jul 10 12:49:45 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:45 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_857063504745946538.fq.gz
-Wed Jul 10 12:49:52 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:52 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4125808506785167989.fq.gz
-Wed Jul 10 12:49:59 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:49:59 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_38811192009684043.fq.gz
-Wed Jul 10 12:50:06 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:06 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8204679951277227056.fq.gz
-Wed Jul 10 12:50:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6254644316341638646.fq.gz
-Wed Jul 10 12:50:22 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:22 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1271452731490058341.fq.gz
-Wed Jul 10 12:50:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7698632950299309310.fq.gz
-Wed Jul 10 12:50:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4845524867152088034.fq.gz
-Wed Jul 10 12:50:42 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:42 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3784259181734060827.fq.gz
-Wed Jul 10 12:50:48 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:48 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7770919327236030112.fq.gz
-Wed Jul 10 12:50:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:50:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5534727744567188316.fq.gz
-Wed Jul 10 12:51:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8035987872914320289.fq.gz
-Wed Jul 10 12:51:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7807088318633294654.fq.gz
-Wed Jul 10 12:51:16 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:16 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2944988365553284243.fq.gz
-Wed Jul 10 12:51:23 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:23 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1440213159297846328.fq.gz
-Wed Jul 10 12:51:30 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:30 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6853285605775369903.fq.gz
-Wed Jul 10 12:51:37 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:37 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6608849024193414537.fq.gz
-Wed Jul 10 12:51:43 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:43 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3450106754465758732.fq.gz
-Wed Jul 10 12:51:51 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:51 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8194787656755525254.fq.gz
-Wed Jul 10 12:51:58 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:51:58 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2189507730402454794.fq.gz
-Wed Jul 10 12:52:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3695168038235305547.fq.gz
-Wed Jul 10 12:52:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5767241771167233760.fq.gz
-Wed Jul 10 12:52:19 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:19 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1898709818261348361.fq.gz
-Wed Jul 10 12:52:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2381504044470765888.fq.gz
-Wed Jul 10 12:52:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7657441765470002347.fq.gz
-Wed Jul 10 12:52:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_816583162915736758.fq.gz
-Wed Jul 10 12:52:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3004371334260965362.fq.gz
-Wed Jul 10 12:52:54 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:52:54 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5072358716542457597.fq.gz
-Wed Jul 10 12:53:00 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:00 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5690607329757573834.fq.gz
-Wed Jul 10 12:53:07 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:07 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8253003639210059704.fq.gz
-Wed Jul 10 12:53:14 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:14 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1430642690041681184.fq.gz
-Wed Jul 10 12:53:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3937463637426269442.fq.gz
-Wed Jul 10 12:53:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3794064907630975106.fq.gz
-Wed Jul 10 12:53:34 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:34 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7974628782444280580.fq.gz
-Wed Jul 10 12:53:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8930312711706453817.fq.gz
-Wed Jul 10 12:53:48 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:48 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5700629118737663351.fq.gz
-Wed Jul 10 12:53:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:53:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5100102081471340144.fq.gz
-Wed Jul 10 12:54:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7420804388870137879.fq.gz
-Wed Jul 10 12:54:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8060811481072289523.fq.gz
-Wed Jul 10 12:54:17 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:17 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4669583029715965138.fq.gz
-Wed Jul 10 12:54:25 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:25 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1228897282512358421.fq.gz
-Wed Jul 10 12:54:31 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:31 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4319732394612776693.fq.gz
-Wed Jul 10 12:54:38 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:38 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2065607630035499193.fq.gz
-Wed Jul 10 12:54:45 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:45 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4437756997494971172.fq.gz
-Wed Jul 10 12:54:51 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:51 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5438881354077135429.fq.gz
-Wed Jul 10 12:54:58 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:54:58 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3659187894049338578.fq.gz
-Wed Jul 10 12:55:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8296232109315650901.fq.gz
-Wed Jul 10 12:55:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3619861747643168165.fq.gz
-Wed Jul 10 12:55:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6075833528303707653.fq.gz
-Wed Jul 10 12:55:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7046599475865598864.fq.gz
-Wed Jul 10 12:55:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8847437196232124682.fq.gz
-Wed Jul 10 12:55:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2275422779953066054.fq.gz
-Wed Jul 10 12:55:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7190116847250574449.fq.gz
-Wed Jul 10 12:55:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:55:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7589721621137411319.fq.gz
-Wed Jul 10 12:56:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_941859201461557330.fq.gz
-Wed Jul 10 12:56:08 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:08 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2732207263012816360.fq.gz
-Wed Jul 10 12:56:16 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:16 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7733596431581510416.fq.gz
-Wed Jul 10 12:56:23 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:23 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_4744722849611949295.fq.gz
-Wed Jul 10 12:56:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3380115061497235103.fq.gz
-Wed Jul 10 12:56:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1464685731578290314.fq.gz
-Wed Jul 10 12:56:42 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:42 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2953508472130999010.fq.gz
-Wed Jul 10 12:56:49 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:49 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5434388487871800929.fq.gz
-Wed Jul 10 12:56:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:56:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3446034447796625137.fq.gz
-Wed Jul 10 12:57:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1722284826726766835.fq.gz
-Wed Jul 10 12:57:11 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:11 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1364057941920827274.fq.gz
-Wed Jul 10 12:57:18 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:18 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8333735731479160255.fq.gz
-Wed Jul 10 12:57:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3515202906824850044.fq.gz
-Wed Jul 10 12:57:32 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:32 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8253845632655842739.fq.gz
-Wed Jul 10 12:57:39 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:39 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2327196771221753436.fq.gz
-Wed Jul 10 12:57:46 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:46 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8545291556337161772.fq.gz
-Wed Jul 10 12:57:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_368130446066409798.fq.gz
-Wed Jul 10 12:57:59 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:57:59 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7124073734324811019.fq.gz
-Wed Jul 10 12:58:06 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:06 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7733641299401431526.fq.gz
-Wed Jul 10 12:58:15 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:15 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5302626124671014971.fq.gz
-Wed Jul 10 12:58:22 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:22 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6188927484563773461.fq.gz
-Wed Jul 10 12:58:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8465235669161564127.fq.gz
-Wed Jul 10 12:58:36 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:36 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3185839081384532679.fq.gz
-Wed Jul 10 12:58:43 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:43 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_3334476427342368940.fq.gz
-Wed Jul 10 12:58:50 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:50 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_7345266001208509873.fq.gz
-Wed Jul 10 12:58:58 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:58:58 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_5679451395490533120.fq.gz
-Wed Jul 10 12:59:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8037046910110265323.fq.gz
-Wed Jul 10 12:59:12 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:12 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_1029105458677732909.fq.gz
-Wed Jul 10 12:59:20 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:20 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_6523189116156395819.fq.gz
-Wed Jul 10 12:59:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_8526945730913487176.fq.gz
-Wed Jul 10 12:59:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_9215255328913829600.fq.gz
-Wed Jul 10 12:59:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Created a WriteThread for ./sort_temp_2591414761789200205.fq.gz
-Wed Jul 10 12:59:49 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:49 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Started output streams:	0.012 seconds.
+Created a WriteThread for ./sort_temp_8146839928154422439.fq.gz
+Tue Jul 16 20:38:46 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:38:46 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_336345619564733957.fq.gz
+Tue Jul 16 20:38:52 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:38:52 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8680060985233854963.fq.gz
+Tue Jul 16 20:38:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:38:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3698245966791140360.fq.gz
+Tue Jul 16 20:39:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_440667396630642108.fq.gz
+Tue Jul 16 20:39:07 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:07 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3683470325765253054.fq.gz
+Tue Jul 16 20:39:12 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:12 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8710996742925128878.fq.gz
+Tue Jul 16 20:39:18 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:18 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2135435160690245008.fq.gz
+Tue Jul 16 20:39:24 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:24 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5084327417490850993.fq.gz
+Tue Jul 16 20:39:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4302505960441575881.fq.gz
+Tue Jul 16 20:39:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5459270413578586739.fq.gz
+Tue Jul 16 20:39:43 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:43 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7304907956552031624.fq.gz
+Tue Jul 16 20:39:48 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:48 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7388828434502704915.fq.gz
+Tue Jul 16 20:39:54 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:39:54 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1566336414392722315.fq.gz
+Tue Jul 16 20:40:00 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:00 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_110182275212049619.fq.gz
+Tue Jul 16 20:40:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6688393513436251598.fq.gz
+Tue Jul 16 20:40:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2164413277677117492.fq.gz
+Tue Jul 16 20:40:15 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:15 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6966165261376409815.fq.gz
+Tue Jul 16 20:40:22 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:22 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3946345839922605861.fq.gz
+Tue Jul 16 20:40:27 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:27 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_271356229789933800.fq.gz
+Tue Jul 16 20:40:34 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:34 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2108983809798753222.fq.gz
+Tue Jul 16 20:40:39 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:39 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3396808321054056911.fq.gz
+Tue Jul 16 20:40:44 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:44 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1415955259096835224.fq.gz
+Tue Jul 16 20:40:51 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:51 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_714432366860391600.fq.gz
+Tue Jul 16 20:40:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:40:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2748075646678427977.fq.gz
+Tue Jul 16 20:41:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7549044739675474804.fq.gz
+Tue Jul 16 20:41:08 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:08 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3400160827386208468.fq.gz
+Tue Jul 16 20:41:14 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:14 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6905429459869042312.fq.gz
+Tue Jul 16 20:41:19 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:19 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8130662634344345563.fq.gz
+Tue Jul 16 20:41:25 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:25 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8597241335000461018.fq.gz
+Tue Jul 16 20:41:30 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:30 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7512453244721321743.fq.gz
+Tue Jul 16 20:41:34 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:34 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3923363358594720064.fq.gz
+Tue Jul 16 20:41:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8125133128149451548.fq.gz
+Tue Jul 16 20:41:45 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:45 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8939064061738023973.fq.gz
+Tue Jul 16 20:41:50 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:50 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1640420300149528723.fq.gz
+Tue Jul 16 20:41:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:41:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8346511636745283743.fq.gz
+Tue Jul 16 20:42:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_401564626233620619.fq.gz
+Tue Jul 16 20:42:07 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:07 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5364347045873548952.fq.gz
+Tue Jul 16 20:42:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2488624437520065736.fq.gz
+Tue Jul 16 20:42:19 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:19 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5238102513604943476.fq.gz
+Tue Jul 16 20:42:24 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:24 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_9128669006129326700.fq.gz
+Tue Jul 16 20:42:30 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:30 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8297932404043693970.fq.gz
+Tue Jul 16 20:42:36 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:36 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3818529812527915624.fq.gz
+Tue Jul 16 20:42:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5198328797744524135.fq.gz
+Tue Jul 16 20:42:48 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:48 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5337052217791211603.fq.gz
+Tue Jul 16 20:42:54 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:54 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6073602613950168647.fq.gz
+Tue Jul 16 20:42:59 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:42:59 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5409607861761014143.fq.gz
+Tue Jul 16 20:43:04 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:04 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6145028075063754135.fq.gz
+Tue Jul 16 20:43:09 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:09 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2010451502177573800.fq.gz
+Tue Jul 16 20:43:14 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:14 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7005317327067149285.fq.gz
+Tue Jul 16 20:43:20 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:20 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6076801230182498654.fq.gz
+Tue Jul 16 20:43:25 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:25 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4213216263950426767.fq.gz
+Tue Jul 16 20:43:30 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:30 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7749285540208638544.fq.gz
+Tue Jul 16 20:43:36 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:36 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4385278348348902726.fq.gz
+Tue Jul 16 20:43:42 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:42 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2686886116728750553.fq.gz
+Tue Jul 16 20:43:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3767354790559090154.fq.gz
+Tue Jul 16 20:43:52 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:52 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6282522578709049254.fq.gz
+Tue Jul 16 20:43:58 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:43:58 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5228230192659305040.fq.gz
+Tue Jul 16 20:44:04 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:04 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8438434213660377236.fq.gz
+Tue Jul 16 20:44:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1427258311552882001.fq.gz
+Tue Jul 16 20:44:15 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:15 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4779542407119483739.fq.gz
+Tue Jul 16 20:44:20 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:20 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3100252884542169336.fq.gz
+Tue Jul 16 20:44:27 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:27 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8907618849956073628.fq.gz
+Tue Jul 16 20:44:33 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:33 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6784743770359596092.fq.gz
+Tue Jul 16 20:44:38 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:38 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6545778198597977773.fq.gz
+Tue Jul 16 20:44:43 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:43 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7961796965501120370.fq.gz
+Tue Jul 16 20:44:48 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:48 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_895575144109061546.fq.gz
+Tue Jul 16 20:44:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:44:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8721584918686888278.fq.gz
+Tue Jul 16 20:45:00 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:00 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8887335394674239730.fq.gz
+Tue Jul 16 20:45:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4344645331355648569.fq.gz
+Tue Jul 16 20:45:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5236906110335227355.fq.gz
+Tue Jul 16 20:45:16 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:16 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3724755516733125359.fq.gz
+Tue Jul 16 20:45:20 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:20 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_723125894981365972.fq.gz
+Tue Jul 16 20:45:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4779751315690987070.fq.gz
+Tue Jul 16 20:45:31 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:31 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7923881031679168892.fq.gz
+Tue Jul 16 20:45:39 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:39 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7323595704824421041.fq.gz
+Tue Jul 16 20:45:44 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:44 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_314523538169157053.fq.gz
+Tue Jul 16 20:45:51 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:51 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8021085431148687715.fq.gz
+Tue Jul 16 20:45:56 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:45:56 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3353971086083148569.fq.gz
+Tue Jul 16 20:46:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5483680178304574762.fq.gz
+Tue Jul 16 20:46:08 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:08 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1882584470129466771.fq.gz
+Tue Jul 16 20:46:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2020781506233649665.fq.gz
+Tue Jul 16 20:46:18 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:18 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6938682504855246382.fq.gz
+Tue Jul 16 20:46:24 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:24 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3904406158376301747.fq.gz
+Tue Jul 16 20:46:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5905962231954793174.fq.gz
+Tue Jul 16 20:46:36 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:36 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6649843376584603185.fq.gz
+Tue Jul 16 20:46:42 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:42 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_90889871472011395.fq.gz
+Tue Jul 16 20:46:46 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:46 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5833597194696650052.fq.gz
+Tue Jul 16 20:46:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1017077994681509158.fq.gz
+Tue Jul 16 20:46:59 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:46:59 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_409369387373095784.fq.gz
+Tue Jul 16 20:47:04 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:04 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6157463205224059880.fq.gz
+Tue Jul 16 20:47:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6488206433696157939.fq.gz
+Tue Jul 16 20:47:17 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:17 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1528539301772049681.fq.gz
+Tue Jul 16 20:47:22 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:22 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5374076774771256777.fq.gz
+Tue Jul 16 20:47:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6755350327568443580.fq.gz
+Tue Jul 16 20:47:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4340599217283103502.fq.gz
+Tue Jul 16 20:47:40 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:40 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7379605574803539600.fq.gz
+Tue Jul 16 20:47:46 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:46 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1727451840223519063.fq.gz
+Tue Jul 16 20:47:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3811898486797738268.fq.gz
+Tue Jul 16 20:47:58 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:47:58 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_9136793463617434798.fq.gz
+Tue Jul 16 20:48:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_423975048053860999.fq.gz
+Tue Jul 16 20:48:10 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:10 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5760280534469701110.fq.gz
+Tue Jul 16 20:48:15 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:15 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7900950306740625832.fq.gz
+Tue Jul 16 20:48:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_9143337286710449362.fq.gz
+Tue Jul 16 20:48:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5531484620693773362.fq.gz
+Tue Jul 16 20:48:33 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:33 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8957761945443932591.fq.gz
+Tue Jul 16 20:48:38 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:38 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1557790371640551553.fq.gz
+Tue Jul 16 20:48:45 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:45 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_9170591551851566407.fq.gz
+Tue Jul 16 20:48:50 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:50 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5557002839481348892.fq.gz
+Tue Jul 16 20:48:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:48:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_9044737912265731724.fq.gz
+Tue Jul 16 20:49:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3912457801301692739.fq.gz
+Tue Jul 16 20:49:07 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:07 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7014130048184400061.fq.gz
+Tue Jul 16 20:49:12 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:12 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8985271140754313356.fq.gz
+Tue Jul 16 20:49:19 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:19 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7113927742940569666.fq.gz
+Tue Jul 16 20:49:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6352997989705316644.fq.gz
+Tue Jul 16 20:49:31 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:31 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4387292754957306322.fq.gz
+Tue Jul 16 20:49:39 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:39 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8723425662077840151.fq.gz
+Tue Jul 16 20:49:45 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:45 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_835962523944562985.fq.gz
+Tue Jul 16 20:49:52 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:52 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3363760927441892820.fq.gz
+Tue Jul 16 20:49:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:49:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_262693552582322438.fq.gz
+Tue Jul 16 20:50:04 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:50:04 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6241906092863478784.fq.gz
+Tue Jul 16 20:50:09 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:50:09 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3468708595142756794.fq.gz
+Tue Jul 16 20:50:16 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:50:16 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2749323643331744803.fq.gz
+Tue Jul 16 20:50:24 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:50:24 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4202014178896948015.fq.gz
+Tue Jul 16 20:50:31 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:50:31 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5196282810329091074.fq.gz
+Tue Jul 16 20:50:40 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:50:40 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5568766484297285766.fq.gz
+Tue Jul 16 20:50:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:50:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4715465687477667800.fq.gz
+Tue Jul 16 20:51:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4072469464786238849.fq.gz
+Tue Jul 16 20:51:13 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:13 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8484228637560964467.fq.gz
+Tue Jul 16 20:51:17 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:17 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3304234179852968961.fq.gz
+Tue Jul 16 20:51:22 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:22 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6026205991762930754.fq.gz
+Tue Jul 16 20:51:28 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:28 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_2692282723266456083.fq.gz
+Tue Jul 16 20:51:35 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:35 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7457340197332931191.fq.gz
+Tue Jul 16 20:51:40 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:40 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1308343800054958935.fq.gz
+Tue Jul 16 20:51:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6273116077638530674.fq.gz
+Tue Jul 16 20:51:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:51:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_840141064648450078.fq.gz
+Tue Jul 16 20:52:05 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:05 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_618453655784259170.fq.gz
+Tue Jul 16 20:52:11 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:11 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8049632912755040699.fq.gz
+Tue Jul 16 20:52:17 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:17 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7898606868606571542.fq.gz
+Tue Jul 16 20:52:22 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:22 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4671100749719663012.fq.gz
+Tue Jul 16 20:52:29 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:29 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3804774817312085993.fq.gz
+Tue Jul 16 20:52:39 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:39 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3827589449173151930.fq.gz
+Tue Jul 16 20:52:50 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:50 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8056880699725250472.fq.gz
+Tue Jul 16 20:52:58 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:52:58 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7817943379283413092.fq.gz
+Tue Jul 16 20:53:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6038163985337443210.fq.gz
+Tue Jul 16 20:53:09 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:09 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1999217387223641223.fq.gz
+Tue Jul 16 20:53:16 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:16 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7320106786865783619.fq.gz
+Tue Jul 16 20:53:21 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:21 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7299743403925582877.fq.gz
+Tue Jul 16 20:53:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5725820654771285930.fq.gz
+Tue Jul 16 20:53:32 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:32 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_9152485463710404177.fq.gz
+Tue Jul 16 20:53:37 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:37 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5071870529182680599.fq.gz
+Tue Jul 16 20:53:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5957676720169982747.fq.gz
+Tue Jul 16 20:53:47 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:47 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1508127598161327626.fq.gz
+Tue Jul 16 20:53:52 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:52 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4099390833590146646.fq.gz
+Tue Jul 16 20:53:57 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:53:57 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_161416614298176826.fq.gz
+Tue Jul 16 20:54:02 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:02 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_1294139062001567975.fq.gz
+Tue Jul 16 20:54:09 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:09 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_6157227940296011980.fq.gz
+Tue Jul 16 20:54:14 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:14 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7527616881570351442.fq.gz
+Tue Jul 16 20:54:20 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:20 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_7971837392702532525.fq.gz
+Tue Jul 16 20:54:25 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:25 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_820882748392880716.fq.gz
+Tue Jul 16 20:54:30 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:30 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_5498242871909678159.fq.gz
+Tue Jul 16 20:54:36 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:36 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_3449572697795058410.fq.gz
+Tue Jul 16 20:54:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_103788583922649432.fq.gz
+Tue Jul 16 20:54:46 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:46 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_8961681496421074720.fq.gz
+Tue Jul 16 20:54:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:54:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Created a WriteThread for ./sort_temp_4768583729378376453.fq.gz
+Tue Jul 16 20:55:00 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:55:00 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Input:                  	416657060 reads          	25832737720 bases
 Output:                 	416657060 reads (100.00%) 	25832737720 bases (100.00%)
 
-Time:                         	1178.592 seconds.
-Reads Processed:        416m 	353.52k reads/sec
-Bases Processed:      25832m 	21.92m bases/sec
+Time:                         	982.557 seconds.
+Reads Processed:        416m 	424.05k reads/sec
+Bases Processed:      25832m 	26.29m bases/sec
 Finished reading input.
-Created a WriteThread for ./sort_temp_3467176663516044340.fq.gz
-Wed Jul 10 12:59:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Merging 168 files.
+Created a WriteThread for ./sort_temp_1942662015577801424.fq.gz
+Tue Jul 16 20:55:04 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:55:04 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging 166 files.
 Reduced buffer sizes prior to merging due to low memory.
 Performing recursive merge to reduce open files.
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_1896056769814381998.fq.gz, ./sort_temp_1432006028872082847.fq.gz, ./sort_temp_469040224057721363.fq.gz, ./sort_temp_6705132465676802197.fq.gz, ./sort_temp_6845011769939863713.fq.gz, ./sort_temp_5287708298109360088.fq.gz, ./sort_temp_3650613761480204885.fq.gz, ./sort_temp_848452944075486303.fq.gz, ./sort_temp_4845524867152088034.fq.gz, ./sort_temp_8194787656755525254.fq.gz, ./sort_temp_8253003639210059704.fq.gz, ./sort_temp_1228897282512358421.fq.gz, ./sort_temp_2275422779953066054.fq.gz, ./sort_temp_3446034447796625137.fq.gz, ./sort_temp_5302626124671014971.fq.gz, ./sort_temp_9215255328913829600.fq.gz]
-Wed Jul 10 12:59:54 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 12:59:54 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_8146839928154422439.fq.gz, ./sort_temp_7304907956552031624.fq.gz, ./sort_temp_1415955259096835224.fq.gz, ./sort_temp_8939064061738023973.fq.gz, ./sort_temp_5337052217791211603.fq.gz, ./sort_temp_3767354790559090154.fq.gz, ./sort_temp_895575144109061546.fq.gz, ./sort_temp_8021085431148687715.fq.gz, ./sort_temp_1017077994681509158.fq.gz, ./sort_temp_9136793463617434798.fq.gz, ./sort_temp_3912457801301692739.fq.gz, ./sort_temp_3468708595142756794.fq.gz, ./sort_temp_7457340197332931191.fq.gz, ./sort_temp_7817943379283413092.fq.gz, ./sort_temp_161416614298176826.fq.gz, ./sort_temp_1942662015577801424.fq.gz]
+Tue Jul 16 20:55:06 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:55:06 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_2584841414917217895.fq.gz, ./sort_temp_3047604132146843092.fq.gz, ./sort_temp_3764346834425931701.fq.gz, ./sort_temp_2948487009201605473.fq.gz, ./sort_temp_8670512780827358470.fq.gz, ./sort_temp_6764124936800625882.fq.gz, ./sort_temp_2358195511531368109.fq.gz, ./sort_temp_6077607722281625641.fq.gz, ./sort_temp_3784259181734060827.fq.gz, ./sort_temp_2189507730402454794.fq.gz, ./sort_temp_1430642690041681184.fq.gz, ./sort_temp_4319732394612776693.fq.gz, ./sort_temp_7190116847250574449.fq.gz, ./sort_temp_1722284826726766835.fq.gz, ./sort_temp_6188927484563773461.fq.gz, ./sort_temp_2591414761789200205.fq.gz]
-Wed Jul 10 13:00:25 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:00:25 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_336345619564733957.fq.gz, ./sort_temp_7388828434502704915.fq.gz, ./sort_temp_714432366860391600.fq.gz, ./sort_temp_1640420300149528723.fq.gz, ./sort_temp_6073602613950168647.fq.gz, ./sort_temp_6282522578709049254.fq.gz, ./sort_temp_8721584918686888278.fq.gz, ./sort_temp_3353971086083148569.fq.gz, ./sort_temp_409369387373095784.fq.gz, ./sort_temp_423975048053860999.fq.gz, ./sort_temp_7014130048184400061.fq.gz, ./sort_temp_2749323643331744803.fq.gz, ./sort_temp_1308343800054958935.fq.gz, ./sort_temp_6038163985337443210.fq.gz, ./sort_temp_1294139062001567975.fq.gz]
+Tue Jul 16 20:56:08 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:56:08 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_1759701697417113803.fq.gz, ./sort_temp_1931976867825299845.fq.gz, ./sort_temp_835696167338169548.fq.gz, ./sort_temp_1358367796083319278.fq.gz, ./sort_temp_3267679051611341898.fq.gz, ./sort_temp_9008549313262854737.fq.gz, ./sort_temp_5931802411080407068.fq.gz, ./sort_temp_3551631663657178221.fq.gz, ./sort_temp_7770919327236030112.fq.gz, ./sort_temp_3695168038235305547.fq.gz, ./sort_temp_3937463637426269442.fq.gz, ./sort_temp_2065607630035499193.fq.gz, ./sort_temp_7589721621137411319.fq.gz, ./sort_temp_1364057941920827274.fq.gz, ./sort_temp_8465235669161564127.fq.gz, ./sort_temp_3467176663516044340.fq.gz]
-Wed Jul 10 13:00:56 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:00:56 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_8680060985233854963.fq.gz, ./sort_temp_1566336414392722315.fq.gz, ./sort_temp_2748075646678427977.fq.gz, ./sort_temp_8346511636745283743.fq.gz, ./sort_temp_5409607861761014143.fq.gz, ./sort_temp_5228230192659305040.fq.gz, ./sort_temp_8887335394674239730.fq.gz, ./sort_temp_5483680178304574762.fq.gz, ./sort_temp_6157463205224059880.fq.gz, ./sort_temp_5760280534469701110.fq.gz, ./sort_temp_8985271140754313356.fq.gz, ./sort_temp_4202014178896948015.fq.gz, ./sort_temp_6273116077638530674.fq.gz, ./sort_temp_1999217387223641223.fq.gz, ./sort_temp_6157227940296011980.fq.gz]
+Tue Jul 16 20:57:04 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:57:04 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_1780806815083531624.fq.gz, ./sort_temp_3910508972567028114.fq.gz, ./sort_temp_4080705071678982807.fq.gz, ./sort_temp_5140844529875969393.fq.gz, ./sort_temp_8510898328863549820.fq.gz, ./sort_temp_2430999169538025715.fq.gz, ./sort_temp_3261847625849886380.fq.gz, ./sort_temp_4965929557829106823.fq.gz, ./sort_temp_5534727744567188316.fq.gz, ./sort_temp_5767241771167233760.fq.gz, ./sort_temp_3794064907630975106.fq.gz, ./sort_temp_4437756997494971172.fq.gz, ./sort_temp_941859201461557330.fq.gz, ./sort_temp_8333735731479160255.fq.gz, ./sort_temp_3185839081384532679.fq.gz]
-Wed Jul 10 13:01:26 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:01:26 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_3698245966791140360.fq.gz, ./sort_temp_110182275212049619.fq.gz, ./sort_temp_7549044739675474804.fq.gz, ./sort_temp_401564626233620619.fq.gz, ./sort_temp_6145028075063754135.fq.gz, ./sort_temp_8438434213660377236.fq.gz, ./sort_temp_4344645331355648569.fq.gz, ./sort_temp_1882584470129466771.fq.gz, ./sort_temp_6488206433696157939.fq.gz, ./sort_temp_7900950306740625832.fq.gz, ./sort_temp_7113927742940569666.fq.gz, ./sort_temp_5196282810329091074.fq.gz, ./sort_temp_840141064648450078.fq.gz, ./sort_temp_7320106786865783619.fq.gz, ./sort_temp_7527616881570351442.fq.gz]
+Tue Jul 16 20:58:03 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:58:03 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_7766335634480195922.fq.gz, ./sort_temp_3721908098807581155.fq.gz, ./sort_temp_4797631954894402403.fq.gz, ./sort_temp_8780835339297630555.fq.gz, ./sort_temp_8512228521734965602.fq.gz, ./sort_temp_8917751802549627946.fq.gz, ./sort_temp_4231487001330421448.fq.gz, ./sort_temp_857063504745946538.fq.gz, ./sort_temp_8035987872914320289.fq.gz, ./sort_temp_1898709818261348361.fq.gz, ./sort_temp_7974628782444280580.fq.gz, ./sort_temp_5438881354077135429.fq.gz, ./sort_temp_2732207263012816360.fq.gz, ./sort_temp_3515202906824850044.fq.gz, ./sort_temp_3334476427342368940.fq.gz]
-Wed Jul 10 13:01:55 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:01:55 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_440667396630642108.fq.gz, ./sort_temp_6688393513436251598.fq.gz, ./sort_temp_3400160827386208468.fq.gz, ./sort_temp_5364347045873548952.fq.gz, ./sort_temp_2010451502177573800.fq.gz, ./sort_temp_1427258311552882001.fq.gz, ./sort_temp_5236906110335227355.fq.gz, ./sort_temp_2020781506233649665.fq.gz, ./sort_temp_1528539301772049681.fq.gz, ./sort_temp_9143337286710449362.fq.gz, ./sort_temp_6352997989705316644.fq.gz, ./sort_temp_5568766484297285766.fq.gz, ./sort_temp_618453655784259170.fq.gz, ./sort_temp_7299743403925582877.fq.gz, ./sort_temp_7971837392702532525.fq.gz]
+Tue Jul 16 20:58:58 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:58:58 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_7940717883744999927.fq.gz, ./sort_temp_1996197371618471116.fq.gz, ./sort_temp_2836030101803594138.fq.gz, ./sort_temp_6589568595323692254.fq.gz, ./sort_temp_5829067917955266191.fq.gz, ./sort_temp_5563138483205029586.fq.gz, ./sort_temp_462279529559797652.fq.gz, ./sort_temp_4125808506785167989.fq.gz, ./sort_temp_7807088318633294654.fq.gz, ./sort_temp_2381504044470765888.fq.gz, ./sort_temp_8930312711706453817.fq.gz, ./sort_temp_3659187894049338578.fq.gz, ./sort_temp_7733596431581510416.fq.gz, ./sort_temp_8253845632655842739.fq.gz, ./sort_temp_7345266001208509873.fq.gz]
-Wed Jul 10 13:02:25 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:02:25 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_3683470325765253054.fq.gz, ./sort_temp_2164413277677117492.fq.gz, ./sort_temp_6905429459869042312.fq.gz, ./sort_temp_2488624437520065736.fq.gz, ./sort_temp_7005317327067149285.fq.gz, ./sort_temp_4779542407119483739.fq.gz, ./sort_temp_3724755516733125359.fq.gz, ./sort_temp_6938682504855246382.fq.gz, ./sort_temp_5374076774771256777.fq.gz, ./sort_temp_5531484620693773362.fq.gz, ./sort_temp_4387292754957306322.fq.gz, ./sort_temp_4715465687477667800.fq.gz, ./sort_temp_8049632912755040699.fq.gz, ./sort_temp_5725820654771285930.fq.gz, ./sort_temp_820882748392880716.fq.gz]
+Tue Jul 16 20:59:53 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 20:59:53 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_6273079601030224914.fq.gz, ./sort_temp_4384585189668666548.fq.gz, ./sort_temp_8310332179778535396.fq.gz, ./sort_temp_7198679909870315401.fq.gz, ./sort_temp_7105692536870360145.fq.gz, ./sort_temp_5574869060660198951.fq.gz, ./sort_temp_1350184671493098249.fq.gz, ./sort_temp_38811192009684043.fq.gz, ./sort_temp_2944988365553284243.fq.gz, ./sort_temp_7657441765470002347.fq.gz, ./sort_temp_5700629118737663351.fq.gz, ./sort_temp_8296232109315650901.fq.gz, ./sort_temp_4744722849611949295.fq.gz, ./sort_temp_2327196771221753436.fq.gz, ./sort_temp_5679451395490533120.fq.gz]
-Wed Jul 10 13:02:52 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:02:52 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_8710996742925128878.fq.gz, ./sort_temp_6966165261376409815.fq.gz, ./sort_temp_8130662634344345563.fq.gz, ./sort_temp_5238102513604943476.fq.gz, ./sort_temp_6076801230182498654.fq.gz, ./sort_temp_3100252884542169336.fq.gz, ./sort_temp_723125894981365972.fq.gz, ./sort_temp_3904406158376301747.fq.gz, ./sort_temp_6755350327568443580.fq.gz, ./sort_temp_8957761945443932591.fq.gz, ./sort_temp_8723425662077840151.fq.gz, ./sort_temp_4072469464786238849.fq.gz, ./sort_temp_7898606868606571542.fq.gz, ./sort_temp_9152485463710404177.fq.gz, ./sort_temp_5498242871909678159.fq.gz]
+Tue Jul 16 21:00:49 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 21:00:49 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_95100411981826533.fq.gz, ./sort_temp_3236296447701559261.fq.gz, ./sort_temp_4698799493495295237.fq.gz, ./sort_temp_7985284435288180175.fq.gz, ./sort_temp_5494156190034038508.fq.gz, ./sort_temp_2499025204730977271.fq.gz, ./sort_temp_551685367665582440.fq.gz, ./sort_temp_8204679951277227056.fq.gz, ./sort_temp_1440213159297846328.fq.gz, ./sort_temp_816583162915736758.fq.gz, ./sort_temp_5100102081471340144.fq.gz, ./sort_temp_3619861747643168165.fq.gz, ./sort_temp_3380115061497235103.fq.gz, ./sort_temp_8545291556337161772.fq.gz, ./sort_temp_8037046910110265323.fq.gz]
-Wed Jul 10 13:03:22 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:03:22 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_2135435160690245008.fq.gz, ./sort_temp_3946345839922605861.fq.gz, ./sort_temp_8597241335000461018.fq.gz, ./sort_temp_9128669006129326700.fq.gz, ./sort_temp_4213216263950426767.fq.gz, ./sort_temp_8907618849956073628.fq.gz, ./sort_temp_4779751315690987070.fq.gz, ./sort_temp_5905962231954793174.fq.gz, ./sort_temp_4340599217283103502.fq.gz, ./sort_temp_1557790371640551553.fq.gz, ./sort_temp_835962523944562985.fq.gz, ./sort_temp_8484228637560964467.fq.gz, ./sort_temp_4671100749719663012.fq.gz, ./sort_temp_5071870529182680599.fq.gz, ./sort_temp_3449572697795058410.fq.gz]
+Tue Jul 16 21:01:45 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 21:01:45 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_3830678472730376353.fq.gz, ./sort_temp_6172739342348267417.fq.gz, ./sort_temp_8095275001011467328.fq.gz, ./sort_temp_5584558331320374087.fq.gz, ./sort_temp_641672564396305952.fq.gz, ./sort_temp_7269353893584943326.fq.gz, ./sort_temp_471962875713690231.fq.gz, ./sort_temp_6254644316341638646.fq.gz, ./sort_temp_6853285605775369903.fq.gz, ./sort_temp_3004371334260965362.fq.gz, ./sort_temp_7420804388870137879.fq.gz, ./sort_temp_6075833528303707653.fq.gz, ./sort_temp_1464685731578290314.fq.gz, ./sort_temp_368130446066409798.fq.gz, ./sort_temp_1029105458677732909.fq.gz]
-Wed Jul 10 13:03:50 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:03:50 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_5084327417490850993.fq.gz, ./sort_temp_271356229789933800.fq.gz, ./sort_temp_7512453244721321743.fq.gz, ./sort_temp_8297932404043693970.fq.gz, ./sort_temp_7749285540208638544.fq.gz, ./sort_temp_6784743770359596092.fq.gz, ./sort_temp_7923881031679168892.fq.gz, ./sort_temp_6649843376584603185.fq.gz, ./sort_temp_7379605574803539600.fq.gz, ./sort_temp_9170591551851566407.fq.gz, ./sort_temp_3363760927441892820.fq.gz, ./sort_temp_3304234179852968961.fq.gz, ./sort_temp_3804774817312085993.fq.gz, ./sort_temp_5957676720169982747.fq.gz, ./sort_temp_103788583922649432.fq.gz]
+Tue Jul 16 21:02:44 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 21:02:44 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_5539358880652150605.fq.gz, ./sort_temp_157241959665621268.fq.gz, ./sort_temp_7319125252388214894.fq.gz, ./sort_temp_1563395815999750962.fq.gz, ./sort_temp_1767055358250178814.fq.gz, ./sort_temp_7579629294333977202.fq.gz, ./sort_temp_5455505439530451803.fq.gz, ./sort_temp_1271452731490058341.fq.gz, ./sort_temp_6608849024193414537.fq.gz, ./sort_temp_5072358716542457597.fq.gz, ./sort_temp_8060811481072289523.fq.gz, ./sort_temp_7046599475865598864.fq.gz, ./sort_temp_2953508472130999010.fq.gz, ./sort_temp_7124073734324811019.fq.gz, ./sort_temp_6523189116156395819.fq.gz]
-Wed Jul 10 13:04:20 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:04:20 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_4302505960441575881.fq.gz, ./sort_temp_2108983809798753222.fq.gz, ./sort_temp_3923363358594720064.fq.gz, ./sort_temp_3818529812527915624.fq.gz, ./sort_temp_4385278348348902726.fq.gz, ./sort_temp_6545778198597977773.fq.gz, ./sort_temp_7323595704824421041.fq.gz, ./sort_temp_90889871472011395.fq.gz, ./sort_temp_1727451840223519063.fq.gz, ./sort_temp_5557002839481348892.fq.gz, ./sort_temp_262693552582322438.fq.gz, ./sort_temp_6026205991762930754.fq.gz, ./sort_temp_3827589449173151930.fq.gz, ./sort_temp_1508127598161327626.fq.gz, ./sort_temp_8961681496421074720.fq.gz]
+Tue Jul 16 21:03:41 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 21:03:41 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
 Reduced buffer sizes prior to merging.
-Merging [./sort_temp_2890834894677045132.fq.gz, ./sort_temp_1662592665019950256.fq.gz, ./sort_temp_543581247490942439.fq.gz, ./sort_temp_1371514207114314177.fq.gz, ./sort_temp_4658576956397825074.fq.gz, ./sort_temp_6805889703439378166.fq.gz, ./sort_temp_4380089977178438157.fq.gz, ./sort_temp_7698632950299309310.fq.gz, ./sort_temp_3450106754465758732.fq.gz, ./sort_temp_5690607329757573834.fq.gz, ./sort_temp_4669583029715965138.fq.gz, ./sort_temp_8847437196232124682.fq.gz, ./sort_temp_5434388487871800929.fq.gz, ./sort_temp_7733641299401431526.fq.gz, ./sort_temp_8526945730913487176.fq.gz]
-Wed Jul 10 13:04:48 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
-Wed Jul 10 13:04:48 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
-Merging [./sort_temp_2437132718881463424.fq.gz, ./sort_temp_6908198078656095102.fq.gz, ./sort_temp_8190159457451501846.fq.gz, ./sort_temp_6000263786069046839.fq.gz, ./sort_temp_2389438100863716447.fq.gz, ./sort_temp_5449533762813339513.fq.gz, ./sort_temp_6881958017281720651.fq.gz, ./sort_temp_1491846154922358015.fq.gz, ./sort_temp_33132176356808181.fq.gz, ./sort_temp_6972016828372961383.fq.gz, ./sort_temp_6442446109982241108.fq.gz]
-Time:                         	2255.220 seconds.
-Reads Processed:        416m 	184.75k reads/sec
-Bases Processed:      25832m 	11.45m bases/sec
-Processing time:   		2254.858 seconds.
+Merging [./sort_temp_5459270413578586739.fq.gz, ./sort_temp_3396808321054056911.fq.gz, ./sort_temp_8125133128149451548.fq.gz, ./sort_temp_5198328797744524135.fq.gz, ./sort_temp_2686886116728750553.fq.gz, ./sort_temp_7961796965501120370.fq.gz, ./sort_temp_314523538169157053.fq.gz, ./sort_temp_5833597194696650052.fq.gz, ./sort_temp_3811898486797738268.fq.gz, ./sort_temp_9044737912265731724.fq.gz, ./sort_temp_6241906092863478784.fq.gz, ./sort_temp_2692282723266456083.fq.gz, ./sort_temp_8056880699725250472.fq.gz, ./sort_temp_4099390833590146646.fq.gz, ./sort_temp_4768583729378376453.fq.gz]
+Tue Jul 16 21:04:38 2019: [unset]:_pmi_alps_get_apid:alps_app_lli_put_request failed
+Tue Jul 16 21:04:38 2019: [unset]:_pmi_init:_pmi_alps_init returned -1
+Merging [./sort_temp_946607686503144421.fq.gz, ./sort_temp_1822120529777506422.fq.gz, ./sort_temp_8666042466526459728.fq.gz, ./sort_temp_2041126604970396702.fq.gz, ./sort_temp_215175402402218333.fq.gz, ./sort_temp_2630493052501719799.fq.gz, ./sort_temp_8903478123905222367.fq.gz, ./sort_temp_7357295749725031610.fq.gz, ./sort_temp_7153634907449227451.fq.gz, ./sort_temp_482559440924907325.fq.gz, ./sort_temp_8072105626548343763.fq.gz]
+Time:                         	2464.159 seconds.
+Reads Processed:        416m 	169.09k reads/sec
+Bases Processed:      25832m 	10.48m bases/sec
+Processing time:   		2464.015 seconds.
 
 Input:                  	416657060 reads 		25832737720 bases.
-QTrimmed:               	228518 reads (0.05%) 	19088524 bases (0.07%)
-KTrimmed:               	315428 reads (0.08%) 	9107019 bases (0.04%)
-Total Removed:          	253224 reads (0.06%) 	28195543 bases (0.11%)
-Result:                 	416403836 reads (99.94%) 	25804542177 bases (99.89%)
+QTrimmed:               	228518 reads (0.05%) 	19088468 bases (0.07%)
+KTrimmed:               	323819 reads (0.08%) 	9204350 bases (0.04%)
+Total Removed:          	253224 reads (0.06%) 	28292818 bases (0.11%)
+Result:                 	416403836 reads (99.94%) 	25804444902 bases (99.89%)
 
-Time:                         	2255.012 seconds.
-Reads Processed:        416m 	184.77k reads/sec
-Bases Processed:      25832m 	11.46m bases/sec
-Processing time:   		2254.975 seconds.
+Time:                         	2464.172 seconds.
+Reads Processed:        416m 	169.09k reads/sec
+Bases Processed:      25832m 	10.48m bases/sec
+Processing time:   		2464.157 seconds.
 
-Input:                  	416403836 reads 		25804542177 bases.
-KTrimmed:               	4405428 reads (1.06%) 	108721425 bases (0.42%)
-Total Removed:          	106166 reads (0.03%) 	108721425 bases (0.42%)
-Result:                 	416297670 reads (99.97%) 	25695820752 bases (99.58%)
+Input:                  	416403836 reads 		25804444902 bases.
+KTrimmed:               	4405428 reads (1.06%) 	108721412 bases (0.42%)
+Total Removed:          	106166 reads (0.03%) 	108721412 bases (0.42%)
+Result:                 	416297670 reads (99.97%) 	25695723490 bases (99.58%)
 
-Time:                         	2255.062 seconds.
-Reads Processed:        416m 	184.65k reads/sec
-Bases Processed:      25804m 	11.44m bases/sec
-Input:                  	416297670 reads          	25695820752 bases
-Short Read Discards:    	168247 reads (0.04%) 	2357858 bases (0.01%)
-Output:                 	415962040 reads (99.92%) 	25683235485 bases (99.95%)
+Time:                         	2464.219 seconds.
+Reads Processed:        416m 	168.98k reads/sec
+Bases Processed:      25804m 	10.47m bases/sec
+Input:                  	416297670 reads          	25695723490 bases
+Short Read Discards:    	172433 reads (0.04%) 	2419423 bases (0.01%)
+Output:                 	415953674 reads (99.92%) 	25682668496 bases (99.95%)
 
-Time:                         	2255.290 seconds.
-Reads Processed:        416m 	184.59k reads/sec
-Bases Processed:      25695m 	11.39m bases/sec
-java -ea -Xmx4g -Xms4g -cp /global/projectb/scratch/bjcole/bin/bbmap/current/ jgi.BBDukF in=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq out=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_R1.fastq ftr=25 -Xmx4g t=1
-Executing jgi.BBDukF [in=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq, out=/global/projectb/scratch/bjcole/at.sc.db/scratch/dc_021/dc_021_R1.fastq, ftr=25, -Xmx4g, t=1]
-Version 38.26
+Time:                         	2464.462 seconds.
+Reads Processed:        416m 	168.92k reads/sec
+Bases Processed:      25695m 	10.43m bases/sec
+java -ea -Xmx4g -Xms4g -cp /global/projectb/scratch/byu24/bin/bbmap/current/ jgi.BBDuk in=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq out=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_R1.fastq ftr=25 -Xmx4g t=1
+Executing jgi.BBDuk [in=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_tmp_1.fastq, out=/global/projectb/scratch/byu24/at.sc.db/scratch/dc_021/dc_021_R1.fastq, ftr=25, -Xmx4g, t=1]
+Version 38.51
 
 Set threads to 1
-0.032 seconds.
+0.092 seconds.
 Initial:
 Memory: max=4116m, total=4116m, free=4008m, used=108m
 
 Input is being processed as unpaired
-Started output streams:	0.073 seconds.
-Processing time:   		517.739 seconds.
+Started output streams:	0.231 seconds.
+Processing time:   		263.954 seconds.
 
-Input:                  	207981020 reads 		5407506520 bases.
+Input:                  	207976837 reads 		5407397762 bases.
 FTrimmed:               	0 reads (0.00%) 	0 bases (0.00%)
 Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
-Result:                 	207981020 reads (100.00%) 	5407506520 bases (100.00%)
+Result:                 	207976837 reads (100.00%) 	5407397762 bases (100.00%)
 
-Time:                         	517.837 seconds.
-Reads Processed:        207m 	401.63k reads/sec
-Bases Processed:       5407m 	10.44m bases/sec
+Time:                         	264.205 seconds.
+Reads Processed:        207m 	787.18k reads/sec
+Bases Processed:       5407m 	20.47m bases/sec
