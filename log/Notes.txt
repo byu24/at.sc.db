@@ -339,6 +339,11 @@ Submitted batch job 23111499
 7/17/19
 Submitted batch job 23142098
 
+7/18/19 - filtering new JS files
+Submitted batch job 23167484
+Submitted batch job 23167485
+Submitted batch job 23167486
+
 
 
 
