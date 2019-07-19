@@ -344,23 +344,28 @@ Submitted batch job 23167484
 Submitted batch job 23167485
 Submitted batch job 23167486
 
-Scripts for Mapping (w/o JS files)
-Submitted batch job 23168449
-Submitted batch job 23168450
-Submitted batch job 23168452
-Submitted batch job 23168453
-Submitted batch job 23168454
-Submitted batch job 23168455
-Submitted batch job 23168458
-Submitted batch job 23168459
-Submitted batch job 23168460
-Submitted batch job 23168461
-Submitted batch job 23168462
-Submitted batch job 23168463
-Submitted batch job 23168465
-Submitted batch job 23168466
-Submitted batch job 23168467
-Submitted batch job 23168468
+7/19/19
+Scripts for Mapping
+Submitted batch job 23182344
+Submitted batch job 23182345
+Submitted batch job 23182346
+Submitted batch job 23182347
+Submitted batch job 23182348
+Submitted batch job 23182349
+Submitted batch job 23182350
+Submitted batch job 23182351
+Submitted batch job 23182352
+Submitted batch job 23182353
+Submitted batch job 23182354
+Submitted batch job 23182355
+Submitted batch job 23182356
+Submitted batch job 23182357
+Submitted batch job 23182358
+Submitted batch job 23182359
+Submitted batch job 23182361
+Submitted batch job 23182363
+Submitted batch job 23182364
+
 
 
 
