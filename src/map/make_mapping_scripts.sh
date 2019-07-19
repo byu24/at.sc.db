@@ -26,7 +26,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/${lib_name}_run.out" >> src/map/${lib_name}_run.bs
   echo "" >> src/map/${lib_name}_run.bs
   echo "module load python3" >> src/map/${lib_name}_run.bs
-  echo "source activate $BSCRATCH/bin/env_STARsolo" >> src/map/${lib_name}_run.bs
+  echo "source activate /global/projectb/scratch/bjcole/env_STARsolo" >> src/map/${lib_name}_run.bs
 
   echo "cd $BSCRATCH/at.sc.db/" >> src/map/${lib_name}_run.bs
   echo "mkdir scratch/${lib_name}" >> src/map/${lib_name}_run.bs
