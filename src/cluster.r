@@ -3,4 +3,4 @@
 #Seurat Package
 
 install.packages('Seurat')
-library(Seurat)
+library("Seurat")
