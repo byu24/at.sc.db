@@ -1,1 +1,6 @@
 scratch/
+.Rproj.user
+packrat/lib*/
+.drake/
+.drake_history/
+
