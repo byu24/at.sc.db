@@ -1,7 +1,7 @@
 library(tidyverse)
 library(Seurat)
 get_dge <- function(dataset) {
-  dge <- Seurat::Read10X(data.dir = paste0("scratch/",dataset,"/",dataset,"_star.Solo.out")) %>%
+  dge <- Seurat::Read10X(data.dir = paste0("$BSCRATCH/at.sc.db/scratch/",dataset,"/",dataset,"_star.Solo.out")) %>%
     `colnames<-`(c(paste0(colnames(.), "_", dataset)))
 }
 
