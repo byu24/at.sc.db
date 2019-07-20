@@ -1,14 +1,15 @@
-library(tidyverse)
 library(drake)
+library(dplyr)
+library(ggplot2)
 
-source("src/analyze/process_dge_functions.R")
+source("$BSCRATCH/at.sc.db/src/analyze/process_dge_functions.R")
 
-groups <- readr::read_csv("data/sample_metadata.csv") %>% 
+groups <- readr::read_csv("$BSCRATCH/at.sc.db/data/sample_metadata.csv") %>% 
   pull(Group) %>% 
   unique()
 
 my_plan <- drake_plan(
-  sample_metadata = readr::read_csv(file_in("data/sample_metadata.csv")),
+  sample_metadata = readr::read_csv(file_in("$BSCRATCH/at.sc.db/data/sample_metadata.csv")),
   dge = target(
     get_dge_group(group = x, sample_metadata = sample_metadata),
     transform = map(x = (!!groups))

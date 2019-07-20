@@ -7,9 +7,8 @@
 #SBATCH -A gtrnd
 #SBATCH -q jgi_exvivo
 #SBATCH -J analyze
-#SBATCH --output=analyze.out
-#SBATCH --mail-user=bjcole@lbl.gov
-#SBATCH --mail-type=ALL
+#SBATCH --output=$BSCRATCH/at.sc.db/log/analyze.out
+
 
 module load python3
 source activate /global/projectb/scratch/bjcole/env/scRNAseq
@@ -18,4 +17,4 @@ mkdir scratch/analysis
 echo "################################################################################" >> log/analyze.Rout
 date >> log/analyze.Rout
 echo "################################################################################" >> log/analyze.Rout
-R CMD BATCH src/analyze/plan.R >> log/analyze.Rout
+R CMD BATCH $BSCRATCH/at.sc.db/src/analyze/plan.R >> $BSCRATCH/at.sc.db/log/analyze.Rout
