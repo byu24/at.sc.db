@@ -9,7 +9,7 @@ groups <- readr::read_csv('/global/projectb/scratch/byu24/at.sc.db/data/sample_m
   unique()
 
 my_plan <- drake_plan(
-  sample_metadata = readr::read_csv(file_in(/global/projectb/scratch/byu24/at.sc.db/data/sample_metadata.csv')),
+  sample_metadata = readr::read_csv(file_in('/global/projectb/scratch/byu24/at.sc.db/data/sample_metadata.csv')),
   dge = target(
     get_dge_group(group = x, sample_metadata = sample_metadata),
     transform = map(x = (!!groups))
