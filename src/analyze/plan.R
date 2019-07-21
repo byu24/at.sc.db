@@ -2,9 +2,9 @@ library(drake)
 library(dplyr)
 library(ggplot2)
 
-source("$BSCRATCH/at.sc.db/src/analyze/process_dge_functions.R")
+source("process_dge_functions.R")
 
-groups <- readr::read_csv("$BSCRATCH/at.sc.db/data/sample_metadata.csv") %>% 
+groups <- readr::read_csv('/global/projectb/scratch/byu24/at.sc.db/data/sample_metadata.csv') %>% 
   pull(Group) %>% 
   unique()
 
