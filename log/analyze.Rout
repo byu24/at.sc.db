@@ -1,0 +1,768 @@
+source('plan.R')
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+-- Attaching packages --------------------------------------- tidyverse 1.2.1 --
+v tibble  2.1.3     v purrr   0.3.2
+v tidyr   0.8.3     v stringr 1.4.0
+v readr   1.3.1     v forcats 0.4.0
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x tidyr::expand() masks drake::expand()
+x dplyr::filter() masks stats::filter()
+x tidyr::gather() masks drake::gather()
+x dplyr::lag()    masks stats::lag()
+Parsed with column specification:
+cols(
+  Name = col_character(),
+  SRA = col_character(),
+  Genotype = col_character(),
+  Reference_name = col_character(),
+  Reference = col_character(),
+  Treatment = col_character(),
+  Platform = col_character(),
+  Version = col_character(),
+  SRR_1 = col_character(),
+  SRR_2 = col_character(),
+  Genome = col_character(),
+  Group = col_character()
+)
+45 outdated targets:
+  dge_SS
+  dge_SC
+  dge_ZC
+  dge_RC1
+  dge_RC2
+  dge_RC3
+  dge_JS1
+  dge_JS2
+  dge_JSH
+  dge_DC1
+  dge_DC2
+  stats_dge_SS
+  stats_dge_SC
+  stats_dge_ZC
+  stats_dge_RC1
+  stats_dge_RC2
+  stats_dge_RC3
+  stats_dge_JS1
+  stats_dge_JS2
+  stats_dge_JSH
+  stats_dge_DC1
+  stats_dge_DC2
+  filtered_dge_SS
+  filtered_dge_SC
+  filtered_dge_ZC
+  filtered_dge_RC1
+  filtered_dge_RC2
+  filtered_dge_RC3
+  filtered_dge_JS1
+  ...
+
+Please read the "Interactive mode" section of the make() help file.
+This prompt only appears once per session.
+
+Really run make() instead of r_make() in interactive mode?
+
+1: yes
+2: no
+
+Selection: yes
+target dge_SS
+target dge_SC
+target dge_ZC
+target dge_RC1
+target dge_RC2
+target dge_RC3
+target dge_JS1
+target dge_JS2
+target dge_JSH
+target dge_DC1
+target dge_DC2
+target stats_dge_SS
+Warning: target stats_dge_SS warnings:
+  Calling `as_tibble()` on a vector is discouraged, because the behavior is likely to change in the future. Use `tibble::enframe(name = NULL)` instead.
+This warning is displayed once per session.
+Target stats_dge_SS messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_SC
+Target stats_dge_SC messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_ZC
+Target stats_dge_ZC messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_RC1
+Target stats_dge_RC1 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_RC2
+Target stats_dge_RC2 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_RC3
+Target stats_dge_RC3 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_JS1
+Target stats_dge_JS1 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_JS2
+Target stats_dge_JS2 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_JSH
+Target stats_dge_JSH messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_DC1
+Target stats_dge_DC1 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target stats_dge_DC2
+Target stats_dge_DC2 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+target filtered_dge_SS
+target filtered_dge_SC
+target filtered_dge_ZC
+target filtered_dge_RC1
+target filtered_dge_RC2
+target filtered_dge_RC3
+target filtered_dge_JS1
+target filtered_dge_JS2
+target filtered_dge_JSH
+target filtered_dge_DC1
+target filtered_dge_DC2
+target sobj_SS
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_SS warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_SS messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 25569 by 6382
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 6382 cells
+  Found 10 outliers - those will be ignored in fitting/regularization step
+
+  Second step: Get residuals using fitted parameters for 25569 genes
+  Computing corrected count matrix for 25569 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 6.652079 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_SC
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_SC warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_SC messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 22152 by 4411
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 4411 cells
+  Found 5 outliers - those will be ignored in fitting/regularization step
+
+  Second step: Get residuals using fitted parameters for 22152 genes
+  Computing corrected count matrix for 22152 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 2.417129 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_ZC
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_ZC warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_ZC messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 22025 by 11031
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 11031 cells
+  Second step: Get residuals using fitted parameters for 22025 genes
+  Computing corrected count matrix for 22025 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 9.335178 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_RC1
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_RC1 warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_RC1 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 20382 by 3236
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 3236 cells
+  Second step: Get residuals using fitted parameters for 20382 genes
+  Computing corrected count matrix for 20382 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 1.823565 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_RC2
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_RC2 warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  NaNs produced
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_RC2 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 20345 by 2913
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 2913 cells
+  Second step: Get residuals using fitted parameters for 20345 genes
+  Computing corrected count matrix for 20345 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 1.679269 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_RC3
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_RC3 warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_RC3 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 22507 by 16447
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 16447 cells
+  Found 1 outliers - those will be ignored in fitting/regularization step
+
+  Second step: Get residuals using fitted parameters for 22507 genes
+  Computing corrected count matrix for 22507 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 12.53277 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+Repacking large object
+target sobj_JS1
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_JS1 warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_JS1 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 20079 by 5070
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 5070 cells
+  Found 1 outliers - those will be ignored in fitting/regularization step
+
+  Second step: Get residuals using fitted parameters for 20079 genes
+  Computing corrected count matrix for 20079 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 5.348165 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_JS2
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_JS2 warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_JS2 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 20128 by 5838
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 5838 cells
+  Found 4 outliers - those will be ignored in fitting/regularization step
+
+  Second step: Get residuals using fitted parameters for 20128 genes
+  Computing corrected count matrix for 20128 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 5.729193 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_JSH
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_JSH warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_JSH messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 18511 by 3210
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 3210 cells
+  Found 1 outliers - those will be ignored in fitting/regularization step
+
+  Second step: Get residuals using fitted parameters for 18511 genes
+  Computing corrected count matrix for 18511 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 1.754452 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_DC1
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_DC1 warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_DC1 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 21492 by 4514
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 4514 cells
+  Second step: Get residuals using fitted parameters for 21492 genes
+  Computing corrected count matrix for 21492 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 2.46071 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_DC2
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+  |======================================================================| 100%
+Warning: target sobj_DC2 warnings:
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  iteration limit reached
+  ...
+Target sobj_DC2 messages:
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Joining, by = "Cell"
+  Calculating cell attributes for input UMI matrix
+  Variance stabilizing transformation of count matrix of size 21679 by 11532
+  Model formula is y ~ log_umi
+  Get Negative Binomial regression parameters per gene
+  Using 2000 genes, 11532 cells
+  Second step: Get residuals using fitted parameters for 21679 genes
+  Computing corrected count matrix for 21679 genes
+  Calculating gene attributes
+  Wall clock passed: Time difference of 9.439212 mins
+  Determine variable features
+  Set 3000 variable features
+  Place corrected count matrix in counts slot
+  Centering data matrix
+  Set default assay to SCT
+target sobj_list
+Repacking large object
+Warning message:
+Auto-saved workspace file '.RData' detected. This is bad for reproducible code. You can remove it with unlink(".RData"). To avoid generating '.RData' files, start your session with 'R --no-save'or disable the saving of workspace images in the RStudio IDE settings.
