@@ -1,0 +1,32 @@
+---
+title: "Analysis of Arabidopsis Thalinia"
+author: "Brenda Yu"
+date: "7/23/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+The following steps outline how to analyze the digital expression matrices (DGE) for Arabidopsis Thalinia single-cell RNAseq data.
+
+Load the following libraries:
+
+```{r eval=FALSE}
+library("Seurat")
+library("tidyverse")
+library("ggplot2")
+```
+
+## Including Plots (EXAMPLE)
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
