@@ -46,7 +46,7 @@ while [ "$i" -lt "$len" ]; do
 
   echo "${lib_name} <- RunUMAP(${lib_name}, dims = 1:10)" >> src/analyze/${lib_name}_analyze.r
   echo "png(file='"/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/${lib_name}_dimplot.png"')" >> src/analyze/${lib_name}_analyze.r
-  echo "DimPlot({lib_name}, reduction = '"umap"')" >> src/analyze/${lib_name}_analyze.r
+  echo "DimPlot(${lib_name}, reduction = '"umap"')" >> src/analyze/${lib_name}_analyze.r
   echo "dev.off()" >> src/analyze/${lib_name}_analyze.r
   echo "" >> src/analyze/${lib_name}_analyze.r
 
