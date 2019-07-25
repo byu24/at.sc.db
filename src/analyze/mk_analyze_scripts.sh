@@ -8,7 +8,7 @@ cb_len=0
 umi_len=0
 echo "" > src/analyze/launch_analyze_scripts.sh
 echo "module load python3" >> src/analyze/launch_analyze_scripts.sh
-echo "source activate /global/projectb/scratch/bjcole/env_STARsolo" >> src/analyze/launch_analyze_scripts.sh
+echo "source activate /global/projectb/scratch/bjcole/env/scRNAseq2" >> src/analyze/launch_analyze_scripts.sh
 
 while [ "$i" -lt "$len" ]; do
   lib_name=${lib_names[$i]}
