@@ -2,7 +2,6 @@
 
 #Load necessary packages
 
-install.packages('Seurat')
 library("Seurat")
 library(tidyverse)
 library(ggplot2)
