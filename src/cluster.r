@@ -10,8 +10,8 @@ library(cowplot)
 
 setwd("/global/projectb/scratch/byu24/at.sc.db/scratch")
 
-dc_018.data<-Read10X(data.dir = paste0("/global/projectb/scratch/byu24/at.sc.db/scratch", dataset,"/",dataset,"_star.Solo.out"))
-
+#dc_018.data<-Read10X(data.dir = paste0("/global/projectb/scratch/byu24/at.sc.db/scratch", dataset,"/",dataset,"_star.Solo.out"))
+dc_018.data<-Read10X(data.dir = "/global/projectb/scratch/byu24/at.sc.db/scratch/dc_018/dc_018_star.Solo.out")
 dc_018 <- CreateSeuratObject(counts = dc_018.data, project = "dc_018")
 dc_018 <- NormalizeData(dc_018, normalization.method = "LogNormalize", scale.factor = 10000)
 
@@ -33,8 +33,13 @@ dev.off()
 dc_018 <- RunUMAP(dc_018, dims = 1:10)
 png(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/dc_018_dimplot.png")
 DimPlot(dc_018, reduction = "umap")
+dev.off()
 
 saveRDS(dc_018, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/dc_018.rds")
+
+#Find cluster biomarkers
+#cluster1.markers <- FindMarkers(dc_018, ident.1 = 1, min.pct = 0.25)
+#head(cluster1.markers, n = 5)
 
 #at.big<-merge(dc_018, y=c(dc_019,sc_004),add.cell.ids=c("dc018", "dc019","sc004"),project = "at3")
 #unique(sapply(X = strsplit(colnames(at.big), split = "_"), FUN = "[", 1))
