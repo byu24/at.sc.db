@@ -16,7 +16,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#!/usr/bin/env" > src/analyze/${lib_name}_analyze.r
   echo "" >> src/analyze/${lib_name}_analyze.r
   
-  echo "setwd(""/global/projectb/scratch/byu24/at.sc.db/scratch"")" >> src/analyze/${lib_name}_analyze.r
+  echo "setwd('"/global/projectb/scratch/byu24/at.sc.db/scratch"')" >> src/analyze/${lib_name}_analyze.r
   echo "library(""Seurat"")" >> src/analyze/${lib_name}_analyze.r
   echo "library(ggplot2)" >> src/analyze/${lib_name}_analyze.r
   echo "" >> src/analyze/${lib_name}_analyze.r
