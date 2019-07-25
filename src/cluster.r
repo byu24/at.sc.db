@@ -18,7 +18,7 @@ dc_018 <- ScaleData(dc_018)
 dc_018 <- RunPCA(dc_018, features = VariableFeatures(object = dc_018))
 print(dc_018[["pca"]], dims = 1:5, nfeatures = 5)
 
-png(file="../analysis/dc_018_vizdim.png")
+png(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/dc_018_vizdim.png")
 VizDimLoadings(dc_018, dims = 1:2, reduction = "pca")
 dev.off()
 
