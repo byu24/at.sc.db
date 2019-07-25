@@ -31,7 +31,7 @@ while [ "$i" -lt "$len" ]; do
   echo "" >> src/analyze/${lib_name}_analyze.r
 
   echo "${lib_name} <- RunPCA(${lib_name}, features = VariableFeatures(object = ${lib_name}))" >> src/analyze/${lib_name}_analyze.r
-  echo "print(lib_name[['"pca"']], dims = 1:5, nfeatures = 5)" >> src/analyze/${lib_name}_analyze.r
+  echo "print(${lib_name}[['"pca"']], dims = 1:5, nfeatures = 5)" >> src/analyze/${lib_name}_analyze.r
   echo "" >> src/analyze/${lib_name}_analyze.r
 
   echo "png(file='"/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/${lib_name}_vizdim.png"')" >> src/analyze/${lib_name}_analyze.r
