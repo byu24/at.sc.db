@@ -3,9 +3,7 @@
 #Load necessary packages
 
 library("Seurat")
-library(tidyverse)
 library(ggplot2)
-library(cowplot)
 
 setwd("/global/projectb/scratch/byu24/at.sc.db/scratch")
 
