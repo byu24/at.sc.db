@@ -52,7 +52,7 @@ while [ "$i" -lt "$len" ]; do
 
   echo "saveRDS(${lib_name}, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/${lib_name}.rds")" >> src/analyze/${lib_name}_analyze.r
 
-  echo "nohup R CMD BATCH $BSCRATCH/at.sc.db/src/analyze/${lib_name}_analyze.r BSCRATCH/at.sc.db/log/analyze_${lib_name}.Rout &" >> src/analyze/launch_analyze_scripts.sh
+  echo "nohup R CMD BATCH $BSCRATCH/at.sc.db/src/analyze/${lib_name}_analyze.r $BSCRATCH/at.sc.db/log/analyze_${lib_name}.Rout &" >> src/analyze/launch_analyze_scripts.sh
 
   i=$(($i + 1))
  
