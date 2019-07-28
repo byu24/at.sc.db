@@ -1,23 +1,18 @@
 library(tidyverse)
-library(Seurat)
 get_dge <- function(dataset) {
-  dge <- Seurat::Read10X(data.dir = paste0("/global/projectb/scratch/byu24/at.sc.db/scratch/",dataset,"/",dataset,"_star.Solo.out")) %>%
+  dge <- Seurat::Read10X(data.dir = paste0("scratch/",dataset,"/",dataset,"_star.Solo.out")) %>%
     `colnames<-`(c(paste0(colnames(.), "_", dataset)))
 }
 
 get_dge_stats <- function(dge) {
   nAt <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT.G.....")],]) %>%
-    as_tibble(rownames = "Cell") %>%
-    dplyr::rename(nAt = value)
+    enframe("Cell","nAt")
   nGene <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT.G.....")],] > 0) %>% 
-    as_tibble(rownames = "Cell") %>% 
-    dplyr::rename(nGene = value)
-  nMa <- Matrix::colSums(dge[rownames(dge)[!str_detect(rownames(dge), "AT.G.....")],]) %>%
-    as_tibble(rownames = "Cell") %>%
-    dplyr::rename(nMa = value)
+    enframe("Cell", "nGene")
+  nMa <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT.G.....")],]) %>%
+    enframe("Cell", "nMa")
   nCM <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT[MC]G.....")],]) %>%
-    as_tibble(rownames = "Cell") %>%
-    dplyr::rename(nCM = value)
+    enframe("Cell", "nCM")
   full_join(nAt, nMa) %>%
     full_join(nCM) %>%
     full_join(nGene) %>% 
@@ -38,14 +33,36 @@ get_sobj <- function(dge, dge_stats, group) {
   sobj <- Seurat::CreateSeuratObject(
     counts = dge,
     project = group,
-    meta.data = dge_stats) %>% 
-    Seurat::SCTransform(variable.features.n = 3000)
+    meta.data = dge_stats) %>%
+    SCTransform(vars.to.regress = "nCM", variable.features.n = 2000) %>%
+    RunPCA(npcs=50) %>%
+    RunUMAP(dims=1:30)
 }
 
-filter_dge <- function(dge, dge_stats, thresh_Gene = 800, thresh_pAt = 0.98, thresh_pCM = 0.1) {
-  keep_cells <- dge_stats %>% 
+filter_dge <- function(dge, thresh_Gene = 200, max_umi = 50000, thresh_pAt = 0.98, thresh_pCM = 0.1, protoplast_loci) {
+  expressed_genes <- Matrix::rowSums(dge > 0) %>%
+    enframe("Locus", "nCells") %>%
+    filter(nCells >= 1) %>%
+    pull(Locus)
+  dge <- dge[expressed_genes,]
+  dge_stats <- get_dge_stats(dge) %>%
     as_tibble(rownames = "Cell") %>% 
-    filter(pAt > 0.98 & nGene > 800 & pCM < 0.1, .preserve = T) %>% 
+    filter(nGene >= thresh_Gene)
+
+  nn_percentile <- dge_stats %>%
+    summarize(mincell = round(n()*0.01)) %>%
+    pull(mincell)
+
+  threshold <- dge_stats %>% 
+    top_n(nn_percentile, nAt) %>%
+    summarize(threshold = min(nAt)*0.05) %>%
+    pull(threshold)
+
+  keep_cells <- dge_stats %>% 
+    filter(pAt >= 0.98 & nAt > max(1000, threshold) & nAt <= max_umi) %>%
     pull(Cell)
-  dge[,keep_cells]
+  sprintf("Threshold UMI set at %g; keeping %g cells", max(1000, threshold), length(keep_cells))
+  keep_genes <- setdiff(rownames(dge)[str_detect(rownames(dge), "AT.G.....")], protoplast_loci)
+  dge <- dge[keep_genes,]
+  dge <- dge[,keep_cells]
 }

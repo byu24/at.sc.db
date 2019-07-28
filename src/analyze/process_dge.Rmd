@@ -1,8 +1,9 @@
 ---
 title: "Analysis of Arabidopsis Thalinia"
 author: "Brenda Yu"
-date: "7/23/2019"
 output: html_document
+params:
+  date: !r Sys.Date()
 ---
 
 ```{r setup, include=FALSE}
@@ -15,18 +16,196 @@ The following steps outline how to analyze the digital expression matrices (DGE)
 
 Load the following libraries:
 
-```{r eval=FALSE}
+```{r warning = FALSE}
 library("Seurat")
-library("tidyverse")
-library("ggplot2")
+library(ggplot2)
+library(tidyverse)
+library(umap)
+library('reticulate')
+use_virtualenv("scRNAseq")
 ```
 
-## Including Plots (EXAMPLE)
+Set the functions to evaluate the DGEs:
+```{r eval = FALSE}
+#Function to load the DGE
+get_dge <- function(dataset) {
+  dge <- Seurat::Read10X(data.dir = "/usr/path/to/dge")
+}
 
-You can also embed plots, for example:
+#Function to pull the necessary columns from the dataset
+get_dge_stats <- function(dge) {
+  nAt <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT.G.....")],]) %>%
+    enframe("Cell","nAt")
+  nGene <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT.G.....")],] > 0) %>% 
+    enframe("Cell", "nGene")
+  nMa <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT.G.....")],]) %>%
+    enframe("Cell", "nMa")
+  nCM <- Matrix::colSums(dge[rownames(dge)[str_detect(rownames(dge), "AT[MC]G.....")],]) %>%
+    enframe("Cell", "nCM")
+  full_join(nAt, nMa) %>%
+    full_join(nCM) %>%
+    full_join(nGene) %>% 
+    mutate(
+      pAt = nAt/(nMa + nAt),
+      pCM = nCM/nAt) %>%
+    column_to_rownames("Cell")
+}
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+#Function to filter dataset with desired genes
+filter_dge <- function(dge, dge_stats, thresh_Gene = 200) {
+  dge_stats <- dge_stats %>% 
+    as_tibble(rownames = "Cell") %>% 
+    filter(nGene >= thresh_Gene)
+  
+  nn_percentile <- dge_stats %>%
+    summarize(mincell = round(n()*0.01)) %>%
+    pull(mincell)
+  
+  threshold <- dge_stats %>% 
+    top_n(nn_percentile, nAt) %>%
+    summarize(threshold = min(nAt)*0.05) %>%
+    pull(threshold)
+  
+  keep_cells <- dge_stats %>% 
+    filter(nAt >= threshold) %>%
+    pull(Cell)
+  
+  dge <- dge[,keep_cells]
+  
+  protoplast_loci = read_csv("/usr/path/to/protoplast_loci")%>%
+    pull(Locus)
+  
+  keep_genes <- setdiff(rownames(dge)[str_detect(rownames(dge), "AT.G.....")], protoplast_loci)
+  dge <- dge[keep_genes,]
+}
+
+#Function to create Seurat Object
+get_sobj <- function(dge_filtered, dge_stats, group) {
+  sobj <- Seurat::CreateSeuratObject(
+    counts = dge_filtered,
+    project = group,
+    meta.data = dge_stats) 
+}
+
+#Function to transform data in PCA and UMAP
+trans_dge <- function(sobj) {
+  sobj <- sobj %>%
+    SCTransform(vars.to.regress = "nCM", variable.features.n = 2000) %>%
+    RunPCA(npcs=50) %>%
+    RunUMAP(dims=1:30)
+  }
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Load the respect data into the above functions to create the Seurat object  before analysis.
+```{r include = FALSE}
+ss_001 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/ss_001.rds")
+ss_002 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/ss_002.rds")
+ss_003 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/ss_003.rds")
+sc_004 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/sc_004.rds")
+sc_005 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/sc_005.rds")
+sc_006 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/sc_006.rds")
+sc_007 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/sc_007.rds")
+sc_008 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/sc_008.rds")
+sc_009 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/sc_009.rds")
+sc_010 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/sc_010.rds")
+zc_011 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/zc_011.rds")
+rc_012 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/rc_012.rds")
+rc_013 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/rc_013.rds")
+rc_014 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/rc_014.rds")
+js_015 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/js_015.rds")
+js_016 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/js_016.rds")
+jsh_017 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/jsh_017.rds")
+dc_018 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/dc_018.rds")
+dc_019 = readRDS(file = "C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/scratch/robjects/dc_019.rds")
+```
+
+View the PCA output:
+```{r include=FALSE, eval=FALSE}
+print(ss_001[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(ss_002[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(ss_003[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(sc_004[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(sc_005[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(sc_006[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(sc_007[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(sc_008[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(sc_009[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(sc_010[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(zc_011[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(rc_012[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(rc_013[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(rc_014[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(js_015[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(js_016[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(jsh_017[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(dc_018[["pca"]], dims = 1:10, nfeatures = 10)
+
+print(dc_019[["pca"]], dims = 1:10, nfeatures = 10)
+
+```
+
+
+## UMAP Plots
+
+Here are the UMAP plots for each sample
+
+```{r, echo=FALSE}
+#ss_001
+DimPlot(ss_001, reduction = "umap")
+#ss_002
+DimPlot(ss_002, reduction = "umap")
+#ss_003
+DimPlot(ss_003, reduction = "umap")
+#sc_004
+DimPlot(sc_004, reduction = "umap")
+#sc_005
+DimPlot(sc_005, reduction = "umap")
+#sc_006
+DimPlot(sc_006, reduction = "umap")
+#sc_007
+DimPlot(sc_007, reduction = "umap")
+#sc_008
+DimPlot(sc_008, reduction = "umap")
+#sc_009
+DimPlot(sc_009, reduction = "umap")
+#sc_010
+DimPlot(sc_010, reduction = "umap")
+#zc_011
+DimPlot(zc_011, reduction = "umap")
+#rc_012
+DimPlot(rc_012, reduction = "umap")
+#rc_013
+DimPlot(rc_013, reduction = "umap")
+#rc_014
+DimPlot(rc_014, reduction = "umap")
+#js_015
+DimPlot(js_015, reduction = "umap")
+#js_016
+DimPlot(js_016, reduction = "umap")
+#jsh_017
+DimPlot(jsh_017, reduction = "umap")
+#dc_018
+DimPlot(dc_018, reduction = "umap")
+#dc_019
+DimPlot(dc_019, reduction = "umap")
+```
+
+
