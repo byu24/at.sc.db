@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -C skylake
+#SBATCH -A gtrnd
+#SBATCH -q jgi_exvivo
+#SBATCH -J merge_sobj
+#SBATCH -t 36:00:00
+#SBATCH --mem-per-cpu=2000
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --output=/global/projectb/scratch/byu24/at.sc.db/log/merge_sobj.out
+
+module load python3
+source activate global/projectb/scratch/bjcole/env/scRNAseq2
+cd $BSCRATCH/at.sc.db/
+
+sh /global/projectb/scratch/byu24/at.sc.db/src/trim_filter.sh dc_021 10x_V2
