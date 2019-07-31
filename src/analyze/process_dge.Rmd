@@ -170,114 +170,133 @@ Here are the UMAP plots for each sample
 SS_001
 ```{r, echo=FALSE}
 #ss_001
+ss_001
 DimPlot(ss_001, reduction = "umap")
 ```
 
 SS_002
 ```{r, echo=FALSE}
 #ss_002
+ss_002
 DimPlot(ss_002, reduction = "umap")
 ```
 
 SS_003
 ```{r, echo=FALSE}
 #ss_003
+ss_003
 DimPlot(ss_003, reduction = "umap")
 ```
 
 SC_004
 ```{r, echo=FALSE}
 #sc_004
+sc_004
 DimPlot(sc_004, reduction = "umap")
 ```
 
 SC_005
 ```{r, echo=FALSE}
 #sc_005
+sc_005
 DimPlot(sc_005, reduction = "umap")
 ```
 
 SC_006
 ```{r, echo=FALSE}
 #sc_006
+sc_006
 DimPlot(sc_006, reduction = "umap")
 ```
 
 SC_007
 ```{r, echo=FALSE}
 #sc_007
+sc_007
 DimPlot(sc_007, reduction = "umap")
 ```
 
 SC_008
 ```{r, echo=FALSE}
 #sc_008
+sc_008
 DimPlot(sc_008, reduction = "umap")
 ```
 
 SC_009
 ```{r, echo=FALSE}
 #sc_009
+sc_009
 DimPlot(sc_009, reduction = "umap")
 ```
 
 SC_010
 ```{r, echo=FALSE}
 #sc_010
+sc_010
 DimPlot(sc_010, reduction = "umap")
 ```
 
 ZC_011
 ```{r, echo=FALSE}
 #zc_011
+zc_011
 DimPlot(zc_011, reduction = "umap")
 ```
 
 RC_012
 ```{r, echo=FALSE}
 #rc_012
+rc_012
 DimPlot(rc_012, reduction = "umap")
 ```
 
 RC_013
 ```{r, echo=FALSE}
 #rc_013
+rc_013
 DimPlot(rc_013, reduction = "umap")
 ```
 
 RC_014
 ```{r, echo=FALSE}
 #rc_014
+rc_014
 DimPlot(rc_014, reduction = "umap")
 ```
 
 JS_015
 ```{r, echo=FALSE}
 #js_015
+js_015
 DimPlot(js_015, reduction = "umap")
 ```
 
 JS_016
 ```{r, echo=FALSE}
 #js_016
+js_016
 DimPlot(js_016, reduction = "umap")
 ```
 
 JSH_017
 ```{r, echo=FALSE}
 #jsh_017
+jsh_017
 DimPlot(jsh_017, reduction = "umap")
 ```
 
 DC_018
 ```{r, echo=FALSE}
 #dc_018
+dc_018
 DimPlot(dc_018, reduction = "umap")
 ```
 
 DC_019
 ```{r, echo=FALSE}
 #dc_019
+dc_019
 DimPlot(dc_019, reduction = "umap")
 ```
 
