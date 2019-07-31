@@ -394,4 +394,4 @@ dev.off()
 
 
 
-rm(list = ls(pattern = "sc_005"))
+rm(list = ls(pattern = "_012"))

@@ -10,7 +10,7 @@
 #SBATCH --output=/global/projectb/scratch/byu24/at.sc.db/log/merge_sobj.out
 
 module load python3
-source activate global/projectb/scratch/bjcole/env/scRNAseq2
+source activate /global/projectb/scratch/bjcole/env/scRNAseq2
 cd $BSCRATCH/at.sc.db/
 
-sh /global/projectb/scratch/byu24/at.sc.db/src/trim_filter.sh dc_021 10x_V2
+Rscript --verbose $BSCRATCH/at.sc.db/src/analyze/merge_sobj.R >> $BSCRATCH/at.sc.db/log/merge_sobj.Rout 2>&1
