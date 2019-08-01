@@ -10,3 +10,7 @@ at.integrated = readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/
 
 at.integrated
 head(at.integrated@metadata)
+
+png(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_integrated.png")
+DimPlot(at.integrated, reduction = "umap")
+dev.off()
