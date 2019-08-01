@@ -17,6 +17,7 @@ dataset = sample_metadata$Name
 protoplast_loci = read_csv("C:/Users/BYU24/Desktop/JGI 2019/at.sc.db/data/protoplast_loci.csv")%>%
   pull(Locus)
 
+
 # Functions ------------------------------------------------------------------
 #Load dataset
 get_dge <- function(dataset) {
@@ -394,4 +395,11 @@ dev.off()
 
 
 
+
+
+# MISC ------------------------------------------------------------------
+plots <- DimPlot(at.integrated, group.by = c("tech", "celltype"), combine = FALSE)
+plots <- lapply(X = plots, FUN = function(x) x + theme(legend.position = "top") + guides(color = guide_legend(nrow = 3, 
+                                                                                                              byrow = TRUE, override.aes = list(size = 3))))
+CombinePlots(plots)
 rm(list = ls(pattern = "_019"))

@@ -41,9 +41,7 @@ at.integrated <- IntegrateData(anchorset = at.anchors, normalization.method = "S
 
 at.integrated <- RunPCA(at.integrated, verbose = FALSE)
 at.integrated <- RunUMAP(at.integrated, dims = 1:30)
-plots <- DimPlot(at.integrated, group.by = c("tech", "celltype"), combine = FALSE)
-plots <- lapply(X = plots, FUN = function(x) x + theme(legend.position = "top") + guides(color = guide_legend(nrow = 3, 
-                                                                                                              byrow = TRUE, override.aes = list(size = 3))))
-CombinePlots(plots)
+saveRDS(at.integrated, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at_integrated.rds")
+
 
 
