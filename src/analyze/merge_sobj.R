@@ -1,7 +1,7 @@
 
 library("Seurat")
 library(ggplot2)
-library(tidyverse)
+library("tidyverse")
 
 #Load all R objects
 ss_001 = readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/ss_001.rds")
