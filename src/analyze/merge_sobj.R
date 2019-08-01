@@ -2,6 +2,8 @@
 library("Seurat")
 library(ggplot2)
 library("tidyverse")
+library(future)
+options(future.globals.maxSize = 100000 * 1024^2)
 
 #Load all R objects
 ss_001 = readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/ss_001.rds")
