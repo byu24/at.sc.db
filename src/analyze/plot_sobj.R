@@ -9,3 +9,4 @@ options(future.globals.maxSize = 100000 * 1024^2)
 at.integrated = readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at_integrated.rds")
 
 at.integrated
+head(at.integrated@metadata)
