@@ -43,3 +43,4 @@ at.integrated <- RunPCA(at.integrated, verbose = FALSE)
 at.integrated <- RunUMAP(at.integrated, dims = 1:30)
 saveRDS(at.integrated, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at_integrated.rds")
 
+at.integrated
