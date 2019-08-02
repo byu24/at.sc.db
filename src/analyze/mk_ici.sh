@@ -11,7 +11,7 @@ echo "" > src/analyze/launch_ici.sh
 while [ "$i" -lt "$len" ]; do
   lib_name=${lib_names[$i]}
   
-  echo "source('"/global/projectb/scratch/byu24/at.sc.db/src/analyze/ici.R"')" >> src/analyze/${lib_name}_ici.r
+  echo "source('"/global/projectb/scratch/byu24/at.sc.db/src/analyze/ici.R"')" > src/analyze/${lib_name}_ici.r
   
   echo "setwd('"/global/projectb/scratch/byu24/at.sc.db/scratch"')" >> src/analyze/${lib_name}_ici.r
   echo "library('"Seurat"')" >> src/analyze/${lib_name}_ici.r
@@ -27,7 +27,7 @@ while [ "$i" -lt "$len" ]; do
   echo "saveRDS(ici_${lib_name}, file = '"/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/robjects/ici_${lib_name}.rds"')" >> src/analyze/${lib_name}_ici.r
   echo "" >> src/analyze/${lib_name}_ici.r
 
-  echo "#!/bin/bash" >> src/analyze/${lib_name}_ici.sh
+  echo "#!/bin/bash" > src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -C skylake" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -A gtrnd" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -q jgi_exvivo" >> src/analyze/${lib_name}_ici.sh
