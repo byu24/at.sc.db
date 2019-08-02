@@ -46,7 +46,7 @@ while [ "$i" -lt "$len" ]; do
   
   echo "Rscript --verbose $BSCRATCH/at.sc.db/src/analyze/${lib_name}_ici.r >> $BSCRATCH/at.sc.db/log/{lib_name}_ici.Rout" >> src/analyze/${lib_name}_ici.sh
 
-  echo "sbatch $BSCRATCH/at.sc.db/src/analyze/${lib_name}_ici.r" >> src/analyze/launch_ici.sh
+  echo "sbatch $BSCRATCH/at.sc.db/src/analyze/${lib_name}_ici.sh" >> src/analyze/launch_ici.sh
 
   i=$(($i + 1))
  

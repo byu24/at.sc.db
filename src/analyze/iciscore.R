@@ -6,7 +6,7 @@ library(future)
 
 get_ICI <- function(df, ci = NULL, sig = TRUE, ma.thresh = 0, do.par = F) {
   ## If ci is not set, load from Birnbaum data
-  if(is.null(ci)) ci <- read.csv("global/projectb/scratch/byu24/at.sc.db/data/root_ci.csv")
+  if(is.null(ci)) ci <- read.csv("/global/projectb/scratch/byu24/at.sc.db/data/root_ci.csv")
   
   ## Move locus identifier to row.names (makes subsetting easier)
   if("Locus" %in% colnames(ci)) ci <- column_to_rownames(ci, "Locus")
@@ -49,4 +49,3 @@ get_ICI <- function(df, ci = NULL, sig = TRUE, ma.thresh = 0, do.par = F) {
   
   return(ici_scores)
 }
-
