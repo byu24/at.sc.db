@@ -31,12 +31,12 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH -C skylake" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -A gtrnd" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -q jgi_exvivo" >> src/analyze/${lib_name}_ici.sh
-  echo "#SBATCH -J ici_${lib_name}" >> src/analyze/${lib_name}_ici.sh
+  echo "#SBATCH -J ${lib_name}_ici" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -t 12:00:00" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --mem-per-cpu=2000" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --ntasks=1" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --cpus-per-task=8" >> src/analyze/${lib_name}_ici.sh
-  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/{lib_name}_ici.out" >> src/analyze/${lib_name}_ici.sh
+  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/${lib_name}_ici.out" >> src/analyze/${lib_name}_ici.sh
   echo "" >> src/analyze/${lib_name}_ici.sh
   
   echo "module load python/3.7-anaconda-2019.07" >> src/analyze/${lib_name}_ici.sh
@@ -44,7 +44,7 @@ while [ "$i" -lt "$len" ]; do
   echo "cd $BSCRATCH/at.sc.db/" >> src/analyze/${lib_name}_ici.sh
   echo "" >> src/analyze/${lib_name}_ici.sh
   
-  echo "Rscript --verbose $BSCRATCH/at.sc.db/src/analyze/${lib_name}_ici.r >> $BSCRATCH/at.sc.db/log/{lib_name}_ici.Rout" >> src/analyze/${lib_name}_ici.sh
+  echo "Rscript --verbose $BSCRATCH/at.sc.db/src/analyze/${lib_name}_ici.r >> $BSCRATCH/at.sc.db/log/${lib_name}_ici.Rout" >> src/analyze/${lib_name}_ici.sh
 
   echo "sbatch $BSCRATCH/at.sc.db/src/analyze/${lib_name}_ici.sh" >> src/analyze/launch_ici.sh
 
