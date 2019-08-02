@@ -11,7 +11,7 @@ echo "" > src/analyze/launch_ici.sh
 while [ "$i" -lt "$len" ]; do
   lib_name=${lib_names[$i]}
   
-  echo "source('"/global/projectb/scratch/byu24/at.sc.db/src/analyze/iciscore.R"')" >> src/analyze/${lib_name}_ici.r
+  echo "source('"/global/projectb/scratch/byu24/at.sc.db/src/analyze/ici.R"')" >> src/analyze/${lib_name}_ici.r
   
   echo "setwd('"/global/projectb/scratch/byu24/at.sc.db/scratch"')" >> src/analyze/${lib_name}_ici.r
   echo "library('"Seurat"')" >> src/analyze/${lib_name}_ici.r
