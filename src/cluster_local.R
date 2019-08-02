@@ -2,6 +2,8 @@
 
 #Load necessary packages
 install.packages('reticulate')
+install.packages('future')
+install.packages('furrr')
 
 library('reticulate')
 library("Seurat")
