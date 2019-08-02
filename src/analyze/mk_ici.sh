@@ -31,7 +31,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH -C skylake" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -A gtrnd" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -q jgi_exvivo" >> src/analyze/${lib_name}_ici.sh
-  echo "#SBATCH -J ${lib_name}_ici" >> src/analyze/${lib_name}_ici.sh
+  echo "#SBATCH -J ici_${lib_name}" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -t 12:00:00" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --mem-per-cpu=2000" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --ntasks=1" >> src/analyze/${lib_name}_ici.sh
