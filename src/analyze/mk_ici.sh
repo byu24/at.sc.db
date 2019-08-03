@@ -24,7 +24,7 @@ while [ "$i" -lt "$len" ]; do
 
   echo "${lib_name}<-readRDS(file = '"/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/${lib_name}.rds"')" >> src/analyze/${lib_name}_ici.r
   echo "ici_${lib_name}<- get_ICI(${lib_name})" >> src/analyze/${lib_name}_ici.r
-  echo "saveRDS(ici_${lib_name}, file = '"/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/robjects/ici_${lib_name}.rds"')" >> src/analyze/${lib_name}_ici.r
+  echo "saveRDS(ici_${lib_name}, file = '"/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/ici_${lib_name}.rds"')" >> src/analyze/${lib_name}_ici.r
   echo "" >> src/analyze/${lib_name}_ici.r
 
   echo "#!/bin/bash" > src/analyze/${lib_name}_ici.sh
