@@ -372,8 +372,28 @@ Submitted batch job 23182364
 8/1/19 - Ran integrated map
 189681
 
-8/2/19
-Ran test ICI matrix
-191867
+8/2/19 - ICI Matrix
+Submitted batch job 191878
+Submitted batch job 191879
+Submitted batch job 191880
+Submitted batch job 191881
+Submitted batch job 191882
+Submitted batch job 191883
+Submitted batch job 191884
+Submitted batch job 191885
+Submitted batch job 191886
+Submitted batch job 191887
+Submitted batch job 191888
+Submitted batch job 191889
+Submitted batch job 191890
+Submitted batch job 191891
+Submitted batch job 191892
+Submitted batch job 191893
+Submitted batch job 191894
+Submitted batch job 191895
+Submitted batch job 191896
 
+8/3/19
+192023
+192024
 
