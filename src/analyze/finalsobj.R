@@ -57,9 +57,12 @@ at.integrated <- at.integrated %>%
 	
 at.final<-AddMetaData(object=at.integrated, metadata=all_ici)
 saveRDS(at.final, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at.final.rds")
-at.final@metadata
 
 png(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final.png")
-DimPlot(at_final, group.by = "cell_type_simple")
+DimPlot(at.final, group.by = "cell_type_simple")
 dev.off()
+
+at.final@meta.data
+
+
 
