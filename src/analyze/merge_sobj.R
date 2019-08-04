@@ -39,8 +39,12 @@ at.anchors <- FindIntegrationAnchors(object.list = at.list, normalization.method
 at.integrated <- IntegrateData(anchorset = at.anchors, normalization.method = "SCT", 
                                      verbose = FALSE)
 
-at.integrated <- RunPCA(at.integrated, verbose = FALSE)
-at.integrated <- RunUMAP(at.integrated, dims = 1:30)
+at.integrated <- at.integrated %>% 
+	RunPCA(verbose = FALSE) %>%
+	RunUMAP(dims = 1:30) %>%
+	FindNeighbors(dims = 1:30) %>%
+    FindClusters(resolution = 0.8)
+
 saveRDS(at.integrated, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at_integrated.rds")
 
 at.integrated

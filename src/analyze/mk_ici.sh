@@ -11,6 +11,9 @@ echo "" > src/analyze/launch_ici.sh
 while [ "$i" -lt "$len" ]; do
   lib_name=${lib_names[$i]}
   
+  echo "if(!is.null(dev.list())) dev.off()" > src/analyze/${lib_name}_ici.r
+  echo "cat('"\014"')" > src/analyze/${lib_name}_ici.r
+  echo "rm(list=ls())" > src/analyze/${lib_name}_ici.r
   echo "source('"/global/projectb/scratch/byu24/at.sc.db/src/analyze/ici.R"')" > src/analyze/${lib_name}_ici.r
   
   echo "setwd('"/global/projectb/scratch/byu24/at.sc.db/scratch"')" >> src/analyze/${lib_name}_ici.r
@@ -34,7 +37,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH -q jgi_exvivo" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -J ${lib_name}_ici" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH -t 12:00:00" >> src/analyze/${lib_name}_ici.sh
-  echo "#SBATCH --mem-per-cpu=2000" >> src/analyze/${lib_name}_ici.sh
+  echo "#SBATCH --mem-per-cpu=4000" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --ntasks=1" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --cpus-per-task=8" >> src/analyze/${lib_name}_ici.sh
   echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/${lib_name}_ici.out" >> src/analyze/${lib_name}_ici.sh

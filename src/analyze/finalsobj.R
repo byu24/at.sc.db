@@ -1,5 +1,3 @@
-unlink(".RData") 
-
 # Clear plots
 if(!is.null(dev.list())) dev.off()
 # Clear console
@@ -53,5 +51,15 @@ all_ici<-do.call(rbind, ls_ici)
 
 at.integrated<-readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at_integrated.rds")	
 
+at.integrated <- at.integrated %>% 
+	FindNeighbors(dims = 1:30) %>%
+    FindClusters(resolution = 0.8)
+	
 at.final<-AddMetaData(object=at.integrated, metadata=all_ici)
+saveRDS(at.final, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at.final.rds")
 at.final@metadata
+
+png(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final.png")
+DimPlot(at_final, group.by = "cell_type_simple")
+dev.off()
+
