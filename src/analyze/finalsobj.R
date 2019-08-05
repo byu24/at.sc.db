@@ -58,11 +58,26 @@ at.integrated <- at.integrated %>%
 at.final<-AddMetaData(object=at.integrated, metadata=all_ici)
 saveRDS(at.final, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at.final.rds")
 
-png(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final.png")
 DimPlot(at.final, group.by = "cell_type_simple")
-dev.off()
+ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final_cts.png", width = 30, height = 20, units = "cm")
+DimPlot(at.final, reduction = "umap")
+ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final_umap25dim50.png", width = 30, height = 20, units = "cm")
 
 at.final@meta.data
 
+at.final<-readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at.final.rds")
 
+at.final <- at.final %>% 
+	FindNeighbors(dims = 1:50) %>%
+    FindClusters(resolution = 0.25)
+	
+umap_coords <- at.final %>% Embeddings(reduction = "umap") %>% 
+	as_tibble(rownames="Cell")
+cell_data <- at.final@meta.data %>% 
+	as_tibble(rownames="Cell") %>%
+	left_join(umap_coords)
 
+test = cell_data %>%
+	filter(cell_type == "QC")
+ggplot(test, aes(x=UMAP_1, y=UMAP_2, color=orig.ident)) + geom_point()
+ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/QConly.png", width = 20, height = 20, units = "cm")
