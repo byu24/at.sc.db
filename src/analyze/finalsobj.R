@@ -52,32 +52,50 @@ all_ici<-do.call(rbind, ls_ici)
 at.integrated<-readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at_integrated.rds")	
 
 at.integrated <- at.integrated %>% 
-	FindNeighbors(dims = 1:30) %>%
-    FindClusters(resolution = 0.8)
+	FindNeighbors(reduction = "pca", dims = 1:30) %>%
+    FindClusters(resolution = 0.60)
 	
 at.final<-AddMetaData(object=at.integrated, metadata=all_ici)
 saveRDS(at.final, file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at.final.rds")
 
 DimPlot(at.final, group.by = "cell_type_simple")
 ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final_cts.png", width = 30, height = 20, units = "cm")
-DimPlot(at.final, reduction = "umap")
-ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final_umap25dim50.png", width = 30, height = 20, units = "cm")
-
+DimPlot(at.final, reduction = "pca")
+ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/at_final_pca.png", width = 30, height = 20, units = "cm")
 at.final@meta.data
 
 at.final<-readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/at.final.rds")
 
-at.final <- at.final %>% 
-	FindNeighbors(dims = 1:50) %>%
-    FindClusters(resolution = 0.25)
-	
+#Pulls QC only data out
 umap_coords <- at.final %>% Embeddings(reduction = "umap") %>% 
 	as_tibble(rownames="Cell")
 cell_data <- at.final@meta.data %>% 
 	as_tibble(rownames="Cell") %>%
 	left_join(umap_coords)
 
-test = cell_data %>%
+qconly = cell_data %>%
 	filter(cell_type == "QC")
-ggplot(test, aes(x=UMAP_1, y=UMAP_2, color=orig.ident)) + geom_point()
-ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/QConly.png", width = 20, height = 20, units = "cm")
+ggplot(qconly, aes(x=UMAP_1, y=UMAP_2, color=orig.ident)) + geom_point()
+ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/QC.png", width = 30, height = 20, units = "cm")
+
+
+ggplot(data=at.final@meta.data, aes(x=Idents(at.final), y=seurat_clusters, fill=cell_type_simple)) + geom_col()
+  geom_bar(stat="Identity")
+ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/idents.png", width = 30, height = 20, units = "cm")
+
+
+new.cluster.ids <- c("Endodermis_1", "Trichoblast_1", "Cortex_1", "Atrichoblast_1", "Stele_1", "Atrichoblast_2", "Trichoblast_2", "Trichoblast_3", "Trichoblast_4", "Trichoblast_5", "Trichoblast_6", "Endodermis_2", "Columella_1", "Cortex_2", "Trichoblast_7", "Stele_2", "Cortex_3", "Atrichoblast_3", "Cortex_4", "Stele_3", "Trichoblast_8", "Columella_2", "Stele_4", "Stele_5", "Stele_6", "Cortex_5", "Endodermis_3")
+
+new.cluster.ids <- c("10", "19", "5", "0", "13", "1", "24", "23", "22", "21", "20", "12", "3", "6", "25", "14", "7", "2", "8", "15", "26", "4", "16", "17", "18", "9", "11")
+names(new.cluster.ids) <- levels(at.final)
+test <- RenameIdents(at.final, new.cluster.ids)
+test@active.ident <- reorder(test@active.ident)
+ggplot(data=test@meta.data, aes(x=test@active.ident, y=seurat_clusters, fill=cell_type_simple)) +
+  geom_bar(stat="Identity")
+ggsave(file="/global/projectb/scratch/byu24/at.sc.db/scratch/analysis/reorder.png", width = 30, height = 20, units = "cm")
+
+
+ggplot(at.final@meta.data, aes(x = reorder(cell_type_simple, -perc), y = perc)) + geom_bar(stat = "identity")
+
+test@active.ident <- forcats::fct_relevel(test@active.ident, "0")
+
