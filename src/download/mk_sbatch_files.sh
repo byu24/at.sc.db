@@ -19,7 +19,7 @@ while [ "$i" -lt "$len" ]; do
   echo "#SBATCH --cpus-per-task=4" >> src/download/download_${set_name}.bs
   echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/download_SRA_${set_name}.out" >> src/download/download_${set_name}.bs
   echo "" >> src/download/download_${set_name}.bs
-  echo "module load python3" >> src/download/download_${set_name}.bs
+  echo "module load python/3.7-anaconda-2019.07" >> src/download/download_${set_name}.bs
   echo "source activate $BSCRATCH/bin/env_STARsolo" >> src/download/download_${set_name}.bs
   echo "cd $BSCRATCH/at.sc.db/" >> src/download/download_${set_name}.bs
   echo "" >> src/download/download_${set_name}.bs
