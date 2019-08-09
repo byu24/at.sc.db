@@ -23,6 +23,9 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 
 ## Download
 
-1. Set up the metadata 
+1. Prior to downloading the data, a metadata CSV file must be set up. Follow the format of `sample_metadata.csv` in the `Data` directory. 
+	* Set a naming structure for the samples in the first column of the metadata CSV. 
+
+2. 
 
 
