@@ -25,11 +25,11 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 1. Prior to downloading the data, a metadata CSV file must be set up. Follow the format of `sample_metadata.csv` in the `Data` directory. 
 	* Set a naming structure for the samples in the first column of the metadata CSV. 
 2. Follow the sample `mk_download.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: SRATools is required to be installed beforehand. 
-3. All scripts can be submitted using the `launch_download.sh` script generated from running `mk_download.sh`
+3. All scripts can be submitted using `launch_download.sh`.
 
 ## Filter
 1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
-2. Follow the sample `mk_filter.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using the `launch_filter.sh` script.
+2. Follow the sample `mk_filter.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using `launch_filter.sh`.
 
 ## Map
 ### Setting up the reference genome
@@ -37,5 +37,5 @@ Reference genomes must be created prior to mapping samples. Sample code be found
 1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
 2. A whitelist should be placed in the `Data` directory for the 10x Genomics samples.
 3.
-4. Follow the sample `mk_map.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using the `launch_map.sh` script.
+4. Follow the sample `mk_map.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using `launch_map.sh`.
 
