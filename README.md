@@ -29,6 +29,8 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 
 3. All scripts can be submitted using the `launch_download.sh` script generated from running `mk_download_files.sh`
 
+4. If the raw data file was not originally from NCBI and was not in FASTA/FASTQ format, it is recommended to run `reshuffle.sh` from the from `BBTools` package to ensure that the raw data is in random order for the filtering step.
+
 ## Filter
 1. 
 
