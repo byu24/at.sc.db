@@ -15,20 +15,20 @@ while [ "$i" -lt "$len" ]; do
   echo "#!/bin/bash" > src/filter/filter_${set_name}.bs
   echo "#SBATCH -A gtrnd" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH -q genepool_shared" >> src/filter/filter_${set_name}.bs
-  echo "#SBATCH -J filter_SRA_${set_name}" >> src/filter/filter_${set_name}.bs
+  echo "#SBATCH -J filter_${set_name}" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH -t 12:00:00" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH --mem-per-cpu=2000" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH --ntasks=1" >> src/filter/filter_${set_name}.bs
   echo "#SBATCH --cpus-per-task=8" >> src/filter/filter_${set_name}.bs
-  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/filter_SRA_${set_name}.out" >> src/filter/filter_${set_name}.bs
+  echo "#SBATCH --output=$BSCRATCH/at.sc.db/log/filter_${set_name}.out" >> src/filter/filter_${set_name}.bs
   echo "" >> src/filter/filter_${set_name}.bs
-  echo "module load python3" >> src/filter/filter_${set_name}.bs
+  echo "module load python/3.7-anaconda-2019.07" >> src/filter/filter_${set_name}.bs
   echo "source activate \$BSCRATCH/bin/env_STARsolo" >> src/filter/filter_${set_name}.bs
 
   echo "cd \$BSCRATCH/at.sc.db/" >> src/filter/filter_${set_name}.bs
 
   echo "" >> src/filter/filter_${set_name}.bs
-  echo "sh $BSCRATCH/at.sc.db/src/trim_filter.sh ${set_name} ${run_name}" >> src/filter/filter_${set_name}.bs
+  echo "sh $BSCRATCH/at.sc.db/src/filter/trim_filter.sh ${set_name} ${run_name}" >> src/filter/filter_${set_name}.bs
 
   i=$(($i + 1))
 done

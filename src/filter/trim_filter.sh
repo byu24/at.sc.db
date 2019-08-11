@@ -1,7 +1,7 @@
 #!/bin/bash
-prefix=$1
-technology=$2
-bbmap_path=$BSCRATCH/bin/bbmap
+prefix=$1 #sample number according to your naming convention from the metadata CSV
+technology=$2 #scRNAseq technique (DropSeq or 10xGenomics) from the metadata CSV
+bbmap_path=$BSCRATCH/bin/bbmap #change to path for BBtools which includes bbmap
 
 echo $prefix 
 echo $technology

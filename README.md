@@ -6,7 +6,7 @@ This guide will walkthrough the steps of processing scRNAseq data and merging mu
 ## Initial set up
 
 ### Packages and programs
-Install the necessary programs you will need to run this package. Install the binaries for SRATools, HKlibs, Bcftools, Samtools, DROP-SEQ-Tools, and Gffread. The two required Python packages are STAR and UMAP. You will also need to have R installed for the final analysis.
+Install the necessary programs you will need to run this package. Install the binaries for SRATools, BBtools, HKlibs, Bcftools, Samtools, DROP-SEQ-Tools, and Gffread. The two required Python packages are STAR and UMAP. You will also need to have R installed for the final analysis.
 
 Clone the PSCREEN repository for the code utilized in this project.
 ```git clone https://github.com/byu24/at.sc.db.git```
@@ -24,14 +24,18 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 ## Download
 1. Prior to downloading the data, a metadata CSV file must be set up. Follow the format of `sample_metadata.csv` in the `Data` directory. 
 	* Set a naming structure for the samples in the first column of the metadata CSV. 
-
-2. Follow the sample `mk_download_files.sh` to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: SRATools is required to be installed beforehand. 
-
-3. All scripts can be submitted using the `launch_download.sh` script generated from running `mk_download_files.sh`
-
-4. If the raw data file was not originally from NCBI and was not in FASTA/FASTQ format, it is recommended to run `reshuffle.sh` from the from `BBTools` package to ensure that the raw data is in random order for the filtering step.
+2. Follow the sample `mk_download.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: SRATools is required to be installed beforehand. 
+3. All scripts can be submitted using the `launch_download.sh` script generated from running `mk_download.sh`
 
 ## Filter
-1. 
+1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
+2. Follow the sample `mk_filter.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using the `launch_filter.sh` script.
 
+## Map
+### Setting up the reference genome
+Reference genomes must be created prior to mapping samples. Sample code be found under `Src` in `create_at10_genome.sh` and `create_refs.sh`. 
+1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
+2. A whitelist should be placed in the `Data` directory for the 10x Genomics samples.
+3.
+4. Follow the sample `mk_map.sh` in the `Src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using the `launch_map.sh` script.
 
