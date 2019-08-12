@@ -1,7 +1,7 @@
 # P-SCREEN: Plant Single-Cell Resource for Evaluation of Expression Niche
 by Brenda Yu and Ben Cole
 
-This guide will walkthrough the steps of processing scRNAseq data and merging multiple scRNAseq datasets into a unified cluster map. This pipeline was successful in processing samples that were obtained via 10x Genomics and Dropseq.
+This guide will walkthrough the steps of processing scRNAseq data and merging multiple scRNAseq datasets into a unified cluster map. This pipeline was successful in processing samples that were obtained via 10x Genomics and Dropseq. The samples used in this project were from [Denyer, et al. Developmental Cell (2019)](https://www.sciencedirect.com/science/article/abs/pii/S1534580719301455), 
 
 ## Initial set up
 
@@ -40,4 +40,6 @@ Reference genomes must be created prior to mapping samples. Sample code be found
 2. A whitelist should be placed in the `data` directory for the 10x Genomics samples.
 3. DropSeq generates whitelists *de novo*. Indicating the sample is Dropseq will trigger `map_dropseq.sh`. The sample code can be found within `mk_map.sh` 
 4. Follow the sample `mk_map.sh` in the `src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using `launch_map.sh`.
+
+
 
