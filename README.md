@@ -6,7 +6,7 @@ This guide will walkthrough the steps of processing scRNAseq data and merging mu
 ## Initial set up
 
 ### Packages and programs
-Install the necessary programs you will need to run this package. Install the binaries for SRATools, BBtools, HKlibs, Bcftools, Samtools, DROP-SEQ-Tools, and Gffread. The two required Python packages are STAR and UMAP. You will also need to have R installed for the final analysis.
+Install the necessary programs you will need to run this package. Install the binaries for NCBI's [SRATools](https://github.com/ncbi/sra-tools), DOE Joint Genome Institute's [BBtools](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/), [Samtools/BCFTools/HTSlib](http://www.htslib.org/download/), [DROP-seq Tools](https://github.com/broadinstitute/Drop-seq), and [Gffread](https://github.com/gpertea/gffread). The two required Python packages are [STAR](https://anaconda.org/bioconda/star) and [UMAP](https://umap-learn.readthedocs.io/en/latest/). You will also need to have R installed for the final analysis.
 
 Clone the PSCREEN repository for the code utilized in this project.
 ```git clone https://github.com/byu24/at.sc.db.git```
