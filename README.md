@@ -37,9 +37,17 @@ Reference genomes must be created prior to mapping samples. Sample code be found
 
 ### Mapping samples
 1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
-2. A whitelist should be placed in the `data` directory for the 10x Genomics samples.
-3. DropSeq generates whitelists *de novo*. Indicating the sample is Dropseq will trigger `map_dropseq.sh`. The sample code can be found within `mk_map.sh` 
-4. Follow the sample `mk_map.sh` in the `src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using `launch_map.sh`.
+2. A whitelist should be placed in the `data` directory for the 10x Genomics samples. DropSeq generates whitelists *de novo*. Indicating the sample is Dropseq will trigger `map_dropseq.sh`. The sample code can be found within `mk_map.sh` 
+3. Follow the sample `mk_map.sh` in the `src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools, STAR, and Drop-seq Tools are required to be installed beforehand. All scripts can be submitted using `launch_map.sh`.
+
+## Analyze
+1.
+
+
+
+
+
+
 
 
 
