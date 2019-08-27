@@ -13,13 +13,14 @@ library(furrr)
 library(future)
 options(future.globals.maxSize = 100000 * 1024^2)
 
-at.final<-readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/data/at.final.rds")
-#Plots cluster map of final database
+at.final<-readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/data/at.final.rds") #change the path to correct directory
+# Plots cluster map of final database ------------------------------------------------------------------
 DimPlot(at.final, group.by = "cell_type_simple")
 ggsave(file="/global/projectb/scratch/byu24/at.sc.db/reports/final_simplecell.png", width = 30, height = 20, units = "cm")
 DimPlot(at.final, reduction = "pca")
 ggsave(file="/global/projectb/scratch/byu24/at.sc.db/reports/final_pca.png", width = 30, height = 20, units = "cm")
 
+# Isolate specific cell types ------------------------------------------------------------------
 #Pulls QC only data out
 umap_coords <- at.final %>% Embeddings(reduction = "umap") %>% 
 	as_tibble(rownames="Cell")
@@ -33,6 +34,7 @@ qc = cell_data %>%
 ggplot(qc, aes(x=UMAP_1, y=UMAP_2, color=orig.ident)) + geom_point()
 ggsave(file="/global/projectb/scratch/byu24/at.sc.db/reports/QC.png", width = 30, height = 20, units = "cm")
 
+# Visualize cell identity composition per cluster ------------------------------------------------------------------
 #Creates barplots of cell identity composition per cluster
 ggplot(data=at.final@meta.data, aes(x=seurat_clusters, y=seurat_clusters, fill=cell_type_simple)) + geom_col()
   geom_bar(stat="Identity")
