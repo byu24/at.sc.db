@@ -1,7 +1,7 @@
 # P-SCREEN: Plant Single-Cell Resource for Evaluation of Expression Niche
-by Brenda Yu and Ben Cole
+<center>by Brenda Yu and Ben Cole</center>
 
-Last updated: August 27, 2019
+<center>Last updated: August 27, 2019</center>
 
 This guide will walkthrough the steps of processing scRNAseq data and merging multiple scRNAseq datasets into a unified cluster map. This pipeline was successful in processing samples that were obtained via 10x Genomics and Dropseq. The *Arabidopsis thaliana* single-cell root samples used in this project were from [Denyer, et al. (2019) *Developmental Cell*](https://www.sciencedirect.com/science/article/abs/pii/S1534580719301455), [Jean-Baptiste, et al. (2019) *The Plant Cell*](http://www.plantcell.org/content/31/5/993.abstract), [Ryu, et al. (2019) *Plant physiology*](http://www.plantphysiol.org/content/179/4/1444.abstract), [Shulse, et al. (2019) *Cell reports*](https://www.sciencedirect.com/science/article/pii/S2211124719305273), and [Zhang, et al. (2019) *Molecular plant*](https://www.sciencedirect.com/science/article/pii/S1674205219301339). 
 
@@ -79,7 +79,7 @@ This subsection merges all the individual samples and ICI scores together into a
 4. The output will be the final Seurat Object with the appropriate statistical calculations completed. Additional statistical calculations can be added to the script by reviewing example Seurat [vignettes](https://satijalab.org/seurat/vignettes.html). The log file produced will also output the metadata information to review and confirm the accuracy of the merging.
 
 ### Analyze
-This subsection features data manipulation to produce different statistical plots in `analyze.R`. Plotting can be done on a local machine if desired or submitted to a HPC using 'mk_analyze.sh`.
+This subsection features data manipulation to produce different statistical plots in `analyze.R`. Plotting can be done on a local machine if desired or submitted to a HPC using `mk_analyze.sh`.
 1. A `DimPlot` with a `PCA` reduction will be outputted to visualize all the clusters in the master Seurat object.
 2. A section to isolate only QC type cells is included and can be customized to isolate other cell types.
 3. Individual cluster composition of cell types can be visualized as barplots using `ggplot()`. Clusters can be reordered and grouped by cell type composition. The steps shown in `analyze.R` were completed manually. Additional scripts can be used to reclassify the clusters.
