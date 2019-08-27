@@ -1,7 +1,7 @@
 # P-SCREEN: Plant Single-Cell Resource for Evaluation of Expression Niche
 <p align="center">
 	by Brenda Yu<sup>1</sup>, Ben Cole<sup>2</sup>, and Axel Visel<sup>2</sup><br>
-	Last updated: <b>August 27, 2019</b>
+	Last updated: <b>August 27, 2019</b><br>
 	<sup>1</sup>University of California, Merced, <sup>2</sup>Department of Energy Joint Genome Institute, Walnut Creek, CA<br>
 	</p>
 
