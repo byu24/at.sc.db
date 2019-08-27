@@ -15,7 +15,7 @@ library(future)
 options(future.globals.maxSize = 100000 * 1024^2)
 
 # Merge samples to Seurat object ------------------------------------------------------------------
-#Load all R objects
+#Load all Seurat Robjects for each sample
 ss_001 = readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/ss_001.rds")
 ss_002 = readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/ss_002.rds")
 ss_003 = readRDS(file = "/global/projectb/scratch/byu24/at.sc.db/scratch/robjects/ss_003.rds")
@@ -70,6 +70,7 @@ sum_df <- function(ici_df) {
 	sum_df<- sum_df %>% as.data.frame() %>% column_to_rownames("Cell")
 	}
 
+#Load all the ICI score Robjects and convert them into dataframes
 ici_ss_001<-sum_df("ici_ss_001")
 ici_ss_002<-sum_df("ici_ss_002")
 ici_ss_003<-sum_df("ici_ss_003")
