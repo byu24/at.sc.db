@@ -43,16 +43,16 @@ Reference genomes must be created prior to mapping samples. Sample code be found
 ## Analyze
 The last step is divided into three subsections: Process, Merge, and Analyze. Before proceeding, be sure to set up a Python environment with [UMAP](https://umap-learn.readthedocs.io/en/latest/). It is highly recommended to run these steps on a HPC as the computing steps require a lot of memory. 
 
-Install the necessary R packages in the Python environment. 
+Install the necessary R packages in the Python environment. Additional features and examples can be explored for the [Seurat Package](https://satijalab.org/seurat/vignettes.html) on its website.
 ```
 install.packages('future', repos="https://cran.cnr.berkeley.edu/")
 install.packages('furrr', repos="https://cran.cnr.berkeley.edu/")
-install.packages("Seurat",repos="https://cran.cnr.berkeley.edu/")
 install.packages("ggplot2",repos="https://cran.cnr.berkeley.edu/")
+install.packages("Seurat",repos="https://cran.cnr.berkeley.edu/")
 ```
 
 ### Process
-The final mapping outputs will be inputted into the Seurat Package in R.
+This section processes the mapping outputs for each sample into a Seurat object.
 
 
 
