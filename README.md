@@ -25,7 +25,11 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 
 ## Download
 1. Prior to downloading the data, a metadata CSV file must be set up. Follow the format of `sample_metadata.csv` in the `data` directory. 
-	* Set a naming structure for the samples in the first column of the metadata CSV. 
+	* Set a naming structure for the samples in the first column of the metadata CSV. Use an easy structure that will help identify the originating sample in the final database.
+	* Include the SRA IDs and the corresponding SRR IDs in the appropriate column. If a sample has two or more SRR IDs under the same SRA, samples must be concatenated after filtering.
+	* The scRNAseq Platform and Version is important to specify. The two methods used in this project were DropSeq and 10xGenomics.
+	* If the samples have been sequenced with additional genomes, specify the genome in the "Genome" column. This project had "at10" (*A. thaliana* only), "at10_hg38" (with human genome), and "at10_mm10" (with mouse genome). Specifying the genomes is necessary for accurate mapping.
+	* Specify the number of expected cells in the "ExpCell" column. This information is used in the Analyze section.
 2. Running `mk_download.sh` in the `src/download` directory will make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: SRATools is required to be installed beforehand. 
 3. All scripts can be submitted using `launch_download.sh`.
 
@@ -54,7 +58,7 @@ install.packages("Seurat",repos="https://cran.cnr.berkeley.edu/")
 ```
 
 ### Process
-This section processes the mapping outputs for each sample into a Seurat object. 
+This subsection processes the mapping outputs for each sample into a Seurat object. 
 1. `process_cluster.r` in the `src/analyze` directory includes all the functions needed to create the initial Seurat object. Edit the functions to reflect the path to the sample mapping matrix directory. Source 'process_cluster.r` at the beginning of your R script for each sample.
 ```
 source('"/path/to/at.sc.db/src/analyze/process_cluster.r"')
@@ -66,12 +70,16 @@ source('"/path/to/at.sc.db/src/analyze/process_ici.R"')
 3. Run `mk_process.sh` in the `src/analyze` directory to make sample-specific R scripts and the corresponding batch script. This script will create the Seurat object from the mapping matrices, save an Elbow Plot and UMAP dimension plot, and calculate the ICI scores. The output will be a sample Seurat Robject and the corresponding ICI Score Robject. Be sure that the output directory has enough space and memory to accommodate the Robjects.
 
 ### Merge
+This subsection merges all the individual samples and ICI scores together into a master Seurat object. The scripts on this step could be integrated into the Process subsection but it was separated due to the high memory and space allocations required.
 1. Edit `merge.R` in the `src/analyze` directory to load all the Seurat objects into the R environment. The script will merge all the individual samples into a master Seurat object.
 2. Edit `merge.R` in the `src/analyze` directory to load all the ICI score Robjects into the R environment. A function exists in the script to calculate the sum of the sample ICI scores and convert them into a dataframe. The ICI scores will then be merged with the master Seurat object.
-3. The output will be the final Seurat Object with the appropriate statistical calculations completed. Additional statistical calculations can be added to the script by reviewing example Seurat [vignettes](https://satijalab.org/seurat/vignettes.html). The log file produced will also output the metadata information to review and confirm the accuracy of the merging.
+3. It is recommended to run `mk_merge.sh` and submit it as a batch job. Be sure to submit onto a HPC cluster with a large memory and space allocation. 
+4. The output will be the final Seurat Object with the appropriate statistical calculations completed. Additional statistical calculations can be added to the script by reviewing example Seurat [vignettes](https://satijalab.org/seurat/vignettes.html). The log file produced will also output the metadata information to review and confirm the accuracy of the merging.
 
 ### Analyze
-
+This subsection features data manipulation to produce different statistical plots. 
+1. `analyze.R` will output a `DimPlot` with a `PCA` reduction to visualize all the clusters in the master Seurat object.
+2. The script also includes steps to isolate only QC type cells.
 
 
 
