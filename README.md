@@ -2,8 +2,9 @@
 <p align="center">
 	by Brenda Yu<sup>1</sup>, Ben Cole<sup>2</sup>, and Axel Visel<sup>2</sup><br>
 	Last updated: <b>August 27, 2019</b><br>
-	<sup>1</sup>University of California, Merced, <sup>2</sup>Department of Energy Joint Genome Institute, Walnut Creek, CA<br>
+	<sup>1</sup><sub><sup>University of California, Merced</sup></sub>, <sup>2</sup>Department of Energy Joint Genome Institute, Walnut Creek, CA<br>
 	</p>
+
 
 This guide will walkthrough the steps of processing scRNAseq data and merging multiple scRNAseq datasets into a unified cluster map. This pipeline was successful in processing samples that were obtained via 10x Genomics and Dropseq. Four main sections are detailed below: Download, Filter, Map, and Process. The *Arabidopsis thaliana* single-cell root samples used in this project were from [Denyer, et al. (2019) *Developmental Cell*](https://www.sciencedirect.com/science/article/abs/pii/S1534580719301455), [Jean-Baptiste, et al. (2019) *The Plant Cell*](http://www.plantcell.org/content/31/5/993.abstract), [Ryu, et al. (2019) *Plant physiology*](http://www.plantphysiol.org/content/179/4/1444.abstract), [Shulse, et al. (2019) *Cell reports*](https://www.sciencedirect.com/science/article/pii/S2211124719305273), and [Zhang, et al. (2019) *Molecular plant*](https://www.sciencedirect.com/science/article/pii/S1674205219301339). 
 
