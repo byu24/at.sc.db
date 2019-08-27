@@ -1,10 +1,10 @@
 # P-SCREEN: Plant Single-Cell Resource for Evaluation of Expression Niche
 <p align="center">
-	by Brenda Yu and Ben Cole<br>
+	by Brenda Yu, Ben Cole, and Axel Visel<br>
 	Last updated: <b>August 27, 2019</b>
 	</p>
 
-This guide will walkthrough the steps of processing scRNAseq data and merging multiple scRNAseq datasets into a unified cluster map. This pipeline was successful in processing samples that were obtained via 10x Genomics and Dropseq. The *Arabidopsis thaliana* single-cell root samples used in this project were from [Denyer, et al. (2019) *Developmental Cell*](https://www.sciencedirect.com/science/article/abs/pii/S1534580719301455), [Jean-Baptiste, et al. (2019) *The Plant Cell*](http://www.plantcell.org/content/31/5/993.abstract), [Ryu, et al. (2019) *Plant physiology*](http://www.plantphysiol.org/content/179/4/1444.abstract), [Shulse, et al. (2019) *Cell reports*](https://www.sciencedirect.com/science/article/pii/S2211124719305273), and [Zhang, et al. (2019) *Molecular plant*](https://www.sciencedirect.com/science/article/pii/S1674205219301339). 
+This guide will walkthrough the steps of processing scRNAseq data and merging multiple scRNAseq datasets into a unified cluster map. This pipeline was successful in processing samples that were obtained via 10x Genomics and Dropseq. Four main sections are detailed below: Download, Filter, Map, and Process. The *Arabidopsis thaliana* single-cell root samples used in this project were from [Denyer, et al. (2019) *Developmental Cell*](https://www.sciencedirect.com/science/article/abs/pii/S1534580719301455), [Jean-Baptiste, et al. (2019) *The Plant Cell*](http://www.plantcell.org/content/31/5/993.abstract), [Ryu, et al. (2019) *Plant physiology*](http://www.plantphysiol.org/content/179/4/1444.abstract), [Shulse, et al. (2019) *Cell reports*](https://www.sciencedirect.com/science/article/pii/S2211124719305273), and [Zhang, et al. (2019) *Molecular plant*](https://www.sciencedirect.com/science/article/pii/S1674205219301339). 
 
 ## Initial set up
 
@@ -15,7 +15,6 @@ Clone the PSCREEN repository for the code utilized in this project.
 ```
 git clone https://github.com/byu24/at.sc.db.git
 ```
-
 ### Directory structure
 Below are the descriptions for the directory structure pre-set from the PSCREEN repository.
 
@@ -23,7 +22,7 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 * `log`: Store all the log files from every step here. Log files should be produced at all steps to ensure that processing was done correctly.
 * `reports`: Final analysis graphs should be stored here. These will be graphs produced in R.
 * `scratch`: Includes all raw data and intermediate files that are worked on in each step. Subdirectories should be labeled accordingly to each sample.
-* `src`: Includes all the working lines of code. Original and example scripts can be found here.
+* `src`: Includes all the working lines of code. Original and example scripts can be found here. 
 
 
 ## Download
@@ -43,11 +42,11 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 ## Map
 ### Setting up the reference genome
 Reference genomes must be created prior to mapping samples. Sample code be found under `src` in `create_at10_genome.sh` and `create_refs.sh`. Reference genomes should be stored under `scratch` under `genomes`. 
-
 ### Mapping samples
 1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
 2. A whitelist should be placed in the `data` directory for the 10x Genomics samples. DropSeq generates whitelists *de novo*. Indicating the sample is Dropseq will trigger `map_dropseq.sh`. The sample code can be found within `mk_map.sh` 
 3. Running `mk_map.sh` in the `src/map` directory will make individual file scripts that maps each sample. Change all directory files and paths to match the location on your local machine. Note: BBTools, STAR, and Drop-seq Tools are required to be installed beforehand. All scripts can be submitted using `launch_map.sh`.
+
 
 ## Analyze
 The last step is divided into three subsections: Process, Merge, and Analyze. Before proceeding, be sure to set up a Python environment with [UMAP](https://umap-learn.readthedocs.io/en/latest/). It is highly recommended to run these steps on a HPC as the computing steps require a lot of memory. 
@@ -59,7 +58,6 @@ install.packages('furrr', repos="https://cran.cnr.berkeley.edu/")
 install.packages("ggplot2",repos="https://cran.cnr.berkeley.edu/")
 install.packages("Seurat",repos="https://cran.cnr.berkeley.edu/")
 ```
-
 ### Process
 This subsection processes the mapping outputs for each sample into a Seurat object. 
 1. `process_cluster.r` in the `src/analyze` directory includes all the functions needed to create the initial Seurat object. Edit the functions to reflect the path to the sample mapping matrix directory. Source 'process_cluster.r` at the beginning of your R script for each sample.
@@ -71,14 +69,12 @@ source('"/path/to/at.sc.db/src/analyze/process_cluster.r"')
 source('"/path/to/at.sc.db/src/analyze/process_ici.R"')
 ```
 3. Run `mk_process.sh` in the `src/analyze` directory to make sample-specific R scripts and the corresponding batch script. This script will create the Seurat object from the mapping matrices, save an Elbow Plot and UMAP dimension plot, and calculate the ICI scores. The output will be a sample Seurat Robject and the corresponding ICI Score Robject. Be sure that the output directory has enough space and memory to accommodate the Robjects.
-
 ### Merge
 This subsection merges all the individual samples and ICI scores together into a master Seurat object. The scripts on this step could be integrated into the Process subsection but it was separated due to the high memory and space allocations required.
 1. Edit `merge.R` in the `src/analyze` directory to load all the Seurat objects into the R environment. The script will merge all the individual samples into a master Seurat object.
 2. Edit `merge.R` in the `src/analyze` directory to load all the ICI score Robjects into the R environment. A function exists in the script to calculate the sum of the sample ICI scores and convert them into a dataframe. The ICI scores will then be merged with the master Seurat object.
 3. It is recommended to run `mk_merge.sh` and submit it as a batch job. Be sure to submit onto a HPC cluster with a large memory and space allocation. 
 4. The output will be the final Seurat Object with the appropriate statistical calculations completed. Additional statistical calculations can be added to the script by reviewing example Seurat [vignettes](https://satijalab.org/seurat/vignettes.html). The log file produced will also output the metadata information to review and confirm the accuracy of the merging.
-
 ### Analyze
 This subsection features data manipulation to produce different statistical plots in `analyze.R`. Plotting can be done on a local machine if desired or submitted to a HPC using `mk_analyze.sh`.
 1. A `DimPlot` with a `PCA` reduction will be outputted to visualize all the clusters in the master Seurat object.
