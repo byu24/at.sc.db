@@ -24,12 +24,12 @@ Below are the descriptions for the directory structure pre-set from the PSCREEN 
 ## Download
 1. Prior to downloading the data, a metadata CSV file must be set up. Follow the format of `sample_metadata.csv` in the `data` directory. 
 	* Set a naming structure for the samples in the first column of the metadata CSV. 
-2. Follow the sample `mk_download.sh` in the `src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: SRATools is required to be installed beforehand. 
+2. Follow the sample `mk_download.sh` in the `src/download` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: SRATools is required to be installed beforehand. 
 3. All scripts can be submitted using `launch_download.sh`.
 
 ## Filter
 1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
-2. Follow the sample `mk_filter.sh` in the `src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using `launch_filter.sh`.
+2. Follow the sample `mk_filter.sh` in the `src/filter` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools is required to be installed beforehand. All scripts can be submitted using `launch_filter.sh`.
 
 ## Map
 ### Setting up the reference genome
@@ -38,7 +38,7 @@ Reference genomes must be created prior to mapping samples. Sample code be found
 ### Mapping samples
 1. Specify the scRNAseq technique used for the sample in the metadata.CSV file. Dropseq and 10x Genomics utilizes different filtering methods.
 2. A whitelist should be placed in the `data` directory for the 10x Genomics samples. DropSeq generates whitelists *de novo*. Indicating the sample is Dropseq will trigger `map_dropseq.sh`. The sample code can be found within `mk_map.sh` 
-3. Follow the sample `mk_map.sh` in the `src` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools, STAR, and Drop-seq Tools are required to be installed beforehand. All scripts can be submitted using `launch_map.sh`.
+3. Follow the sample `mk_map.sh` in the `src/map` directory to make individual file scripts that downloads each of the samples from NCBI. This script saves time from having to manually download each raw data file. Change all directory files and paths to match the location on your local machine. Note: BBTools, STAR, and Drop-seq Tools are required to be installed beforehand. All scripts can be submitted using `launch_map.sh`.
 
 ## Analyze
 The last step is divided into three subsections: Process, Merge, and Analyze. Before proceeding, be sure to set up a Python environment with [UMAP](https://umap-learn.readthedocs.io/en/latest/). It is highly recommended to run these steps on a HPC as the computing steps require a lot of memory. 
@@ -52,7 +52,11 @@ install.packages("Seurat",repos="https://cran.cnr.berkeley.edu/")
 ```
 
 ### Process
-This section processes the mapping outputs for each sample into a Seurat object.
+This section processes the mapping outputs for each sample into a Seurat object. 
+1. `process_cluster.r` in the `src/analyze` directory includes all the functions needed to create the initial Seurat object. Edit the functions to reflect the path to the sample mapping matrix directory. Source 'process_cluster.R` at the beginning of your R script.
+```source('"/path/to/at.sc.db/src/analyze/process_cluster.r"')```
+2. `process_ici.R` in the `src/analyze` directory includes all the functions needed to calculate ICI scores [(Elfroni, et al. (2016))](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4354993/) from the Seurat object. Edit the functions to reflect the path to the sample mapping matrix directory. Source 'process_cluster.R` at the beginning of your R script.
+```source('"/path/to/at.sc.db/src/analyze/process_ici.R"')```
 
 
 
