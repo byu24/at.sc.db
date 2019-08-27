@@ -24,7 +24,7 @@ while [ "$i" -lt "$len" ]; do
   echo "library(tidyverse)" >> src/analyze/process_${lib_name}.r
   echo "library(furrr)" >> src/analyze/process_${lib_name}.r
   echo "library(future)" >> src/analyze/process_${lib_name}.r
-  echo "options(future.globals.maxSize = 100000 * 1024^2)" >> src/analyze/process_${lib_name}.r
+  echo "options(future.globals.maxSize = 100000 * 1024^2) #Extends memory size allowed in R" >> src/analyze/process_${lib_name}.r
   echo "" >> src/analyze/process_${lib_name}.r
 
   echo "${lib_name}.read = get_dge('"${lib_name}"')" >> src/analyze/process_${lib_name}.r

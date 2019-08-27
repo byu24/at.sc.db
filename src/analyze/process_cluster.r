@@ -2,12 +2,6 @@
 
 #Load necessary packages
 
-install.packages('reticulate', repos="https://cran.cnr.berkeley.edu/")
-install.packages('future', repos="https://cran.cnr.berkeley.edu/")
-install.packages('furrr', repos="https://cran.cnr.berkeley.edu/")
-install.packages("Seurat",repos="https://cran.cnr.berkeley.edu/")
-install.packages("ggplot2",repos="https://cran.cnr.berkeley.edu/")
-
 library("Seurat")
 library(ggplot2)
 library(tidyverse)
