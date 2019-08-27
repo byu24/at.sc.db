@@ -9,7 +9,9 @@ This guide will walkthrough the steps of processing scRNAseq data and merging mu
 Install the necessary programs you will need to run this package. Install the binaries for NCBI's [SRATools](https://github.com/ncbi/sra-tools), DOE Joint Genome Institute's [BBtools](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/), [Samtools/BCFTools/HTSlib](http://www.htslib.org/download/), [DROP-seq Tools](https://github.com/broadinstitute/Drop-seq), and [Gffread](https://github.com/gpertea/gffread). The two required Python packages are [STAR](https://anaconda.org/bioconda/star) and [UMAP](https://umap-learn.readthedocs.io/en/latest/). You will also need to have R installed for the final analysis.
 
 Clone the PSCREEN repository for the code utilized in this project.
-```git clone https://github.com/byu24/at.sc.db.git```
+```
+git clone https://github.com/byu24/at.sc.db.git
+```
 
 ### Directory structure
 Below are the descriptions for the directory structure pre-set from the PSCREEN repository.
@@ -54,7 +56,9 @@ install.packages("Seurat",repos="https://cran.cnr.berkeley.edu/")
 ### Process
 This section processes the mapping outputs for each sample into a Seurat object. 
 1. `process_cluster.r` in the `src/analyze` directory includes all the functions needed to create the initial Seurat object. Edit the functions to reflect the path to the sample mapping matrix directory. Source 'process_cluster.R` at the beginning of your R script.
-```source('"/path/to/at.sc.db/src/analyze/process_cluster.r"')```
+```
+source('"/path/to/at.sc.db/src/analyze/process_cluster.r"')
+```
 2. `process_ici.R` in the `src/analyze` directory includes all the functions needed to calculate ICI scores [(Elfroni, et al. (2016))](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4354993/) from the Seurat object. Edit the functions to reflect the path to the sample mapping matrix directory. Source 'process_cluster.R` at the beginning of your R script.
 ```source('"/path/to/at.sc.db/src/analyze/process_ici.R"')```
 
