@@ -2,7 +2,7 @@
 <p align="center">
 	by Brenda Yu<sup>1</sup>, Ben Cole<sup>2</sup>, and Axel Visel<sup>2</sup><br>
 	Last updated: <b>August 27, 2019</b><br>
-	<sup>1</sup><sub><sup>University of California, Merced</sup></sub>, <sup>2</sup>Department of Energy Joint Genome Institute, Walnut Creek, CA<br>
+	<sup>1</sup><sub><sup>University of California, Merced</sup></sub>, <sup>2</sup><sub><sup>Department of Energy Joint Genome Institute, Walnut Creek, CA</sup></sub><br>
 	</p>
 
 
